@@ -48,6 +48,11 @@ instructions; shorter entrypoints alone are not acceptance evidence.
    first verify the active tree still matches the deployment manifest; archive
    it, restore that skill's backup, verify hashes and refresh discovery again.
 
+When reverting LikeC4 to upstream-managed ownership, restore only its original
+entry from the archived `skills-updater-lock-before.json` after checking for a
+conflicting current entry; retain all other live installer settings. A rollback
+to an earlier personal adaptation keeps the upstream updater entry retired.
+
 Do not recursively delete an unknown destination, overwrite a changed skill,
 or restore a system-skill snapshot over a newer Codex-managed bundle.
 

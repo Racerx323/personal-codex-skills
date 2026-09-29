@@ -112,3 +112,10 @@ was submitted as related evidence; shared root cause and an upstream fix remain
 unconfirmed. The two security findings remain open. A private local manual-cache
 wrapper and persistent-only supplemental artifact policy mitigate the selected
 workflows; private temporary runtime enforcement and upstream fixes remain pending.
+
+The reviewed bundles were synchronized after backing up and hash-checking the
+previous installation. [Review installation evidence](review-installation.json)
+records the source revision and all 32 installed file hashes. The earlier
+installation receipt remains an immutable record of the first deployment.
+The corrected IndexedDB example passed loopback checks for completed deletion
+and blocked-operation rejection; see [browser regression results](../evals/maintenance-2026-09-29/review-browser-runtime.json).

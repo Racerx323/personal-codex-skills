@@ -27,7 +27,11 @@ Clear Writing as an update mechanism. Taste Skill is excluded by user decision.
 
 ## LikeC4 and Playwright maintenance sources
 
-LikeC4's installed provenance points to the likec4.dev well-known skill tarball;
+LikeC4's upstream source is `likec4/likec4`, directory `skills/likec4-dsl`.
+The homelab LikeC4 installation guide documents the Vercel Skills CLI command
+using `https://likec4.dev/`; the installer's lock points to that site's well-known
+skill tarball. The GitHub repository is the source, the tarball is the delivery
+method, and `vercel-labs/skills` supplies the installer;
 the original immutable revision was not recorded. Compared against
 `likec4/likec4@33dbc2d34c399a99daf96e92fc28fe5d280a7fd5`. Its MIT notice is
 preserved in the bundle. Existing evaluations were retained under evals/likec4-dsl.

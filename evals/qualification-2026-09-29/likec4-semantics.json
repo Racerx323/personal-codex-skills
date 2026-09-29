@@ -1,0 +1,649 @@
+{
+  "version": {
+    "command": [
+      "likec4",
+      "--version"
+    ],
+    "exit": 0,
+    "stdout": "1.59.4\n",
+    "stderr": ""
+  },
+  "help": {
+    "validate": {
+      "command": [
+        "likec4",
+        "validate",
+        "--help"
+      ],
+      "exit": 0,
+      "stdout": "likec4 validate [path]\n\nValidate syntax, semantics and layout drifts\n\nArguments:\n  path  <directory> with LikeC4 sources (default is current directory or 'LIKEC4_WORKSPACE' env)  [string] [default: \".\"]\n\nGlobals:\n      --verbose      verbose logging  [boolean]\n  -h, --help         Show help  [boolean]\n  -v, --version      Show version number  [boolean]\n      --show-hidden  Show hidden options  [boolean]\n\nOptions:\n  -p, --project  select LikeC4 project by name (e.g. \"my-project\") or by path  [string]\n  -f, --file     only report errors from these files (can be specified multiple times)  [array]\n      --layout   force layout validation, or disable with --no-layout  [boolean] [default: enabled]\n      --json     output as JSON (structured)  [boolean]\n\nExamples:\n  likec4 validate\n    Validate all in the current directory\n\n  likec4 validate --no-layout --json -f ./src/model.c4 -f ./src/deployment.c4\n    Validate all, ignore layout drifts, report only errors from these files, output as JSON\n\n  likec4 validate --project my-project /some/where\n    Validate my-project in /some/where\n",
+      "stderr": ""
+    },
+    "json": {
+      "command": [
+        "likec4",
+        "export",
+        "json",
+        "--help"
+      ],
+      "exit": 0,
+      "stdout": "likec4 export json [path]\n\nexport model(s) to JSON\n\nArguments:\n  path  <directory> with LikeC4 sources (default is current directory or 'LIKEC4_WORKSPACE' env)  [string] [default: \".\"]\n\nGlobals:\n      --verbose      verbose logging  [boolean]\n  -h, --help         Show help  [boolean]\n  -v, --version      Show version number  [boolean]\n      --show-hidden  Show hidden options  [boolean]\n\nOptions:\n  -o, --outfile                 <file> output .json file  [string] [default: \"likec4.json\"]\n  -p, --project                 select LikeC4 project by name (e.g. \"my-project\") or by path  [string]\n      --use-dot, --use-dot-bin  use graphviz binaries (\"dot\" should be on PATH)  [boolean] [default: false]\n      --skip-layout             skip layout (produce compute-only model, faster)  [boolean]\n      --pretty                  indented JSON output  [boolean]\n\nExamples:\n  likec4 export json --skip-layout\n    Search for likec4 files in current directory and output JSON to likec4.json (no layout)\n\n  likec4 export json --pretty -o ./generated/likec4.json src/likec4\n    Search for likec4 files in src/likec4 and output JSON to generated/likec4.json\n",
+      "stderr": ""
+    },
+    "png": {
+      "command": [
+        "likec4",
+        "export",
+        "png",
+        "--help"
+      ],
+      "exit": 0,
+      "stdout": "likec4 export png [path]\n\nexport views to PNG\n\nArguments:\n  path  <directory> with LikeC4 sources (default is current directory or 'LIKEC4_WORKSPACE' env)  [string] [default: \".\"]\n\nGlobals:\n      --verbose      verbose logging  [boolean]\n  -h, --help         Show help  [boolean]\n  -v, --version      Show version number  [boolean]\n      --show-hidden  Show hidden options  [boolean]\n\nOptions:\n  -o, --outdir, --output        output directory for PNG files; if not specified, images are saved next to sources  [string]\n  -p, --project                 select LikeC4 project by name (e.g. \"my-project\") or by path  [string]\n      --theme                   color-scheme to use, defaults to light  [choices: \"light\", \"dark\"]\n      --dark                    use dark theme, shortcut for --theme=dark  [boolean]\n      --light                   use light theme, shortcut for --theme=light  [boolean]\n      --use-dot, --use-dot-bin  use graphviz binaries (\"dot\" should be on PATH)  [boolean] [default: false]\n      --seq, --sequence         use sequence layout for dynamic views  [boolean]\n      --flat, --flatten         flatten all images in outdir ignoring sources structure  [boolean]\n  -f, --filter                  include views with ids matching given patterns\n                                multiple patterns are combined with OR  [array]\n  -i, --ignore                  continue if export fails for some views  [boolean]\n  -t, --timeout                 timeout for playwright (in seconds)  [number] [default: 15]\n      --max-attempts            max attempts to export failing view, 1 means no retry  [number] [default: 3]\n      --server-url              use this url instead of starting new likec4 server  [string]\n      --chromium-sandbox        enable chromium sandbox (see Playwright docs)  [boolean] [default: false]\n      --notation                include view notation in exported PNG files  [boolean] [default: false]\n      --description             include view description in exported PNG files  [boolean] [default: false]\n\nExamples:\n  likec4 export png\n    Search for likec4 files in current directory and output PNG next to sources\n\n  likec4 export png --theme dark -o ./png src/likec4\n    Search for likec4 files in src/likec4 and output PNG with dark theme to png folder\n\n  likec4 export png -f \"team1*\" -f \"team2*\" --flat -o ./png src/likec4\n    Export views matching team1* or team2* only\n\n  likec4 export png -f \"use-case*\" --sequence src/likec4\n    Export views matching use-case* using sequence layout\n",
+      "stderr": ""
+    }
+  },
+  "checks": [
+    {
+      "case": "absolute-files-total-errors",
+      "passed": true
+    },
+    {
+      "case": "descendants",
+      "nodes": [
+        "g.a",
+        "g.b",
+        "g.b.c"
+      ],
+      "edge_count": 0,
+      "passed": true
+    },
+    {
+      "case": "accumulated",
+      "nodes": [
+        "external",
+        "g.a",
+        "g.b",
+        "g.b.c"
+      ],
+      "edge_count": 0,
+      "passed": true
+    },
+    {
+      "case": "linked",
+      "nodes": [
+        "x",
+        "y"
+      ],
+      "edge_count": 1,
+      "passed": true
+    },
+    {
+      "case": "computed-edge-membership",
+      "passed": true
+    },
+    {
+      "case": "typed-title-exact-extension",
+      "passed": true
+    },
+    {
+      "case": "deployment-instances",
+      "passed": true
+    },
+    {
+      "case": "actual-png-export",
+      "passed": true
+    }
+  ],
+  "validation": {
+    "command": [
+      "likec4",
+      "validate",
+      "--json",
+      "--no-layout",
+      "--file",
+      "/tmp/likec4-qualification-5ogou3zm/model.c4",
+      "--file",
+      "/tmp/likec4-qualification-5ogou3zm/views.c4",
+      "/tmp/likec4-qualification-5ogou3zm"
+    ],
+    "exit": 0,
+    "stdout": "{\n  \"valid\": true,\n  \"errors\": [],\n  \"stats\": {\n    \"totalFiles\": 2,\n    \"totalErrors\": 0,\n    \"filteredFiles\": 2,\n    \"filteredErrors\": 0\n  }\n}\n",
+    "stderr": ""
+  },
+  "export": {
+    "command": [
+      "likec4",
+      "export",
+      "json",
+      "--skip-layout",
+      "-o",
+      "/tmp/likec4-qualification-5ogou3zm/computed.json",
+      "/tmp/likec4-qualification-5ogou3zm"
+    ],
+    "exit": 0,
+    "stdout": "23:43:50.660 INF likec4\u00b7lang layout wasm\n23:43:50.670 INF likec4\u00b7lang workspace: /tmp/likec4-qualification-5ogou3zm\n23:43:51.046 INF likec4\u00b7lang workspace: found 2 source files\n23:43:51.046 INF likec4\u00b7c4:export workspace: Found 1 projects\n23:43:51.046 INF likec4\u00b7c4:export Generate model for project default (skip layout)\n23:43:51.067 INF likec4\u00b7c4:export generated computed.json\n23:43:51.067 INF likec4\u00b7c4:export \u2713 export in 407ms\n",
+    "stderr": ""
+  },
+  "computed_model": {
+    "_stage": "computed",
+    "projectId": "default",
+    "project": {
+      "id": "default",
+      "title": "default"
+    },
+    "specification": {
+      "tags": {},
+      "elements": {
+        "service": {
+          "style": {}
+        }
+      },
+      "relationships": {
+        "async": {
+          "style": {}
+        },
+        "sync": {
+          "style": {}
+        }
+      },
+      "deployments": {
+        "host": {
+          "style": {}
+        }
+      },
+      "metadataKeys": [
+        "checked"
+      ],
+      "customColors": {}
+    },
+    "elements": {
+      "external": {
+        "style": {},
+        "title": "external",
+        "kind": "service",
+        "id": "external"
+      },
+      "g": {
+        "style": {},
+        "title": "g",
+        "kind": "service",
+        "id": "g"
+      },
+      "x": {
+        "style": {},
+        "title": "x",
+        "kind": "service",
+        "id": "x"
+      },
+      "y": {
+        "style": {},
+        "title": "y",
+        "kind": "service",
+        "id": "y"
+      },
+      "g.a": {
+        "style": {},
+        "title": "a",
+        "kind": "service",
+        "id": "g.a"
+      },
+      "g.b": {
+        "style": {},
+        "title": "b",
+        "kind": "service",
+        "id": "g.b"
+      },
+      "g.b.c": {
+        "style": {},
+        "title": "c",
+        "kind": "service",
+        "id": "g.b.c"
+      }
+    },
+    "relations": {
+      "11m8l7t": {
+        "title": "publishes",
+        "source": {
+          "model": "x"
+        },
+        "target": {
+          "model": "y"
+        },
+        "kind": "async",
+        "id": "11m8l7t",
+        "metadata": {
+          "checked": "yes"
+        }
+      },
+      "18xneco": {
+        "title": "publishes",
+        "source": {
+          "model": "x"
+        },
+        "target": {
+          "model": "y"
+        },
+        "kind": "sync",
+        "id": "18xneco"
+      },
+      "1syftyj": {
+        "title": "other",
+        "source": {
+          "model": "x"
+        },
+        "target": {
+          "model": "y"
+        },
+        "kind": "async",
+        "id": "1syftyj"
+      }
+    },
+    "globals": {
+      "predicates": {},
+      "dynamicPredicates": {},
+      "styles": {}
+    },
+    "views": {
+      "index": {
+        "_stage": "computed",
+        "_type": "element",
+        "id": "index",
+        "title": "Landscape view",
+        "description": null,
+        "autoLayout": {
+          "direction": "TB"
+        },
+        "edges": [
+          {
+            "id": "1k6n43v",
+            "parent": null,
+            "source": "x",
+            "target": "y",
+            "label": "[...]",
+            "relations": [
+              "11m8l7t",
+              "18xneco",
+              "1syftyj"
+            ],
+            "color": "gray",
+            "line": "dashed",
+            "head": "normal"
+          }
+        ],
+        "nodes": [
+          {
+            "id": "external",
+            "parent": null,
+            "level": 0,
+            "children": [],
+            "inEdges": [],
+            "outEdges": [],
+            "title": "external",
+            "modelRef": "external",
+            "shape": "rectangle",
+            "color": "primary",
+            "style": {
+              "opacity": 15,
+              "size": "md"
+            },
+            "tags": [],
+            "kind": "service"
+          },
+          {
+            "id": "g",
+            "parent": null,
+            "level": 0,
+            "children": [],
+            "inEdges": [],
+            "outEdges": [],
+            "title": "g",
+            "modelRef": "g",
+            "shape": "rectangle",
+            "color": "primary",
+            "style": {
+              "opacity": 15,
+              "size": "md"
+            },
+            "tags": [],
+            "kind": "service"
+          },
+          {
+            "id": "x",
+            "parent": null,
+            "level": 0,
+            "children": [],
+            "inEdges": [],
+            "outEdges": [
+              "1k6n43v"
+            ],
+            "title": "x",
+            "modelRef": "x",
+            "shape": "rectangle",
+            "color": "primary",
+            "style": {
+              "opacity": 15,
+              "size": "md"
+            },
+            "tags": [],
+            "kind": "service"
+          },
+          {
+            "id": "y",
+            "parent": null,
+            "level": 0,
+            "children": [],
+            "inEdges": [
+              "1k6n43v"
+            ],
+            "outEdges": [],
+            "title": "y",
+            "modelRef": "y",
+            "shape": "rectangle",
+            "color": "primary",
+            "style": {
+              "opacity": 15,
+              "size": "md"
+            },
+            "tags": [],
+            "kind": "service"
+          }
+        ],
+        "hash": "7XeFEKxJ8t5m_tsoiRE9eyI_3I0y9otkODuAX_kMQ4E"
+      },
+      "descendants": {
+        "_type": "element",
+        "tags": null,
+        "links": null,
+        "_stage": "computed",
+        "sourcePath": "views.c4",
+        "description": null,
+        "title": null,
+        "id": "descendants",
+        "autoLayout": {
+          "direction": "TB"
+        },
+        "edges": [],
+        "nodes": [
+          {
+            "id": "g.a",
+            "parent": null,
+            "level": 0,
+            "children": [],
+            "inEdges": [],
+            "outEdges": [],
+            "title": "a",
+            "modelRef": "g.a",
+            "shape": "rectangle",
+            "color": "primary",
+            "style": {
+              "opacity": 15,
+              "size": "md"
+            },
+            "tags": [],
+            "kind": "service"
+          },
+          {
+            "id": "g.b",
+            "parent": null,
+            "level": 0,
+            "children": [
+              "g.b.c"
+            ],
+            "inEdges": [],
+            "outEdges": [],
+            "title": "b",
+            "modelRef": "g.b",
+            "shape": "rectangle",
+            "color": "primary",
+            "style": {
+              "opacity": 15,
+              "size": "md"
+            },
+            "tags": [],
+            "kind": "service",
+            "depth": 1
+          },
+          {
+            "id": "g.b.c",
+            "parent": "g.b",
+            "level": 1,
+            "children": [],
+            "inEdges": [],
+            "outEdges": [],
+            "title": "c",
+            "modelRef": "g.b.c",
+            "shape": "rectangle",
+            "color": "primary",
+            "style": {
+              "opacity": 15,
+              "size": "md"
+            },
+            "tags": [],
+            "kind": "service"
+          }
+        ],
+        "hash": "0kDGdBx_iTrEztT4s8cWgSnbjDn2MXmrjgB7IhXN1lM"
+      },
+      "accumulated": {
+        "_type": "element",
+        "tags": null,
+        "links": null,
+        "_stage": "computed",
+        "sourcePath": "views.c4",
+        "description": null,
+        "title": null,
+        "id": "accumulated",
+        "autoLayout": {
+          "direction": "TB"
+        },
+        "edges": [],
+        "nodes": [
+          {
+            "id": "external",
+            "parent": null,
+            "level": 0,
+            "children": [],
+            "inEdges": [],
+            "outEdges": [],
+            "title": "external",
+            "modelRef": "external",
+            "shape": "rectangle",
+            "color": "primary",
+            "style": {
+              "opacity": 15,
+              "size": "md"
+            },
+            "tags": [],
+            "kind": "service"
+          },
+          {
+            "id": "g.a",
+            "parent": null,
+            "level": 0,
+            "children": [],
+            "inEdges": [],
+            "outEdges": [],
+            "title": "a",
+            "modelRef": "g.a",
+            "shape": "rectangle",
+            "color": "primary",
+            "style": {
+              "opacity": 15,
+              "size": "md"
+            },
+            "tags": [],
+            "kind": "service"
+          },
+          {
+            "id": "g.b",
+            "parent": null,
+            "level": 0,
+            "children": [
+              "g.b.c"
+            ],
+            "inEdges": [],
+            "outEdges": [],
+            "title": "b",
+            "modelRef": "g.b",
+            "shape": "rectangle",
+            "color": "primary",
+            "style": {
+              "opacity": 15,
+              "size": "md"
+            },
+            "tags": [],
+            "kind": "service",
+            "depth": 1
+          },
+          {
+            "id": "g.b.c",
+            "parent": "g.b",
+            "level": 1,
+            "children": [],
+            "inEdges": [],
+            "outEdges": [],
+            "title": "c",
+            "modelRef": "g.b.c",
+            "shape": "rectangle",
+            "color": "primary",
+            "style": {
+              "opacity": 15,
+              "size": "md"
+            },
+            "tags": [],
+            "kind": "service"
+          }
+        ],
+        "hash": "7wTs-pp4PEEwFH8SIbMQdi4Hyp1OK11qR3WNQgwmxFc"
+      },
+      "linked": {
+        "_type": "element",
+        "tags": null,
+        "links": null,
+        "_stage": "computed",
+        "sourcePath": "views.c4",
+        "description": null,
+        "title": null,
+        "id": "linked",
+        "autoLayout": {
+          "direction": "TB"
+        },
+        "edges": [
+          {
+            "id": "1k6n43v",
+            "parent": null,
+            "source": "x",
+            "target": "y",
+            "label": "[...]",
+            "relations": [
+              "11m8l7t",
+              "18xneco",
+              "1syftyj"
+            ],
+            "color": "gray",
+            "line": "dashed",
+            "head": "normal"
+          }
+        ],
+        "nodes": [
+          {
+            "id": "x",
+            "parent": null,
+            "level": 0,
+            "children": [],
+            "inEdges": [],
+            "outEdges": [
+              "1k6n43v"
+            ],
+            "title": "x",
+            "modelRef": "x",
+            "shape": "rectangle",
+            "color": "primary",
+            "style": {
+              "opacity": 15,
+              "size": "md"
+            },
+            "tags": [],
+            "kind": "service"
+          },
+          {
+            "id": "y",
+            "parent": null,
+            "level": 0,
+            "children": [],
+            "inEdges": [
+              "1k6n43v"
+            ],
+            "outEdges": [],
+            "title": "y",
+            "modelRef": "y",
+            "shape": "rectangle",
+            "color": "primary",
+            "style": {
+              "opacity": 15,
+              "size": "md"
+            },
+            "tags": [],
+            "kind": "service"
+          }
+        ],
+        "hash": "Ls26josWQFRHgZecgnjHaNuCYoR9rmwSSmo425U0EdE"
+      }
+    },
+    "deployments": {
+      "elements": {
+        "machine": {
+          "style": {},
+          "kind": "host",
+          "title": "machine",
+          "id": "machine"
+        },
+        "machine.xx": {
+          "id": "machine.xx",
+          "element": "x",
+          "style": {}
+        },
+        "machine.yy": {
+          "id": "machine.yy",
+          "element": "y",
+          "style": {}
+        }
+      },
+      "relations": {}
+    },
+    "imports": {},
+    "manualLayouts": {}
+  },
+  "raster": {
+    "browser": {
+      "version": "1.60.0",
+      "executable": "/home/aaron/.cache/ms-playwright/chromium-1223/chrome-linux64/chrome",
+      "exists": true
+    },
+    "command": {
+      "command": [
+        "likec4",
+        "export",
+        "png",
+        "/tmp/likec4-qualification-5ogou3zm",
+        "-o",
+        "/tmp/likec4-qualification-5ogou3zm/png",
+        "-f",
+        "descendants",
+        "--max-attempts",
+        "1"
+      ],
+      "exit": 0,
+      "stdout": "23:43:52.034 INF likec4\u00b7lang layout wasm\n23:43:52.044 INF likec4\u00b7lang workspace: /tmp/likec4-qualification-5ogou3zm\n23:43:52.443 INF likec4\u00b7lang workspace: found 2 source files\n23:43:52.444 INF likec4\u00b7c4:export start preview server\n23:43:52.447 INF likec4\u00b7vite likec4 app root ../../.nvm/versions/node/v26.4.0/lib/node_modules/likec4/__app__\n23:43:52.447 INF likec4\u00b7vite outDir ../../../../tmp/likec4-qualification-5ogou3zm/dist\n23:43:52.508 INF likec4\u00b7vite Disabling HMR\n23:43:52.553 INF likec4\u00b7vite Re-optimizing dependencies because vite config has changed\n23:43:52.597 INF likec4\u00b7vite Skip webcomponent build\n23:43:52.739 INF likec4\u00b7c4:export filter [\"descendants\"]\n23:43:52.739 INF likec4\u00b7c4:export skip index\n23:43:52.739 INF likec4\u00b7c4:export include descendants \u2705\n23:43:52.739 INF likec4\u00b7c4:export skip accumulated\n23:43:52.739 INF likec4\u00b7c4:export skip linked\n23:43:52.740 INF likec4\u00b7c4:export output /tmp/likec4-qualification-5ogou3zm/png\n23:43:52.740 INF likec4\u00b7c4:export base url http://localhost:5173/\n\n23:43:53.002 INF likec4\u00b7c4:export Start chromium /home/aaron/.cache/ms-playwright/chromium-1223/chrome-linux64/chrome\n23:43:53.107 INF likec4\u00b7c4:export Color scheme: light\n\n23:43:53.434 INF likec4\u00b7vite generating likec4:app-config\n23:43:53.434 INF likec4\u00b7vite generating likec4:projects\n23:43:53.435 INF likec4\u00b7vite generating likec4:model\n23:43:53.436 INF likec4\u00b7vite generating likec4:icons\n23:43:53.436 INF likec4\u00b7vite generating likec4:rpc\n23:43:53.437 INF likec4\u00b7vite generating likec4:puml\n23:43:53.437 INF likec4\u00b7vite generating likec4:mmd\n23:43:53.438 INF likec4\u00b7vite generating likec4:dot\n23:43:53.438 INF likec4\u00b7vite generating likec4:d2\n23:43:53.530 INF likec4\u00b7vite generating likec4:icons/default\n23:43:54.343 INF likec4\u00b7c4:export export/descendants/ -> descendants.png\n23:43:54.386 INF likec4\u00b7vite generating likec4:model/default\n23:43:55.334 INF likec4\u00b7c4:export close chromium\n23:43:55.375 INF likec4\u00b7c4:export exported 1 views in 2.6s\n\n23:43:55.375 INF likec4\u00b7c4:export stop server\n",
+      "stderr": ""
+    },
+    "status": "passed",
+    "images": [
+      {
+        "name": "descendants.png",
+        "bytes": 17411,
+        "sha256": "efd656d91e4ec6cb320f960d52d74573162c1398b113384b0aa4fa8d7ecd5c85"
+      }
+    ]
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "mode": "live loopback synthetic integration",
+  "error": null,
+  "records": [
+    {
+      "args": [
+        "playwright-cli",
+        "-s=audit-68ba345e31",
+        "open",
+        "http://127.0.0.1:46101"
+      ],
+      "exit": 0,
+      "stdout": "### Browser `audit-68ba345e31` opened with pid 233450.\n### Ran Playwright code\n```js\nawait page.goto('http://127.0.0.1:46101');\n```\n### Page\n- Page URL: http://127.0.0.1:46101/\n- Page Title: Audit fixture\n- Console: 1 errors, 0 warnings\n### Snapshot\n- [Snapshot](.playwright-cli/page-2026-09-29T23-01-18-832Z.yml)\n### Events\n- New console entries: .playwright-cli/console-2026-09-29T23-01-18-750Z.log#L1\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "playwright-cli",
+        "-s=audit-08b3fc106f",
+        "open",
+        "http://127.0.0.1:46101"
+      ],
+      "exit": 0,
+      "stdout": "### Browser `audit-08b3fc106f` opened with pid 233655.\n### Ran Playwright code\n```js\nawait page.goto('http://127.0.0.1:46101');\n```\n### Page\n- Page URL: http://127.0.0.1:46101/\n- Page Title: Audit fixture\n- Console: 1 errors, 0 warnings\n### Snapshot\n- [Snapshot](.playwright-cli/page-2026-09-29T23-01-19-941Z.yml)\n### Events\n- New console entries: .playwright-cli/console-2026-09-29T23-01-19-845Z.log#L1\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "playwright-cli",
+        "-s=audit-68ba345e31",
+        "run-code",
+        "async page => { await page.getByRole('button', {name:'Details'}).click(); if (await page.locator('p').innerText() !== 'Details ready') throw new Error('assertion failed'); return 'click verified'; }"
+      ],
+      "exit": 0,
+      "stdout": "### Result\n\"click verified\"\n### Ran Playwright code\n```js\nawait (async page => { await page.getByRole('button', {name:'Details'}).click(); if (await page.locator('p').innerText() !== 'Details ready') throw new Error('assertion failed'); return 'click verified'; })(page);\n```\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "playwright-cli",
+        "-s=audit-68ba345e31",
+        "eval",
+        "() => localStorage.setItem('audit-synthetic', 'fixture-only')"
+      ],
+      "exit": 0,
+      "stdout": "### Result\nundefined\n### Ran Playwright code\n```js\nawait page.evaluate('() => localStorage.setItem(\\'audit-synthetic\\', \\'fixture-only\\')');\n```\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "playwright-cli",
+        "-s=audit-68ba345e31",
+        "state-save",
+        "/tmp/skill-audit-browser-wj4rki9u/state.json"
+      ],
+      "exit": 0,
+      "stdout": "### Result\n- [Storage state](./state.json)\n### Ran Playwright code\n```js\nawait page.context().storageState({ path: './state.json' });\n```\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "playwright-cli",
+        "-s=audit-08b3fc106f",
+        "state-load",
+        "/tmp/skill-audit-browser-wj4rki9u/state.json"
+      ],
+      "exit": 0,
+      "stdout": "### Result\nStorage state restored from <private-task>/state.json\n### Ran Playwright code\n```js\nawait page.context().setStorageState('<private-task>/state.json');\n```\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "playwright-cli",
+        "-s=audit-08b3fc106f",
+        "goto",
+        "http://127.0.0.1:46101"
+      ],
+      "exit": 0,
+      "stdout": "### Ran Playwright code\n```js\nawait page.goto('http://127.0.0.1:46101');\n```\n### Page\n- Page URL: http://127.0.0.1:46101/\n- Page Title: Audit fixture\n### Snapshot\n- [Snapshot](.playwright-cli/page-2026-09-29T23-01-23-017Z.yml)\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "playwright-cli",
+        "-s=audit-08b3fc106f",
+        "run-code",
+        "async page => { if(await page.evaluate(() => localStorage.getItem('audit-synthetic')) !== 'fixture-only') throw new Error('state roundtrip failed'); return 'state verified'; }"
+      ],
+      "exit": 0,
+      "stdout": "### Result\n\"state verified\"\n### Ran Playwright code\n```js\nawait (async page => { if(await page.evaluate(() => localStorage.getItem('audit-synthetic')) !== 'fixture-only') throw new Error('state roundtrip failed'); return 'state verified'; })(page);\n```\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "playwright-cli",
+        "-s=audit-68ba345e31",
+        "close"
+      ],
+      "exit": 0,
+      "stdout": "Browser 'audit-68ba345e31' closed\n\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "playwright-cli",
+        "-s=audit-08b3fc106f",
+        "run-code",
+        "async page => { if(await page.title() !== 'Audit fixture') throw new Error('wrong browser'); return 'second owned session survived targeted close'; }"
+      ],
+      "exit": 0,
+      "stdout": "### Result\n\"second owned session survived targeted close\"\n### Ran Playwright code\n```js\nawait (async page => { if(await page.title() !== 'Audit fixture') throw new Error('wrong browser'); return 'second owned session survived targeted close'; })(page);\n```\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "playwright-cli",
+        "-s=audit-68ba345e31",
+        "close"
+      ],
+      "exit": 0,
+      "stdout": "Browser 'audit-68ba345e31' is not open.\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "playwright-cli",
+        "-s=audit-08b3fc106f",
+        "close"
+      ],
+      "exit": 0,
+      "stdout": "Browser 'audit-08b3fc106f' closed\n\n",
+      "stderr": ""
+    }
+  ],
+  "limitations": [
+    "No real authenticated profiles",
+    "Attached-browser detach not exercised in this run",
+    "Generated test runner and raster export not exercised"
+  ]
+}

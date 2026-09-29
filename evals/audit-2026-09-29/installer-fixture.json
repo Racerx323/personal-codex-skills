@@ -1,0 +1,19 @@
+{
+  "helper_sha256": "38f311b75664bb063808f982c600271ebc4b560830f491705190f88a94e3e781",
+  "mode": "actual installer main/validation/copy executed with mocked download and same-UID simulation of parent-owner replacement; no network, actual installation, second UID or live race",
+  "cases": [
+    {
+      "repeat": 1,
+      "exit": 0,
+      "replacement_installed": true,
+      "stdout": "Installed demo to <fixture>/destination/demo\n"
+    },
+    {
+      "repeat": 2,
+      "exit": 0,
+      "replacement_installed": true,
+      "stdout": "Installed demo to <fixture>/destination/demo\n"
+    }
+  ],
+  "prerequisite": "Local adversary can precreate and control the shared codex temp parent; child mode0700 does not protect its directory entry from its parent owner."
+}

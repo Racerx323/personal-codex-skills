@@ -1,0 +1,9 @@
+{
+  "skills_config": [],
+  "features_plugins": null,
+  "plugin_entries": {
+    "context7@context7-marketplace": {
+      "enabled": true
+    }
+  }
+}

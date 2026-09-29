@@ -1,0 +1,670 @@
+{
+  "mode": "executed synthetic loopback qualification",
+  "cli_version": "0.1.22",
+  "playwright_version": "1.64.0-alpha-1790635538000",
+  "core_version": "1.64.0-alpha-1790635538000",
+  "cli_sha256": "fda252270793401d2856530a5f503adf7fc326fc07bed97e413138f67c50662b",
+  "harness_sha256": "9cfe6e1b9e829e4404bae57333528a2b1e64b24855093173aafc28cfef307c53",
+  "runtime_manifest_sha256": "f8a818e27de670929765493bb92715c0253336b5b99fd59918318305e84ef17c",
+  "private_root_mode": "0o700",
+  "private_root_owner_matches": true,
+  "documentation": [
+    "https://github.com/microsoft/playwright-cli/blob/main/README.md",
+    "https://github.com/microsoft/playwright-cli/blob/main/skills/playwright-cli/references/session-management.md"
+  ],
+  "browser_executable": "<home>/.cache/ms-playwright/chromium-1247/chrome-linux64/chrome",
+  "browser_binary_sha256": "adf078f8f80eb9e980a07b4418af23b0f4008a83bc5756d5588055bc4d76c5a0",
+  "browser_binary_version": "Google Chrome for Testing 155.0.8059.12",
+  "checks": [
+    {
+      "name": "installed_cli_browser_pairing",
+      "status": "pass",
+      "detail": {
+        "expected_browser_version": "155.0.8059.12",
+        "runtime_readback_matches": true
+      }
+    },
+    {
+      "name": "snapshot_click_and_generated_action",
+      "status": "pass",
+      "detail": {
+        "generated_action": "await page.getByRole('button', { name: 'Details' }).click();"
+      }
+    },
+    {
+      "name": "state_roundtrip",
+      "status": "pass",
+      "detail": "Cookies and localStorage restored in second isolated session"
+    },
+    {
+      "name": "indexeddb_blocked_deletion",
+      "status": "pass",
+      "detail": {
+        "error_detected": true,
+        "cli_exit": 1,
+        "policy": "Inspect error payload as well as process exit"
+      }
+    },
+    {
+      "name": "authoritative_failed_cli_assertion",
+      "status": "pass",
+      "detail": {
+        "cli_exit": 1,
+        "error_payload_detected": true,
+        "expectation_unchanged": true
+      }
+    },
+    {
+      "name": "actual_trace_video_paths",
+      "status": "pass",
+      "detail": {
+        "trace_paths": [
+          "output/traces/trace-1790725135401.trace"
+        ],
+        "video_paths": [
+          "output/qualification.webm"
+        ]
+      }
+    },
+    {
+      "name": "targeted_cleanup",
+      "status": "pass",
+      "detail": "Targeted close preserves independently launched second session"
+    },
+    {
+      "name": "attached_detach_preserves_preexisting_tabs",
+      "status": "fail",
+      "error": "Synthetic CDP browser did not start"
+    },
+    {
+      "name": "generated_test_imports_and_assertions",
+      "status": "pass",
+      "detail": {
+        "passing_tests": 2,
+        "intentional_failing_tests": 1,
+        "fixture_relative_import": "../fixtures",
+        "standalone_navigation_present": true,
+        "runner_source": "Installed playwright/test via temporary @playwright/test alias; no package installed"
+      }
+    },
+    {
+      "name": "raw_artifact_privacy",
+      "status": "pass",
+      "paths_with_excess_permissions": []
+    }
+  ],
+  "records": [
+    {
+      "argv": [
+        "<home>/.nvm/versions/node/v26.4.0/lib/node_modules/@playwright/cli/playwright-cli.js",
+        "--version"
+      ],
+      "exit": 0,
+      "stdout": "0.1.22\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<home>/.nvm/versions/node/v26.4.0/lib/node_modules/@playwright/cli/playwright-cli.js",
+        "--help"
+      ],
+      "exit": 0,
+      "stdout": "playwright-cli - run playwright mcp commands from terminal\n\nUsage: playwright-cli <command> [args] [options]\nUsage: playwright-cli -s=<session> <command> [args] [options]\n\nCore:\n  open [url]                  open the browser\n  attach [name]               attach to a running playwright browser\n  close                       close the browser\n  detach                      detach from an attached browser\n  goto <url>                  navigate to a url\n  type <text>                 type text into editable element\n  click <target> [button]     perform click on a web page\n  dblclick <target> [button]  perform double click on a web page\n  fill <target> <text>        fill text into editable element\n  drag <startTarget> <endTarget> perform drag and drop between two elements\n  drop <target>               drop files or data onto an element\n  hover <target>              hover over element on page\n  select <target> <val>       select an option in a dropdown\n  upload <files...>           upload one or multiple files\n  check <target>              check a checkbox or radio button\n  uncheck <target>            uncheck a checkbox or radio button\n  snapshot [target]           capture page snapshot to obtain element ref\n  find [text]                 search the page snapshot for text or a regexp, returning matching nodes with surrounding context (like search snippets)\n  eval <func> [target]        evaluate javascript expression on page or element\n  dialog-accept [prompt]      accept a dialog\n  dialog-dismiss              dismiss a dialog\n  resize <w> <h>              resize the browser window\n  delete-data                 delete session data\n\nNavigation:\n  go-back                     go back to the previous page\n  go-forward                  go forward to the next page\n  reload                      reload the current page\n\nKeyboard:\n  press <key>                 press a key on the keyboard, `a`, `arrowleft`\n  keydown <key>               press a key down on the keyboard\n  keyup <key>                 press a key up on the keyboard\n\nMouse:\n  mousemove <x> <y>           move mouse to a given position\n  mousedown [button]          press mouse down\n  mouseup [button]            press mouse up\n  mousewheel <dx> <dy>        scroll mouse wheel\n\nSave as:\n  screenshot [target]         screenshot of the current page or element\n  pdf                         save page as pdf\n\nTabs:\n  tab-list                    list all tabs\n  tab-new [url]               create a new tab\n  tab-close [index]           close a browser tab\n  tab-select <index>          select a browser tab\n\nStorage:\n  state-load <filename>       loads browser storage (authentication) state from a file\n  state-save [filename]       saves the current storage (authentication) state to a file\n  cookie-list                 list all cookies (optionally filtered by domain/path)\n  cookie-get <name>           get a specific cookie by name\n  cookie-set <name> <value>   set a cookie with optional flags\n  cookie-delete <name>        delete a specific cookie\n  cookie-clear                clear all cookies\n  localstorage-list           list all localstorage key-value pairs\n  localstorage-get <key>      get a localstorage item by key\n  localstorage-set <key> <value> set a localstorage item\n  localstorage-delete <key>   delete a localstorage item\n  localstorage-clear          clear all localstorage\n  sessionstorage-list         list all sessionstorage key-value pairs\n  sessionstorage-get <key>    get a sessionstorage item by key\n  sessionstorage-set <key> <value> set a sessionstorage item\n  sessionstorage-delete <key> delete a sessionstorage item\n  sessionstorage-clear        clear all sessionstorage\n\nEmulation:\n  set-color-scheme <scheme>   emulate the light or dark color scheme\n  set-reduced-motion <motion> emulate the reduced motion preference\n  set-forced-colors <colors>  emulate forced colors mode\n  set-contrast <contrast>     emulate the preferred contrast\n  set-media <media>           emulate the css media type\n  clear-color-scheme          clear color scheme emulation\n  clear-reduced-motion        clear reduced motion emulation\n  clear-forced-colors         clear forced colors emulation\n  clear-contrast              clear preferred contrast emulation\n  clear-media                 clear css media type emulation\n\nNetwork:\n  requests                    list all network requests since loading the page. each request is numbered for use with the `request` command.\n  request <index>             show full details (headers, body, response) of a single network request by its number from the `requests` command.\n  request-headers <index>     print only the request headers for a single network request by its number from the `requests` command.\n  request-body <index>        print only the request body for a single network request by its number from the `requests` command.\n  response-headers <index>    print only the response headers for a single network request by its number from the `requests` command.\n  response-body <index>       print the response body for a single network request by its number from the `requests` command. textual bodies are inlined; binary bodies are saved to a file and the path is printed.\n  route <pattern>             mock network requests matching a url pattern\n  route-list                  list all active network routes\n  unroute [pattern]           remove routes matching a pattern (or all routes)\n  network-state-set <state>   set the browser network state to online or offline\n\nDevTools:\n  console [min-level]         list console messages\n  run-code [code]             run playwright code snippet\n  recording-start             start recording user actions\n  recording-stop              stop recording user actions and print them as playwright code\n  tracing-start               start trace recording\n  tracing-stop                stop trace recording\n  video-start [filename]      start video recording\n  video-stop                  stop video recording\n  video-chapter <title>       add a chapter marker to the video recording\n  video-show-actions          annotate subsequent cli/mcp actions on the page with a callout that names the action and, when styled, marks the action point and highlights the target element\n  video-hide-actions          stop annotating actions performed on the page\n  show                        show playwright dashboard\n  pause-at <location>         run the test up to a specific location and pause there\n  resume                      resume the test execution\n  step-over                   step over the next call in the test\n  generate-locator <target>   generate a playwright locator for the given element\n  highlight [target]          show (or with --hide, remove) a highlight overlay for an element; `--hide` without a target hides all page highlights.\n\nWebMCP:\n  webmcp-list                 list the webmcp tools registered by the page\n  webmcp-call <name>          call a webmcp tool registered by the page\n\nInstall:\n  install                     initialize workspace\n  install-browser [browser]   install browser\n\nBrowser sessions:\n  list                        list browser sessions\n  close-all                   close all browser sessions\n  kill-all                    forcefully kill all browser sessions (for stale/zombie processes)\n\nGlobal options:\n  --help [command]            print help\n  --json                      output response as JSON\n  --raw                       output only the result value, without status and code\n  --version                   print version\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<home>/.nvm/versions/node/v26.4.0/lib/node_modules/@playwright/cli/playwright-cli.js",
+        "--help",
+        "open"
+      ],
+      "exit": 0,
+      "stdout": "playwright-cli open [url]\n\nOpen the browser\n\nArguments:\n  [url]                       the url to navigate to\nOptions:\n  --browser                   browser or chrome channel to use, possible values: chrome, firefox, webkit, msedge.\n  --config                    path to the configuration file, defaults to .playwright/cli.config.json\n  --device                    emulate a specific device, for example \"iphone 15\".\n  --headed                    run browser in headed mode\n  --idle-timeout              shut the session down after this many milliseconds without a command. defaults to one hour for headless browsers, never for headed ones. pass 0 to disable.\n  --mobile                    emulate a generic mobile device (pixel 10 for chromium, iphone 17 for webkit). mobile pages are usually lighter, which saves tokens.\n  --persistent                use persistent browser profile\n  --profile                   path to a persistent user data directory.\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<home>/.nvm/versions/node/v26.4.0/lib/node_modules/@playwright/cli/playwright-cli.js",
+        "--help",
+        "attach"
+      ],
+      "exit": 0,
+      "stdout": "playwright-cli attach [name]\n\nAttach to a running Playwright browser\n\nArguments:\n  [name]                      bound browser name to attach to\nOptions:\n  --cdp                       connect to an existing browser via cdp endpoint url.\n  --endpoint                  playwright browser server endpoint to attach to.\n  --extension                 connect to browser extension, optionally specify browser name (e.g. --extension=chrome)\n  --config                    path to the configuration file, defaults to .playwright/cli.config.json\n  --session                   session name (defaults to bound browser name or \"default\")\n  --idle-timeout              detach after this many milliseconds without a command. attached browsers are never detached by default.\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<home>/.nvm/versions/node/v26.4.0/lib/node_modules/@playwright/cli/playwright-cli.js",
+        "--help",
+        "detach"
+      ],
+      "exit": 0,
+      "stdout": "playwright-cli detach \n\nDetach from an attached browser\n\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<home>/.nvm/versions/node/v26.4.0/lib/node_modules/@playwright/cli/playwright-cli.js",
+        "--help",
+        "state-save"
+      ],
+      "exit": 0,
+      "stdout": "playwright-cli state-save [filename]\n\nSaves the current storage (authentication) state to a file\n\nArguments:\n  [filename]                  file name to save the storage state to.\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<home>/.nvm/versions/node/v26.4.0/lib/node_modules/@playwright/cli/playwright-cli.js",
+        "--help",
+        "state-load"
+      ],
+      "exit": 0,
+      "stdout": "playwright-cli state-load <filename>\n\nLoads browser storage (authentication) state from a file\n\nArguments:\n  <filename>                  file name to load the storage state from.\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<home>/.nvm/versions/node/v26.4.0/lib/node_modules/@playwright/cli/playwright-cli.js",
+        "--help",
+        "tracing-stop"
+      ],
+      "exit": 0,
+      "stdout": "playwright-cli tracing-stop \n\nStop trace recording\n\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<home>/.nvm/versions/node/v26.4.0/lib/node_modules/@playwright/cli/playwright-cli.js",
+        "--help",
+        "video-start"
+      ],
+      "exit": 0,
+      "stdout": "playwright-cli video-start [filename]\n\nStart video recording\n\nArguments:\n  [filename]                  filename to save the video.\nOptions:\n  --size                      video frame size, e.g. \"800x600\". if not specified, the size of the recorded video will fit 800x800.\n  --fps                       video frame rate in frames per second, defaults to 25.\n  --cursor                    render an animated mouse cursor that travels to each action point. paces actions by 800ms so that the cursor has time to travel.\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<home>/.nvm/versions/node/v26.4.0/lib/node_modules/@playwright/cli/playwright-cli.js",
+        "--help",
+        "run-code"
+      ],
+      "exit": 0,
+      "stdout": "playwright-cli run-code [code]\n\nRun Playwright code snippet\n\nArguments:\n  [code]                      a javascript function containing playwright code to execute. it will be invoked with a single argument, page, which you can use for any page interaction.\nOptions:\n  --filename                  load code from the specified file.\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "node",
+        "-e",
+        "console.log(require(process.argv[1]).chromium.executablePath())",
+        "<home>/.nvm/versions/node/v26.4.0/lib/node_modules/@playwright/cli/node_modules/playwright-core"
+      ],
+      "exit": 0,
+      "stdout": "<home>/.cache/ms-playwright/chromium-1247/chrome-linux64/chrome\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<home>/.cache/ms-playwright/chromium-1247/chrome-linux64/chrome",
+        "--version"
+      ],
+      "exit": 0,
+      "stdout": "Google Chrome for Testing 155.0.8059.12 \n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<home>/.nvm/versions/node/v26.4.0/lib/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=qual-25a0b0063906",
+        "open",
+        "http://127.0.0.1:46299/",
+        "--config=<private-task>/config.json"
+      ],
+      "exit": 0,
+      "stdout": "### Browser `qual-25a0b0063906` opened with pid 253545.\n### Ran Playwright code\n```js\nawait page.goto('http://127.0.0.1:46299/');\n```\n### Page\n- Page URL: http://127.0.0.1:46299/\n- Page Title: Qualification fixture\n- Console: 1 errors, 0 warnings\n### Snapshot\n- [Snapshot](output/page-2026-09-29T23-38-45-637Z.yml)\n### Events\n- New console entries: output/console-2026-09-29T23-38-45-561Z.log#L1\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<home>/.nvm/versions/node/v26.4.0/lib/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=qual-a1c53a898027",
+        "open",
+        "http://127.0.0.1:46299/",
+        "--config=<private-task>/config.json"
+      ],
+      "exit": 0,
+      "stdout": "### Browser `qual-a1c53a898027` opened with pid 253696.\n### Ran Playwright code\n```js\nawait page.goto('http://127.0.0.1:46299/');\n```\n### Page\n- Page URL: http://127.0.0.1:46299/\n- Page Title: Qualification fixture\n- Console: 1 errors, 0 warnings\n### Snapshot\n- [Snapshot](output/page-2026-09-29T23-38-46-738Z.yml)\n### Events\n- New console entries: output/console-2026-09-29T23-38-46-661Z.log#L1\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<home>/.nvm/versions/node/v26.4.0/lib/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=qual-25a0b0063906",
+        "run-code",
+        "async page => ({version: page.context().browser().version(), userAgent: await page.evaluate(() => navigator.userAgent)})"
+      ],
+      "exit": 0,
+      "stdout": "### Result\n{\"version\":\"155.0.8059.12\",\"userAgent\":\"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36\"}\n### Ran Playwright code\n```js\nawait (async page => ({version: page.context().browser().version(), userAgent: await page.evaluate(() => navigator.userAgent)}))(page);\n```\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<home>/.nvm/versions/node/v26.4.0/lib/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=qual-25a0b0063906",
+        "snapshot"
+      ],
+      "exit": 0,
+      "stdout": "### Page\n- Page URL: http://127.0.0.1:46299/\n- Page Title: Qualification fixture\n- Console: 1 errors, 0 warnings\n### Snapshot\n```yaml\n- generic [active] [ref=e1]:\n  - button \"Details\" [ref=e2]\n  - paragraph [ref=e3]: Waiting\n```\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<home>/.nvm/versions/node/v26.4.0/lib/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=qual-25a0b0063906",
+        "click",
+        "e2"
+      ],
+      "exit": 0,
+      "stdout": "### Ran Playwright code\n```js\nawait page.getByRole('button', { name: 'Details' }).click();\n```\n### Page\n- Page URL: http://127.0.0.1:46299/\n- Page Title: Qualification fixture\n- Console: 1 errors, 0 warnings\n### Snapshot\n- [Snapshot](output/page-2026-09-29T23-38-48-947Z.yml)\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<home>/.nvm/versions/node/v26.4.0/lib/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=qual-25a0b0063906",
+        "run-code",
+        "async page => { if(await page.locator('p').innerText() !== 'Clicked') throw new Error('click mismatch'); return 'verified click'; }"
+      ],
+      "exit": 0,
+      "stdout": "### Result\n\"verified click\"\n### Ran Playwright code\n```js\nawait (async page => { if(await page.locator('p').innerText() !== 'Clicked') throw new Error('click mismatch'); return 'verified click'; })(page);\n```\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<home>/.nvm/versions/node/v26.4.0/lib/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=qual-25a0b0063906",
+        "eval",
+        "() => {localStorage.setItem('synthetic', 'roundtrip'); document.cookie='synthetic=roundtrip; SameSite=Lax';}"
+      ],
+      "exit": 0,
+      "stdout": "### Result\nundefined\n### Ran Playwright code\n```js\nawait page.evaluate('() => {localStorage.setItem(\\'synthetic\\', \\'roundtrip\\'); document.cookie=\\'synthetic=roundtrip; SameSite=Lax\\';}');\n```\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<home>/.nvm/versions/node/v26.4.0/lib/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=qual-25a0b0063906",
+        "state-save",
+        "<private-task>/output/state.json"
+      ],
+      "exit": 0,
+      "stdout": "### Result\n- [Storage state](output/state.json)\n### Ran Playwright code\n```js\nawait page.context().storageState({ path: 'output/state.json' });\n```\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<home>/.nvm/versions/node/v26.4.0/lib/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=qual-a1c53a898027",
+        "state-load",
+        "<private-task>/output/state.json"
+      ],
+      "exit": 0,
+      "stdout": "### Result\nStorage state restored from <private-task>/output/state.json\n### Ran Playwright code\n```js\nawait page.context().setStorageState('<private-task>/output/state.json');\n```\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<home>/.nvm/versions/node/v26.4.0/lib/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=qual-a1c53a898027",
+        "goto",
+        "http://127.0.0.1:46299/"
+      ],
+      "exit": 0,
+      "stdout": "### Ran Playwright code\n```js\nawait page.goto('http://127.0.0.1:46299/');\n```\n### Page\n- Page URL: http://127.0.0.1:46299/\n- Page Title: Qualification fixture\n### Snapshot\n- [Snapshot](output/page-2026-09-29T23-38-51-761Z.yml)\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<home>/.nvm/versions/node/v26.4.0/lib/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=qual-a1c53a898027",
+        "run-code",
+        "async page => { if(await page.evaluate(() => localStorage.getItem('synthetic')) !== 'roundtrip') throw new Error('storage failed'); if(!(await page.context().cookies()).some(c => c.name === 'synthetic' && c.value === 'roundtrip')) throw new Error('cookie failed'); return 'state verified'; }"
+      ],
+      "exit": 0,
+      "stdout": "### Result\n\"state verified\"\n### Ran Playwright code\n```js\nawait (async page => { if(await page.evaluate(() => localStorage.getItem('synthetic')) !== 'roundtrip') throw new Error('storage failed'); if(!(await page.context().cookies()).some(c => c.name === 'synthetic' && c.value === 'roundtrip')) throw new Error('cookie failed'); return 'state verified'; })(page);\n```\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<home>/.nvm/versions/node/v26.4.0/lib/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=qual-25a0b0063906",
+        "eval",
+        "() => new Promise((resolve,reject) => {const r=indexedDB.open('myDatabase',1); r.onsuccess=()=>{window.heldDB=r.result; resolve('open');}; r.onerror=()=>reject(r.error);})"
+      ],
+      "exit": 0,
+      "stdout": "### Result\n\"open\"\n### Ran Playwright code\n```js\nawait page.evaluate('() => new Promise((resolve,reject) => {const r=indexedDB.open(\\'myDatabase\\',1); r.onsuccess=()=>{window.heldDB=r.result; resolve(\\'open\\');}; r.onerror=()=>reject(r.error);})');\n```\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<home>/.nvm/versions/node/v26.4.0/lib/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=qual-25a0b0063906",
+        "eval",
+        "() => new Promise((resolve, reject) => { const request = indexedDB.deleteDatabase('myDatabase'); request.onsuccess = () => resolve('deleted'); request.onerror = () => reject(request.error); request.onblocked = () => reject(new Error('Database deletion blocked by an open connection')); })"
+      ],
+      "exit": 1,
+      "stdout": "### Error\nError: Database deletion blocked by an open connection\n    at request.onblocked (eval at <anonymous> (eval at evaluate (:368:30)), <anonymous>:1:225)\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<home>/.nvm/versions/node/v26.4.0/lib/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=qual-25a0b0063906",
+        "eval",
+        "() => window.heldDB.close()"
+      ],
+      "exit": 0,
+      "stdout": "### Result\nundefined\n### Ran Playwright code\n```js\nawait page.evaluate('() => window.heldDB.close()');\n```\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<home>/.nvm/versions/node/v26.4.0/lib/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=qual-25a0b0063906",
+        "run-code",
+        "async page => { if(await page.locator('p').innerText() !== 'Requested but wrong') throw new Error('AUTHORITATIVE_ASSERTION_FAILED'); }"
+      ],
+      "exit": 1,
+      "stdout": "### Error\nError: AUTHORITATIVE_ASSERTION_FAILED\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<home>/.nvm/versions/node/v26.4.0/lib/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=qual-25a0b0063906",
+        "tracing-start"
+      ],
+      "exit": 0,
+      "stdout": "### Result\nTrace recording started\n- [Action log](output/traces/trace-1790725135401.trace)\n- [Network log](output/traces/trace-1790725135401.network)\n- [Resources](output/traces/resources)\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<home>/.nvm/versions/node/v26.4.0/lib/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=qual-25a0b0063906",
+        "video-start",
+        "<private-task>/output/qualification.webm"
+      ],
+      "exit": 0,
+      "stdout": "### Result\nVideo recording started.\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<home>/.nvm/versions/node/v26.4.0/lib/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=qual-25a0b0063906",
+        "goto",
+        "http://127.0.0.1:46299/"
+      ],
+      "exit": 0,
+      "stdout": "### Ran Playwright code\n```js\nawait page.goto('http://127.0.0.1:46299/');\n```\n### Page\n- Page URL: http://127.0.0.1:46299/\n- Page Title: Qualification fixture\n### Snapshot\n- [Snapshot](output/page-2026-09-29T23-38-56-193Z.yml)\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<home>/.nvm/versions/node/v26.4.0/lib/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=qual-25a0b0063906",
+        "run-code",
+        "async page => { await page.getByRole('button', {name:'Details'}).click(); return await page.locator('p').innerText(); }"
+      ],
+      "exit": 0,
+      "stdout": "### Result\n\"Clicked\"\n### Ran Playwright code\n```js\nawait (async page => { await page.getByRole('button', {name:'Details'}).click(); return await page.locator('p').innerText(); })(page);\n```\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<home>/.nvm/versions/node/v26.4.0/lib/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=qual-25a0b0063906",
+        "video-stop"
+      ],
+      "exit": 0,
+      "stdout": "### Result\n- [Video](output/qualification.webm)\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<home>/.nvm/versions/node/v26.4.0/lib/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=qual-25a0b0063906",
+        "tracing-stop"
+      ],
+      "exit": 0,
+      "stdout": "### Result\nTrace recording stopped.\n- [Trace](output/traces/trace-1790725135401.trace)\n- [Network log](output/traces/trace-1790725135401.network)\n- [Resources](output/traces/resources)\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<home>/.nvm/versions/node/v26.4.0/lib/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=qual-25a0b0063906",
+        "close"
+      ],
+      "exit": 0,
+      "stdout": "Browser 'qual-25a0b0063906' closed\n\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<home>/.nvm/versions/node/v26.4.0/lib/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=qual-a1c53a898027",
+        "run-code",
+        "async page => {if(await page.title() !== 'Qualification fixture') throw new Error('second session lost'); return 'second session survived';}"
+      ],
+      "exit": 0,
+      "stdout": "### Result\n\"second session survived\"\n### Ran Playwright code\n```js\nawait (async page => {if(await page.title() !== 'Qualification fixture') throw new Error('second session lost'); return 'second session survived';})(page);\n```\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "node",
+        "<home>/.nvm/versions/node/v26.4.0/lib/node_modules/@playwright/cli/node_modules/playwright/cli.js",
+        "test",
+        "--config=<private-task>/generated-tests/playwright.config.js"
+      ],
+      "exit": 0,
+      "stdout": "\nRunning 2 tests using 1 worker\n\n\n\n[1/2] generated-tests/tests/group/fixture.spec.ts:2:5 \u203a generated\n[2/2] generated-tests/tests/group/standalone.spec.ts:3:5 \u203a generated\n  2 passed (1.2s)\n",
+      "stderr": "(node:254172) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "argv": [
+        "node",
+        "<home>/.nvm/versions/node/v26.4.0/lib/node_modules/@playwright/cli/node_modules/playwright/cli.js",
+        "test",
+        "--config=<private-task>/generated-tests/playwright.config.js",
+        "wrong.spec.ts"
+      ],
+      "exit": 1,
+      "stdout": "\nRunning 1 test using 1 worker\n\n\n\n[1/1] generated-tests/tests/group/wrong.spec.ts:2:5 \u203a authoritative wrong assertion\n  1) generated-tests/tests/group/wrong.spec.ts:2:5 \u203a authoritative wrong assertion \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n\n    Error: expect(locator).toHaveText(expected) failed\n\n    Locator:  locator('p')\n    Expected: \"Requested but wrong\"\n    Received: \"Waiting\"\n    Timeout:  500ms\n\n    Call log:\n      - Expect \"toHaveText\" locator('p') with timeout 500ms\n      - waiting for locator('p')\n        6 \u00d7 locator resolved to <p>Waiting</p>\n          - unexpected value \"Waiting\"\n\n\n      1 | import {test,expect} from '../fixtures';\n    > 2 | test('authoritative wrong assertion', async ({page})=>{await expect(page.locator('p')).toHaveText('Requested but wrong',{timeout:500});});\n        |                                                                                        ^\n      3 |\n        at <private-task>/generated-tests/tests/group/wrong.spec.ts:2:88\n\n    Error Context: output/test-results/group-wrong-authoritative-wrong-assertion/error-context.md\n\n\n  1 failed\n    generated-tests/tests/group/wrong.spec.ts:2:5 \u203a authoritative wrong assertion \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n",
+      "stderr": "(node:254359) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "argv": [
+        "<home>/.nvm/versions/node/v26.4.0/lib/node_modules/@playwright/cli/playwright-cli.js",
+        "-s=qual-a1c53a898027",
+        "close"
+      ],
+      "exit": 0,
+      "stdout": "Browser 'qual-a1c53a898027' closed\n\n",
+      "stderr": ""
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "config.json",
+      "bytes": 229,
+      "mode": "0o600",
+      "sha256": "0546dbe0a92fd2dc2c98b2045411baec3df3d550b6246dbeb6654487cfa7e9fd"
+    },
+    {
+      "path": "external-browser.log",
+      "bytes": 110,
+      "mode": "0o600",
+      "sha256": "5488387d49053561aa66965d3e49c17fc53b50573527eb033e485c67405327a0"
+    },
+    {
+      "path": "generated-tests/node_modules/@playwright/test/index.js",
+      "bytes": 45,
+      "mode": "0o600",
+      "sha256": "04b5f4362303d6d0fd49c63c721cbeaa54e11a3be8c2c5313df2d5cc2128de35"
+    },
+    {
+      "path": "generated-tests/playwright.config.js",
+      "bytes": 296,
+      "mode": "0o600",
+      "sha256": "e4929439f6675cc212ff59474ad76b565e14ea81cef890cc2880b105383e7529"
+    },
+    {
+      "path": "generated-tests/tests/fixtures.ts",
+      "bytes": 226,
+      "mode": "0o600",
+      "sha256": "ef658add03f974e28f7e5c309a5ea4c110f8bf6e332ac3c4cf43048e5997ebce"
+    },
+    {
+      "path": "generated-tests/tests/group/fixture.spec.ts",
+      "bytes": 197,
+      "mode": "0o600",
+      "sha256": "d979b32e5ea84dc5be3131d09235610ed173d4907fe6b4565bf69146baa73b5c"
+    },
+    {
+      "path": "generated-tests/tests/group/standalone.spec.ts",
+      "bytes": 282,
+      "mode": "0o600",
+      "sha256": "99e0f30e463bfcece1ec12fa5effab171d2a43e54dd7b94d86e215e92ba17f81"
+    },
+    {
+      "path": "generated-tests/tests/group/wrong.spec.ts",
+      "bytes": 180,
+      "mode": "0o600",
+      "sha256": "78d4ce8bbdfc3c357172508f4df3d3f397e93cbbb5ca5fb3a1e61b4246757616"
+    },
+    {
+      "path": "output/console-2026-09-29T23-38-45-561Z.log",
+      "bytes": 144,
+      "mode": "0o600",
+      "sha256": "b09f01ec248125415e1f851d11f0bd974d24a9f1227b14ae0a965ee635858638"
+    },
+    {
+      "path": "output/console-2026-09-29T23-38-46-661Z.log",
+      "bytes": 144,
+      "mode": "0o600",
+      "sha256": "bcaa8028aba036c51047fa86d214e6910019327b9d4e624da6e567d68abfa4ae"
+    },
+    {
+      "path": "output/page-2026-09-29T23-38-45-637Z.yml",
+      "bytes": 90,
+      "mode": "0o600",
+      "sha256": "fec4020e46aa9398f99638a528cd6bf52f87f50b0b2c9b60498a9d004bc7de24"
+    },
+    {
+      "path": "output/page-2026-09-29T23-38-46-738Z.yml",
+      "bytes": 90,
+      "mode": "0o600",
+      "sha256": "fec4020e46aa9398f99638a528cd6bf52f87f50b0b2c9b60498a9d004bc7de24"
+    },
+    {
+      "path": "output/page-2026-09-29T23-38-48-947Z.yml",
+      "bytes": 90,
+      "mode": "0o600",
+      "sha256": "ff16209352f34e928a5f6dbed35bad4144e1f6392ec3539640445ff33adb525e"
+    },
+    {
+      "path": "output/page-2026-09-29T23-38-51-761Z.yml",
+      "bytes": 96,
+      "mode": "0o600",
+      "sha256": "81e6272db47417bdb4763a21e3eb2cd68697ce141d1066748e44eec0957e6054"
+    },
+    {
+      "path": "output/page-2026-09-29T23-38-56-193Z.yml",
+      "bytes": 96,
+      "mode": "0o600",
+      "sha256": "81e6272db47417bdb4763a21e3eb2cd68697ce141d1066748e44eec0957e6054"
+    },
+    {
+      "path": "output/qualification.webm",
+      "bytes": 6537,
+      "mode": "0o600",
+      "sha256": "641bbf511d40df869b50f2e706cf9d8d871398544372b7bf91d3263c2d49a386"
+    },
+    {
+      "path": "output/state.json",
+      "bytes": 418,
+      "mode": "0o600",
+      "sha256": "8a93ed0c427d7f6a96e3e4091377aebbc940d444fb1ecb0b4cf3c421f237f38e"
+    },
+    {
+      "path": "output/test-results/.last-run.json",
+      "bytes": 96,
+      "mode": "0o600",
+      "sha256": "ab17a58b61d539b90a1d4af93a42518e0a23159a33802e7e6f36dd87499c47c3"
+    },
+    {
+      "path": "output/test-results/group-wrong-authoritative-wrong-assertion/error-context.md",
+      "bytes": 1051,
+      "mode": "0o600",
+      "sha256": "3adbfbf4254573c1c0aea72dc4d8246fb6fa2f05af8e018cddc63d0c5e520bf7"
+    },
+    {
+      "path": "output/traces/resources/b152376dd9f65877ed2a7fb89573921a983b1ad7.html",
+      "bytes": 149,
+      "mode": "0o600",
+      "sha256": "4296a04a34e6c57d65a503afdacdb83d1d393a1baae1f3be2f4e839020548944"
+    },
+    {
+      "path": "output/traces/screencast/page@5ed85b349fe667de450ecf2dbe67c114-1790725135412.jpeg",
+      "bytes": 3551,
+      "mode": "0o600",
+      "sha256": "1890b2143800942194e14d37a650064cdf0cc8149b48f3c8215cba9d0aae19cf"
+    },
+    {
+      "path": "output/traces/screencast/page@5ed85b349fe667de450ecf2dbe67c114-1790725136178.jpeg",
+      "bytes": 3503,
+      "mode": "0o600",
+      "sha256": "c0c8bef89dece0e0265ac8e8fa13e9f9f417ee42a9b5851d4d87c29902336df6"
+    },
+    {
+      "path": "output/traces/screencast/page@5ed85b349fe667de450ecf2dbe67c114-1790725136587.jpeg",
+      "bytes": 3551,
+      "mode": "0o600",
+      "sha256": "1890b2143800942194e14d37a650064cdf0cc8149b48f3c8215cba9d0aae19cf"
+    },
+    {
+      "path": "output/traces/trace-1790725135401.network",
+      "bytes": 2043,
+      "mode": "0o600",
+      "sha256": "12bc9b84c0637c099b6dbb54e44a5dc016e3a13021b7be876810252c4797cb58"
+    },
+    {
+      "path": "output/traces/trace-1790725135401.stacks",
+      "bytes": 313,
+      "mode": "0o600",
+      "sha256": "3c2239ab2d4f4e289a46dbf4d1d6884129db292e1677a4bf35d8a631d7598aed"
+    },
+    {
+      "path": "output/traces/trace-1790725135401.trace",
+      "bytes": 15308,
+      "mode": "0o600",
+      "sha256": "869fb3adadd97a70ccb68e6639daa7fe42a3fd468dcfd4f159b899fbec128ecc"
+    },
+    {
+      "path": "web/index.html",
+      "bytes": 149,
+      "mode": "0o600",
+      "sha256": "4296a04a34e6c57d65a503afdacdb83d1d393a1baae1f3be2f4e839020548944"
+    }
+  ],
+  "passed": false,
+  "limitations": [
+    "Synthetic task-owned browsers only; no real user profiles or accounts",
+    "No extension attach or interactive paused-test generation exercised",
+    "Generated tests reuse CLI-emitted action; temporary module alias exposes installed playwright/test",
+    "Raw artifacts retained in private task directory, not repository; binary traces/video not embedded"
+  ]
+}

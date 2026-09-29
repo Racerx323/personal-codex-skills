@@ -1,0 +1,108 @@
+{
+  "findings": [
+    {
+      "id": "SEC-01",
+      "category": "security",
+      "severity": "low",
+      "confidence": "high static; medium runtime exploitability",
+      "title": "Installer trusts a predictable shared temporary parent",
+      "locations": [
+        "$HOME/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py:50-53",
+        "same file:326-341"
+      ],
+      "attacker": "Different local user able to precreate/control the selected tempdir/codex directory before installer use. Not a remote unauthenticated attacker.",
+      "input": "Directory ownership and replacement entries beneath an attacker-owned shared parent.",
+      "flow": "_tmp_root uses makedirs(exist_ok=True) without owner/mode/type verification; mkdtemp creates a private child; download/checkout, validation and copy later resolve child pathnames. Parent owner can rename child and replace it with a real directory containing different SKILL.md.",
+      "impact": "Integrity loss of newly installed skill instructions/helpers. Subsequent code execution or secret access is not demonstrated and requires later invocation/agent behavior.",
+      "validation": "installer_fixture.py ran actual main, validation and copying twice with mocked _prepare_repo and same-UID simulation of parent-owner replacement. Both installed AUDIT_REPLACEMENT_MARKER. No second-UID race, actual download, or active installation.",
+      "counterevidence": "mkdtemp gives random private child; installer rejects escapes and disallowed symlinks. These protect contents under a trusted parent, but not replacement by its owner. /tmp/codex was absent at observation; no compromise observed.",
+      "recommendation": "Supported upstream fix: verify owner-private real temp parent beneath trusted ancestors, or create private random staging directly beneath trusted temporary root; retain verified handles/identity across validation and copying. Pin immutable source revisions and recheck downloaded/copied integrity.",
+      "reproduction": "Run python3 evals/audit-2026-09-29/installer_fixture.py; writes only temporary fixtures.",
+      "newly_identified": true
+    },
+    {
+      "id": "SEC-02",
+      "category": "security",
+      "severity": "low",
+      "confidence": "high source; current direct path prohibited",
+      "title": "Managed manual helper exposes returned cache paths to parent-owner replacement",
+      "locations": [
+        "$HOME/.codex/skills/.system/openai-docs/scripts/fetch-codex-manual.mjs:240-300",
+        "same file:388-451"
+      ],
+      "attacker": "Local user who precreates or controls selected shared cache directory, before use; no control of official HTTPS source assumed.",
+      "input": "Shared cache directory entries after content verification.",
+      "flow": "Default candidates include shared temp locations. stat/access establish writability, not ownership/privacy. Hash verification covers bytes read/fetched, then returns manualPath/outlinePath for a later consumer read. A controlling parent owner can replace those files after verification.",
+      "impact": "Documentation/outline integrity loss in subsequent reads. No credential disclosure or code execution established.",
+      "validation": "Current helper source reread; known mechanism remains. No direct helper invocation/import or shared-cache PoC because local instructions require the private wrapper exclusively. Safe reproduction specification: in a separate authorized harness, serve synthetic manual bytes and matching hash, use a controlled cache, replace returned file after verification and observe changed later read. NOT executed here.",
+      "counterevidence": "HEAD/body SHA256 prevents simple pre-fetch stale-content substitution. Private wrapper validates ancestors/owner/mode/non-symlink files and forces private cache; this mitigates the mandated workflow.",
+      "recommendation": "Keep invoking only the existing private wrapper. Request supported upstream owner/private-path checks and handle-bound consumption; do not patch .system.",
+      "newly_identified": false
+    },
+    {
+      "id": "SEC-03",
+      "category": "security",
+      "severity": "low",
+      "confidence": "high source; live exposure unresolved",
+      "title": "Security supplemental temporary artifact root lacks ownership verification",
+      "locations": [
+        "codex-security/0.1.31/mcp/server.mjs (decoded bundle):storageContext lines 41840-41851",
+        "decoded bundle:requireArtifactRoot lines 37237-37255",
+        "decoded bundle:saveCodexSecurityArtifact lines 41889-41903",
+        "codex-security/0.1.31/scripts/finalize_scan_contract.py:266-280,330-355,396-444",
+        "codex-security/0.1.31/scripts/workbench_saved_results.py:1347-1355"
+      ],
+      "attacker": "Local user able to precreate predictable codex-security-artifacts-<hash> under shared process tmpdir. Must know/derive target context identity.",
+      "input": "Existing real directory and regular-file entries; symlink not needed.",
+      "flow": "storageContext derives predictable temp root, accepts EEXIST; root validation checks directory/symlink/canonical identity but not owner/private modes. sourcePath import reads a later regular file from that tree through native descriptors. A controlling parent can replace ordinary files before import.",
+      "impact": "Integrity of retained supplemental evidence. No canonical finding overwrite, confidentiality loss or code execution established.",
+      "validation": "Decoded current 49,554-line bundle as inert data and traced specific functions into native Python read guards. Did not fully audit bundle. No temporary MCP storage/sourcePath use or log/binary import performed. Safe reproduction specification: separate owner-private process test root, simulate precreated attacker-owned artifact root, replace regular evidence before persistent import, compare content. NOT executed here because actual plugin private temp runtime is unverified.",
+      "counterevidence": "Portable path and non-symlink descriptor checks prevent simple traversal/symlink escapes. Persistent inline storage bypasses vulnerable temporary import path and is mandatory locally.",
+      "recommendation": "Keep persistent inline supplemental artifacts. Verify an owner-private process-wide temporary parent before separately authorized restart and temporary use; request upstream owner/mode enforcement.",
+      "newly_identified": false
+    },
+    {
+      "id": "COR-01",
+      "category": "correctness",
+      "severity": "medium operational",
+      "confidence": "high",
+      "title": "Current managed refresh removes plugin-creator",
+      "locations": [
+        "inventory/isolated-cli-discovery.json",
+        "inventory/reproduce_discovery.py"
+      ],
+      "impact": "System invocation unavailable after refresh despite valid skill content; read-like discovery has managed-file side effects.",
+      "validation": "CLI 0.159.1 disposable home: eleven plugin-creator files removed and marker changed; identical repo-scope entrypoint discovered without errors. Active system hashes unchanged.",
+      "recommendation": "Supported Codex release investigation; no personal duplicate or .system patch."
+    },
+    {
+      "id": "COR-02",
+      "category": "correctness",
+      "severity": "low",
+      "confidence": "high",
+      "title": "LikeC4 recursive-descendant reference contradicts installed semantics",
+      "locations": [
+        "$HOME/.agents/skills/likec4-dsl/references/predicates.md:47",
+        "$HOME/.agents/skills/likec4-dsl/references/include-predicates-wildcards.md:14"
+      ],
+      "impact": "Evaluator declines to answer or may omit unrelated descendants from intended diagrams.",
+      "validation": "lc02, lc10 and fresh D flag contradiction. LikeC4 1.59.4 export json --skip-layout includes cloud.worker.deep with no relationships both alone and after external. Context7 also returned conflicting upstream snippets; live installed behavior is stronger evidence for this version.",
+      "recommendation": "Separately edit the maintained reference to match verified installed semantics; add computed-view membership regression, not syntax-only test."
+    },
+    {
+      "id": "BEH-01",
+      "category": "behavioral",
+      "severity": "low",
+      "confidence": "high observation; low generalization",
+      "title": "One Clear Writing draft introduced unsupported completion status",
+      "locations": [
+        "personal-evaluations.json:scenario cw09",
+        "blind-retests.json:cases A and B"
+      ],
+      "impact": "A reader could copy the leading unsupported sentence even though the output immediately asks for confirmation and supplies a safer alternative.",
+      "validation": "cw09 begins The migration is complete without evidence, then qualifies it. cw10 and two fresh blind outputs avoid the invention. Not consistently reproduced; not a deterministic skill defect.",
+      "recommendation": "Retain failure; add blind repeated drafting cases where project state is unstated. No rewrite based only on one sample."
+    }
+  ],
+  "note": "Overall user audit, separate from narrow canonical skills/ scan. Severity calibrated by parent; independent helper reviewer initially proposed medium for SEC-01; downgraded for local precreation/timing prerequisites and limited demonstrated impact."
+}

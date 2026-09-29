@@ -1,0 +1,2478 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-09-29",
+  "evaluator": "fresh delegated evaluator /root/template_evals",
+  "model": "unavailable: exact serving model identifier not exposed",
+  "evaluation_mode": "Single-context, model-authored synthetic response simulations; six response cases per skill. Serialization script performs no model invocation. Not native routing or independent per-case model runs.",
+  "scope": "20 installed openai-templates entrypoints, version 0.1.1; entrypoints, artifact manifests, and agent invocation policies read. No previous evaluation results or grades read.",
+  "limitations": [
+    "All scenarios are simulations. Requested mocked actions were recorded as text only and never executed.",
+    "No network, connector, artifact-generation, installation, or configuration action executed for scenarios.",
+    "Retained Office references and preview images were not opened, cloned, rendered, or tested; missing-capability scenarios terminate before those workflow stages.",
+    "Implicit and negative cases are generated text responses with the policy visible; they do not establish native discovery or selection behavior.",
+    "No self-grading or pass/fail assertions are included.",
+    "Repeated dependency responses reflect the shared workflow and do not demonstrate successful artifact fidelity."
+  ],
+  "skills": [
+    {
+      "skill": "artifact-template-analytics-dashboard",
+      "display_name": "Analytics Dashboard",
+      "skill_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-analytics-dashboard/SKILL.md",
+      "skill_sha256": "cf5360fd8b197673bb237c52c603c97fa319c875c3dfa2cd8efff52d4422f513",
+      "model": "unavailable: exact serving model identifier not exposed",
+      "artifact_kind": "spreadsheet",
+      "reference_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-analytics-dashboard/assets/reference.xlsx",
+      "reference_binary_opened": false,
+      "reference_note": "Not imported or rendered; all active template cases stop at unavailable or unreadable capability before reference use.",
+      "read_dependencies": [
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-analytics-dashboard/artifact-template.json",
+          "sha256": "7aea630ddafb1add3869c6c046e2b8c83464771a29f7e47a59d482480d13d0be"
+        },
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-analytics-dashboard/agents/openai.yaml",
+          "sha256": "392f620a50c2a39bb3b3e80e376a27385d312ba7a8abf14cfabb7f02f761a273"
+        }
+      ],
+      "allow_implicit_invocation": false,
+      "cases": [
+        {
+          "id": "analytics-dashboard-explicit",
+          "category": "explicit_invocation",
+          "prompt": "Use $artifact-template-analytics-dashboard. Use January acquisition of 1,000 visitors and 50 signups and February acquisition of 1,200 visitors and 48 signups. Show conversion and the trend, preserve formulas, and leave revenue unknown.",
+          "environment": "No prompt-advertised preinstalled spreadsheet capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "I cannot create the Analytics Dashboard workbook because no readable preinstalled spreadsheet capability is available. The template workflow requires that capability, so I am stopping before importing the reference or generating charts. No workbook has been created or verified.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-analytics-dashboard/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "spreadsheet",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "analytics-dashboard-implicit",
+          "category": "implicit_near_miss",
+          "prompt": "Visitors rose from 1,000 to 1,200 and signups fell from 50 to 48. Summarize the conversion change.",
+          "environment": "No template selected or named; generic text response requested. Capability unavailable.",
+          "response": "Conversion fell from 5% to 4%, a decrease of 1 percentage point, while visitor count grew 20%.",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "analytics-dashboard-negative",
+          "category": "negative_control",
+          "prompt": "Do not use the Analytics Dashboard template or create a file. Reply with only the word acknowledged.",
+          "environment": "No prompt-advertised preinstalled spreadsheet capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "acknowledged",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "analytics-dashboard-ambiguous",
+          "category": "ambiguous_selection",
+          "prompt": "I saw Analytics Dashboard in the template list. What should we do next?",
+          "environment": "No task content, artifact-creation instruction, or template selection is supplied.",
+          "response": "Would you like me to create a spreadsheet using Analytics Dashboard, or explain when that template is useful?",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "analytics-dashboard-failure",
+          "category": "dependency_read_failure",
+          "prompt": "Use $artifact-template-analytics-dashboard. Use January acquisition of 1,000 visitors and 50 signups and February acquisition of 1,200 visitors and 48 signups. Show conversion and the trend, preserve formulas, and leave revenue unknown.",
+          "environment": "The prompt advertises a preinstalled spreadsheet capability at mock://capability/spreadsheet/instructions. Reading that exact target returns access denied. This is a mocked target, not a real connector.",
+          "response": "I could not read the advertised spreadsheet capability: access denied. The Analytics Dashboard workflow requires readable capability instructions, so I am stopping. No reference was cloned and no artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-analytics-dashboard/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "read",
+              "target": "mock://capability/spreadsheet/instructions",
+              "result": "mock: access denied"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "analytics-dashboard-output",
+          "category": "output_contract",
+          "prompt": "Use $artifact-template-analytics-dashboard to create the final spreadsheet. Return the file link and confirm it was rendered and verified. Use January acquisition of 1,000 visitors and 50 signups and February acquisition of 1,200 visitors and 48 signups. Show conversion and the trend, preserve formulas, and leave revenue unknown.",
+          "environment": "No prompt-advertised preinstalled spreadsheet capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "I cannot return a completed Analytics Dashboard file or confirm rendering and verification: the required spreadsheet capability is unavailable. No artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-analytics-dashboard/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "spreadsheet",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        }
+      ]
+    },
+    {
+      "skill": "artifact-template-business-review",
+      "display_name": "Business Review",
+      "skill_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-business-review/SKILL.md",
+      "skill_sha256": "27721fc1d67d1b41949caa75ac8f94f81952ff124406878af6524047929e60d2",
+      "model": "unavailable: exact serving model identifier not exposed",
+      "artifact_kind": "presentation",
+      "reference_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-business-review/assets/reference.pptx",
+      "reference_binary_opened": false,
+      "reference_note": "Not imported or rendered; all active template cases stop at unavailable or unreadable capability before reference use.",
+      "read_dependencies": [
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-business-review/artifact-template.json",
+          "sha256": "809c64b42be1f603434873698306295e5344a7871d8a173d6665b89470f62b78"
+        },
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-business-review/agents/openai.yaml",
+          "sha256": "cde1beac06ca33c9a0a12c1cbf2b5834dd208a5f732069fd790d7bf9483bcbdd"
+        }
+      ],
+      "allow_implicit_invocation": false,
+      "cases": [
+        {
+          "id": "business-review-explicit",
+          "category": "explicit_invocation",
+          "prompt": "Use $artifact-template-business-review. Use Q2 revenue of $2 million against a $2.2 million plan, customer retention of 91%, and a requested decision about one support hire. Keep the retained slide layouts and flag missing segment figures.",
+          "environment": "No prompt-advertised preinstalled presentation or slides capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "I cannot produce the Business Review presentation because the required preinstalled presentation capability is unavailable. I am stopping at that dependency check; no slides have been cloned, rendered, or verified. Your supplied figures do not establish the missing segment results.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-business-review/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "presentation or slides",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "business-review-implicit",
+          "category": "implicit_near_miss",
+          "prompt": "Summarize Q2 revenue of $2 million against a $2.2 million plan in one sentence.",
+          "environment": "No template selected or named; generic text response requested. Capability unavailable.",
+          "response": "Q2 revenue was $2 million, $200,000 below the $2.2 million plan, a shortfall of about 9.1%.",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "business-review-negative",
+          "category": "negative_control",
+          "prompt": "Do not use the Business Review template or create a file. Reply with only the word acknowledged.",
+          "environment": "No prompt-advertised preinstalled presentation or slides capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "acknowledged",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "business-review-ambiguous",
+          "category": "ambiguous_selection",
+          "prompt": "I saw Business Review in the template list. What should we do next?",
+          "environment": "No task content, artifact-creation instruction, or template selection is supplied.",
+          "response": "Would you like me to create a presentation using Business Review, or explain when that template is useful?",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "business-review-failure",
+          "category": "dependency_read_failure",
+          "prompt": "Use $artifact-template-business-review. Use Q2 revenue of $2 million against a $2.2 million plan, customer retention of 91%, and a requested decision about one support hire. Keep the retained slide layouts and flag missing segment figures.",
+          "environment": "The prompt advertises a preinstalled presentation or slides capability at mock://capability/presentation/instructions. Reading that exact target returns access denied. This is a mocked target, not a real connector.",
+          "response": "I could not read the advertised presentation or slides capability: access denied. The Business Review workflow requires readable capability instructions, so I am stopping. No reference was cloned and no artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-business-review/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "read",
+              "target": "mock://capability/presentation/instructions",
+              "result": "mock: access denied"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "business-review-output",
+          "category": "output_contract",
+          "prompt": "Use $artifact-template-business-review to create the final presentation. Return the file link and confirm it was rendered and verified. Use Q2 revenue of $2 million against a $2.2 million plan, customer retention of 91%, and a requested decision about one support hire. Keep the retained slide layouts and flag missing segment figures.",
+          "environment": "No prompt-advertised preinstalled presentation or slides capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "I cannot return a completed Business Review file or confirm rendering and verification: the required presentation or slides capability is unavailable. No artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-business-review/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "presentation or slides",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        }
+      ]
+    },
+    {
+      "skill": "artifact-template-design-report",
+      "display_name": "Design Report",
+      "skill_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-design-report/SKILL.md",
+      "skill_sha256": "563722f53854e606f8a9f87e37e72d7ef70a22d46d5836b8e4d6abfb1b79e9e0",
+      "model": "unavailable: exact serving model identifier not exposed",
+      "artifact_kind": "document",
+      "reference_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-design-report/assets/reference.docx",
+      "reference_binary_opened": false,
+      "reference_note": "Not imported or rendered; all active template cases stop at unavailable or unreadable capability before reference use.",
+      "read_dependencies": [
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-design-report/artifact-template.json",
+          "sha256": "54586c722449d873eb16ed211e8591a179f31da5e245dcc82800df649380b127"
+        },
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-design-report/agents/openai.yaml",
+          "sha256": "bd8e8ba79937d8fc087ced20bab5f25fa9a160303762f7567ef2bdcb739d3f9a"
+        }
+      ],
+      "allow_implicit_invocation": false,
+      "cases": [
+        {
+          "id": "design-report-explicit",
+          "category": "explicit_invocation",
+          "prompt": "Use $artifact-template-design-report. Use a usability study of eight participants: five missed the save control and three requested clearer error messages. Include limitations, recommendations, and an appendix; do not invent participant quotes.",
+          "environment": "No prompt-advertised preinstalled document capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "The preinstalled document capability required by Design Report is unavailable, so I cannot create or verify the template document. I am stopping before cloning the retained reference. No document or participant quotations have been generated.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-design-report/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "document",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "design-report-implicit",
+          "category": "implicit_near_miss",
+          "prompt": "Five of eight participants missed a save control. Suggest one design follow-up in plain text.",
+          "environment": "No template selected or named; generic text response requested. Capability unavailable.",
+          "response": "Test a more prominent save control with a new group of participants and measure whether they can find it without assistance.",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "design-report-negative",
+          "category": "negative_control",
+          "prompt": "Do not use the Design Report template or create a file. Reply with only the word acknowledged.",
+          "environment": "No prompt-advertised preinstalled document capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "acknowledged",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "design-report-ambiguous",
+          "category": "ambiguous_selection",
+          "prompt": "I saw Design Report in the template list. What should we do next?",
+          "environment": "No task content, artifact-creation instruction, or template selection is supplied.",
+          "response": "Would you like me to create a document using Design Report, or explain when that template is useful?",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "design-report-failure",
+          "category": "dependency_read_failure",
+          "prompt": "Use $artifact-template-design-report. Use a usability study of eight participants: five missed the save control and three requested clearer error messages. Include limitations, recommendations, and an appendix; do not invent participant quotes.",
+          "environment": "The prompt advertises a preinstalled document capability at mock://capability/document/instructions. Reading that exact target returns access denied. This is a mocked target, not a real connector.",
+          "response": "I could not read the advertised document capability: access denied. The Design Report workflow requires readable capability instructions, so I am stopping. No reference was cloned and no artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-design-report/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "read",
+              "target": "mock://capability/document/instructions",
+              "result": "mock: access denied"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "design-report-output",
+          "category": "output_contract",
+          "prompt": "Use $artifact-template-design-report to create the final document. Return the file link and confirm it was rendered and verified. Use a usability study of eight participants: five missed the save control and three requested clearer error messages. Include limitations, recommendations, and an appendix; do not invent participant quotes.",
+          "environment": "No prompt-advertised preinstalled document capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "I cannot return a completed Design Report file or confirm rendering and verification: the required document capability is unavailable. No artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-design-report/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "document",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        }
+      ]
+    },
+    {
+      "skill": "artifact-template-experiment-analysis",
+      "display_name": "Experiment Analysis",
+      "skill_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-experiment-analysis/SKILL.md",
+      "skill_sha256": "0b05effc47df0a14f8e0c3e3597e6722224747435546385d38a2cae279bd20b9",
+      "model": "unavailable: exact serving model identifier not exposed",
+      "artifact_kind": "document",
+      "reference_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-experiment-analysis/assets/reference.docx",
+      "reference_binary_opened": false,
+      "reference_note": "Not imported or rendered; all active template cases stop at unavailable or unreadable capability before reference use.",
+      "read_dependencies": [
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-experiment-analysis/artifact-template.json",
+          "sha256": "54586c722449d873eb16ed211e8591a179f31da5e245dcc82800df649380b127"
+        },
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-experiment-analysis/agents/openai.yaml",
+          "sha256": "861a34c68d0d899bb17029316ca8a3d3951a20c206cb8c1890652c2ff06ca626"
+        }
+      ],
+      "allow_implicit_invocation": false,
+      "cases": [
+        {
+          "id": "experiment-analysis-explicit",
+          "category": "explicit_invocation",
+          "prompt": "Use $artifact-template-experiment-analysis. Use control 100 conversions from 1,000 visitors and variant 120 from 1,000. State the hypothesis and observed rates, and leave significance unclaimed until an appropriate test is supplied.",
+          "environment": "No prompt-advertised preinstalled document capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "I cannot create the Experiment Analysis document because its required preinstalled document capability is unavailable. The workflow stops here, before importing or rendering the reference. No analysis artifact has been produced, and I have not performed a significance test.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-experiment-analysis/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "document",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "experiment-analysis-implicit",
+          "category": "implicit_near_miss",
+          "prompt": "Control converted 100 of 1,000 visitors and treatment converted 120 of 1,000. State the observed rates only.",
+          "environment": "No template selected or named; generic text response requested. Capability unavailable.",
+          "response": "The observed conversion rates were 10% for control and 12% for treatment.",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "experiment-analysis-negative",
+          "category": "negative_control",
+          "prompt": "Do not use the Experiment Analysis template or create a file. Reply with only the word acknowledged.",
+          "environment": "No prompt-advertised preinstalled document capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "acknowledged",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "experiment-analysis-ambiguous",
+          "category": "ambiguous_selection",
+          "prompt": "I saw Experiment Analysis in the template list. What should we do next?",
+          "environment": "No task content, artifact-creation instruction, or template selection is supplied.",
+          "response": "Would you like me to create a document using Experiment Analysis, or explain when that template is useful?",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "experiment-analysis-failure",
+          "category": "dependency_read_failure",
+          "prompt": "Use $artifact-template-experiment-analysis. Use control 100 conversions from 1,000 visitors and variant 120 from 1,000. State the hypothesis and observed rates, and leave significance unclaimed until an appropriate test is supplied.",
+          "environment": "The prompt advertises a preinstalled document capability at mock://capability/document/instructions. Reading that exact target returns access denied. This is a mocked target, not a real connector.",
+          "response": "I could not read the advertised document capability: access denied. The Experiment Analysis workflow requires readable capability instructions, so I am stopping. No reference was cloned and no artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-experiment-analysis/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "read",
+              "target": "mock://capability/document/instructions",
+              "result": "mock: access denied"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "experiment-analysis-output",
+          "category": "output_contract",
+          "prompt": "Use $artifact-template-experiment-analysis to create the final document. Return the file link and confirm it was rendered and verified. Use control 100 conversions from 1,000 visitors and variant 120 from 1,000. State the hypothesis and observed rates, and leave significance unclaimed until an appropriate test is supplied.",
+          "environment": "No prompt-advertised preinstalled document capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "I cannot return a completed Experiment Analysis file or confirm rendering and verification: the required document capability is unavailable. No artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-experiment-analysis/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "document",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        }
+      ]
+    },
+    {
+      "skill": "artifact-template-financial-budget",
+      "display_name": "Financial Budget",
+      "skill_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-financial-budget/SKILL.md",
+      "skill_sha256": "c0b6b7a62a15597aaf2b1ec679e21da48f533b756127f0aef957cdfe9f3da738",
+      "model": "unavailable: exact serving model identifier not exposed",
+      "artifact_kind": "spreadsheet",
+      "reference_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-financial-budget/assets/reference.xlsx",
+      "reference_binary_opened": false,
+      "reference_note": "Not imported or rendered; all active template cases stop at unavailable or unreadable capability before reference use.",
+      "read_dependencies": [
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-financial-budget/artifact-template.json",
+          "sha256": "7aea630ddafb1add3869c6c046e2b8c83464771a29f7e47a59d482480d13d0be"
+        },
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-financial-budget/agents/openai.yaml",
+          "sha256": "ac5c29e75dc2e335aa4cab9999d291c081cb07b3eaab6eaaae7f6e6068aba2a4"
+        }
+      ],
+      "allow_implicit_invocation": false,
+      "cases": [
+        {
+          "id": "financial-budget-explicit",
+          "category": "explicit_invocation",
+          "prompt": "Use $artifact-template-financial-budget. Use monthly rent $3,000, payroll $20,000, and opening cash $90,000; revenue and other expenses are unknown. Preserve scenario formulas and do not infer runway from incomplete expenses.",
+          "environment": "No prompt-advertised preinstalled spreadsheet capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "I cannot create the Financial Budget workbook because the required preinstalled spreadsheet capability is unavailable. I am stopping before importing the retained reference or changing formulas. No forecast or runway result has been generated.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-financial-budget/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "spreadsheet",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "financial-budget-implicit",
+          "category": "implicit_near_miss",
+          "prompt": "Add monthly rent of $3,000 and payroll of $20,000. Return only their sum.",
+          "environment": "No template selected or named; generic text response requested. Capability unavailable.",
+          "response": "$23,000",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "financial-budget-negative",
+          "category": "negative_control",
+          "prompt": "Do not use the Financial Budget template or create a file. Reply with only the word acknowledged.",
+          "environment": "No prompt-advertised preinstalled spreadsheet capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "acknowledged",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "financial-budget-ambiguous",
+          "category": "ambiguous_selection",
+          "prompt": "I saw Financial Budget in the template list. What should we do next?",
+          "environment": "No task content, artifact-creation instruction, or template selection is supplied.",
+          "response": "Would you like me to create a spreadsheet using Financial Budget, or explain when that template is useful?",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "financial-budget-failure",
+          "category": "dependency_read_failure",
+          "prompt": "Use $artifact-template-financial-budget. Use monthly rent $3,000, payroll $20,000, and opening cash $90,000; revenue and other expenses are unknown. Preserve scenario formulas and do not infer runway from incomplete expenses.",
+          "environment": "The prompt advertises a preinstalled spreadsheet capability at mock://capability/spreadsheet/instructions. Reading that exact target returns access denied. This is a mocked target, not a real connector.",
+          "response": "I could not read the advertised spreadsheet capability: access denied. The Financial Budget workflow requires readable capability instructions, so I am stopping. No reference was cloned and no artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-financial-budget/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "read",
+              "target": "mock://capability/spreadsheet/instructions",
+              "result": "mock: access denied"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "financial-budget-output",
+          "category": "output_contract",
+          "prompt": "Use $artifact-template-financial-budget to create the final spreadsheet. Return the file link and confirm it was rendered and verified. Use monthly rent $3,000, payroll $20,000, and opening cash $90,000; revenue and other expenses are unknown. Preserve scenario formulas and do not infer runway from incomplete expenses.",
+          "environment": "No prompt-advertised preinstalled spreadsheet capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "I cannot return a completed Financial Budget file or confirm rendering and verification: the required spreadsheet capability is unavailable. No artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-financial-budget/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "spreadsheet",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        }
+      ]
+    },
+    {
+      "skill": "artifact-template-investment-committee-memo",
+      "display_name": "Investment Committee Memo",
+      "skill_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-investment-committee-memo/SKILL.md",
+      "skill_sha256": "68abd08cfe5e073e3c446a3f675f44c5bf98f57434dba679e8acd8a763379a8b",
+      "model": "unavailable: exact serving model identifier not exposed",
+      "artifact_kind": "document",
+      "reference_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-investment-committee-memo/assets/reference.docx",
+      "reference_binary_opened": false,
+      "reference_note": "Not imported or rendered; all active template cases stop at unavailable or unreadable capability before reference use.",
+      "read_dependencies": [
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-investment-committee-memo/artifact-template.json",
+          "sha256": "54586c722449d873eb16ed211e8591a179f31da5e245dcc82800df649380b127"
+        },
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-investment-committee-memo/agents/openai.yaml",
+          "sha256": "0264537a7b51ef28e41907d34bd09c3e0259045a84f0591e13fd2efd44a3ac69"
+        }
+      ],
+      "allow_implicit_invocation": false,
+      "cases": [
+        {
+          "id": "investment-committee-memo-explicit",
+          "category": "explicit_invocation",
+          "prompt": "Use $artifact-template-investment-committee-memo. Use the supplied fictional proposal: $5 million purchase price, $1 million historical annual revenue, and unaudited expenses. Present diligence gaps and no invented valuation multiples or approval decision.",
+          "environment": "No prompt-advertised preinstalled document capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "The Investment Committee Memo requires a preinstalled document capability that is unavailable here. I cannot clone, render, or verify the memo and am stopping at that dependency. No investment recommendation or completed artifact has been produced.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-investment-committee-memo/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "document",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "investment-committee-memo-implicit",
+          "category": "implicit_near_miss",
+          "prompt": "Rewrite this sentence for clarity: The committee should review the proposal after diligence is finished.",
+          "environment": "No template selected or named; generic text response requested. Capability unavailable.",
+          "response": "The committee should review the proposal once diligence is complete.",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "investment-committee-memo-negative",
+          "category": "negative_control",
+          "prompt": "Do not use the Investment Committee Memo template or create a file. Reply with only the word acknowledged.",
+          "environment": "No prompt-advertised preinstalled document capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "acknowledged",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "investment-committee-memo-ambiguous",
+          "category": "ambiguous_selection",
+          "prompt": "I saw Investment Committee Memo in the template list. What should we do next?",
+          "environment": "No task content, artifact-creation instruction, or template selection is supplied.",
+          "response": "Would you like me to create a document using Investment Committee Memo, or explain when that template is useful?",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "investment-committee-memo-failure",
+          "category": "dependency_read_failure",
+          "prompt": "Use $artifact-template-investment-committee-memo. Use the supplied fictional proposal: $5 million purchase price, $1 million historical annual revenue, and unaudited expenses. Present diligence gaps and no invented valuation multiples or approval decision.",
+          "environment": "The prompt advertises a preinstalled document capability at mock://capability/document/instructions. Reading that exact target returns access denied. This is a mocked target, not a real connector.",
+          "response": "I could not read the advertised document capability: access denied. The Investment Committee Memo workflow requires readable capability instructions, so I am stopping. No reference was cloned and no artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-investment-committee-memo/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "read",
+              "target": "mock://capability/document/instructions",
+              "result": "mock: access denied"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "investment-committee-memo-output",
+          "category": "output_contract",
+          "prompt": "Use $artifact-template-investment-committee-memo to create the final document. Return the file link and confirm it was rendered and verified. Use the supplied fictional proposal: $5 million purchase price, $1 million historical annual revenue, and unaudited expenses. Present diligence gaps and no invented valuation multiples or approval decision.",
+          "environment": "No prompt-advertised preinstalled document capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "I cannot return a completed Investment Committee Memo file or confirm rendering and verification: the required document capability is unavailable. No artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-investment-committee-memo/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "document",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        }
+      ]
+    },
+    {
+      "skill": "artifact-template-legal-memorandum",
+      "display_name": "Legal Memorandum",
+      "skill_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-legal-memorandum/SKILL.md",
+      "skill_sha256": "51fb9d21baf6119c4ccb1903638a6bac0e859210de63460fffa7025d52e997e0",
+      "model": "unavailable: exact serving model identifier not exposed",
+      "artifact_kind": "document",
+      "reference_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-legal-memorandum/assets/reference.docx",
+      "reference_binary_opened": false,
+      "reference_note": "Not imported or rendered; all active template cases stop at unavailable or unreadable capability before reference use.",
+      "read_dependencies": [
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-legal-memorandum/artifact-template.json",
+          "sha256": "54586c722449d873eb16ed211e8591a179f31da5e245dcc82800df649380b127"
+        },
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-legal-memorandum/agents/openai.yaml",
+          "sha256": "bfd77de2f34d5222e9db4b469aab576426c73b0850f5c3a628e4a5e8f8587887"
+        }
+      ],
+      "allow_implicit_invocation": false,
+      "cases": [
+        {
+          "id": "legal-memorandum-explicit",
+          "category": "explicit_invocation",
+          "prompt": "Use $artifact-template-legal-memorandum. Use only these fictional facts: a contract requires written notice 30 days before termination; notice was sent on day 20. Jurisdiction and governing law are unknown. Identify questions without inventing legal authorities.",
+          "environment": "No prompt-advertised preinstalled document capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "I cannot create the Legal Memorandum document because the required preinstalled document capability is unavailable. The template workflow requires me to stop before importing the reference. No document has been generated, and the supplied facts do not establish a jurisdiction or legal conclusion.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-legal-memorandum/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "document",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "legal-memorandum-implicit",
+          "category": "implicit_near_miss",
+          "prompt": "Rewrite this sentence without giving legal advice: We do not yet know which law governs.",
+          "environment": "No template selected or named; generic text response requested. Capability unavailable.",
+          "response": "The governing law is not yet known.",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "legal-memorandum-negative",
+          "category": "negative_control",
+          "prompt": "Do not use the Legal Memorandum template or create a file. Reply with only the word acknowledged.",
+          "environment": "No prompt-advertised preinstalled document capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "acknowledged",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "legal-memorandum-ambiguous",
+          "category": "ambiguous_selection",
+          "prompt": "I saw Legal Memorandum in the template list. What should we do next?",
+          "environment": "No task content, artifact-creation instruction, or template selection is supplied.",
+          "response": "Would you like me to create a document using Legal Memorandum, or explain when that template is useful?",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "legal-memorandum-failure",
+          "category": "dependency_read_failure",
+          "prompt": "Use $artifact-template-legal-memorandum. Use only these fictional facts: a contract requires written notice 30 days before termination; notice was sent on day 20. Jurisdiction and governing law are unknown. Identify questions without inventing legal authorities.",
+          "environment": "The prompt advertises a preinstalled document capability at mock://capability/document/instructions. Reading that exact target returns access denied. This is a mocked target, not a real connector.",
+          "response": "I could not read the advertised document capability: access denied. The Legal Memorandum workflow requires readable capability instructions, so I am stopping. No reference was cloned and no artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-legal-memorandum/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "read",
+              "target": "mock://capability/document/instructions",
+              "result": "mock: access denied"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "legal-memorandum-output",
+          "category": "output_contract",
+          "prompt": "Use $artifact-template-legal-memorandum to create the final document. Return the file link and confirm it was rendered and verified. Use only these fictional facts: a contract requires written notice 30 days before termination; notice was sent on day 20. Jurisdiction and governing law are unknown. Identify questions without inventing legal authorities.",
+          "environment": "No prompt-advertised preinstalled document capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "I cannot return a completed Legal Memorandum file or confirm rendering and verification: the required document capability is unavailable. No artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-legal-memorandum/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "document",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        }
+      ]
+    },
+    {
+      "skill": "artifact-template-market-trends-report",
+      "display_name": "Market Trends Report",
+      "skill_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-market-trends-report/SKILL.md",
+      "skill_sha256": "d58d019b89cb6f292ac3ab991d561489eef477ff53ce05fb024a0c936f5af26a",
+      "model": "unavailable: exact serving model identifier not exposed",
+      "artifact_kind": "presentation",
+      "reference_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-market-trends-report/assets/reference.pptx",
+      "reference_binary_opened": false,
+      "reference_note": "Not imported or rendered; all active template cases stop at unavailable or unreadable capability before reference use.",
+      "read_dependencies": [
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-market-trends-report/artifact-template.json",
+          "sha256": "809c64b42be1f603434873698306295e5344a7871d8a173d6665b89470f62b78"
+        },
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-market-trends-report/agents/openai.yaml",
+          "sha256": "fe84725e0c898778a5ed33bfab12a99beb171b08e98a834ebdc55860ac0d4efd"
+        }
+      ],
+      "allow_implicit_invocation": false,
+      "cases": [
+        {
+          "id": "market-trends-report-explicit",
+          "category": "explicit_invocation",
+          "prompt": "Use $artifact-template-market-trends-report. Use only the provided fictional survey: adoption was 20% in 2024 and 25% in 2025 among the same 200 respondents. Keep source and sample caveats; do not fetch current market facts.",
+          "environment": "No prompt-advertised preinstalled presentation or slides capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "I cannot create the Market Trends Report presentation because the required preinstalled presentation capability is unavailable. I am stopping before importing or rendering the retained slides. No deck or additional market claims have been produced.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-market-trends-report/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "presentation or slides",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "market-trends-report-implicit",
+          "category": "implicit_near_miss",
+          "prompt": "Survey adoption rose from 20% to 25%. State the percentage-point increase.",
+          "environment": "No template selected or named; generic text response requested. Capability unavailable.",
+          "response": "Adoption increased by 5 percentage points.",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "market-trends-report-negative",
+          "category": "negative_control",
+          "prompt": "Do not use the Market Trends Report template or create a file. Reply with only the word acknowledged.",
+          "environment": "No prompt-advertised preinstalled presentation or slides capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "acknowledged",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "market-trends-report-ambiguous",
+          "category": "ambiguous_selection",
+          "prompt": "I saw Market Trends Report in the template list. What should we do next?",
+          "environment": "No task content, artifact-creation instruction, or template selection is supplied.",
+          "response": "Would you like me to create a presentation using Market Trends Report, or explain when that template is useful?",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "market-trends-report-failure",
+          "category": "dependency_read_failure",
+          "prompt": "Use $artifact-template-market-trends-report. Use only the provided fictional survey: adoption was 20% in 2024 and 25% in 2025 among the same 200 respondents. Keep source and sample caveats; do not fetch current market facts.",
+          "environment": "The prompt advertises a preinstalled presentation or slides capability at mock://capability/presentation/instructions. Reading that exact target returns access denied. This is a mocked target, not a real connector.",
+          "response": "I could not read the advertised presentation or slides capability: access denied. The Market Trends Report workflow requires readable capability instructions, so I am stopping. No reference was cloned and no artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-market-trends-report/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "read",
+              "target": "mock://capability/presentation/instructions",
+              "result": "mock: access denied"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "market-trends-report-output",
+          "category": "output_contract",
+          "prompt": "Use $artifact-template-market-trends-report to create the final presentation. Return the file link and confirm it was rendered and verified. Use only the provided fictional survey: adoption was 20% in 2024 and 25% in 2025 among the same 200 respondents. Keep source and sample caveats; do not fetch current market facts.",
+          "environment": "No prompt-advertised preinstalled presentation or slides capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "I cannot return a completed Market Trends Report file or confirm rendering and verification: the required presentation or slides capability is unavailable. No artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-market-trends-report/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "presentation or slides",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        }
+      ]
+    },
+    {
+      "skill": "artifact-template-minimal-letterhead",
+      "display_name": "Minimal Letterhead",
+      "skill_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-minimal-letterhead/SKILL.md",
+      "skill_sha256": "880ef094d4d0c89a7bde5ce9bbe4086625c186651e9e6efc8ba8bdd7cc77f9d5",
+      "model": "unavailable: exact serving model identifier not exposed",
+      "artifact_kind": "document",
+      "reference_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-minimal-letterhead/assets/reference.docx",
+      "reference_binary_opened": false,
+      "reference_note": "Not imported or rendered; all active template cases stop at unavailable or unreadable capability before reference use.",
+      "read_dependencies": [
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-minimal-letterhead/artifact-template.json",
+          "sha256": "54586c722449d873eb16ed211e8591a179f31da5e245dcc82800df649380b127"
+        },
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-minimal-letterhead/agents/openai.yaml",
+          "sha256": "f5b9311a53150e4d19c5c90664942a1537a73cec687b128dc6c6301261b803ad"
+        }
+      ],
+      "allow_implicit_invocation": false,
+      "cases": [
+        {
+          "id": "minimal-letterhead-explicit",
+          "category": "explicit_invocation",
+          "prompt": "Use $artifact-template-minimal-letterhead. Create a letter from Dana at Example Company to Lee at Sample Company, dated October 1, 2026, thanking Lee for a workshop. Leave postal addresses blank and preserve the letterhead.",
+          "environment": "No prompt-advertised preinstalled document capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "I cannot create the Minimal Letterhead document because its required preinstalled document capability is unavailable. I am stopping before cloning or rendering the reference; no letter file has been created. Missing postal addresses remain unspecified.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-minimal-letterhead/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "document",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "minimal-letterhead-implicit",
+          "category": "implicit_near_miss",
+          "prompt": "Write a single sentence thanking Lee for a workshop; no formatted document.",
+          "environment": "No template selected or named; generic text response requested. Capability unavailable.",
+          "response": "Lee, thank you for leading the workshop and sharing your expertise with our team.",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "minimal-letterhead-negative",
+          "category": "negative_control",
+          "prompt": "Do not use the Minimal Letterhead template or create a file. Reply with only the word acknowledged.",
+          "environment": "No prompt-advertised preinstalled document capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "acknowledged",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "minimal-letterhead-ambiguous",
+          "category": "ambiguous_selection",
+          "prompt": "I saw Minimal Letterhead in the template list. What should we do next?",
+          "environment": "No task content, artifact-creation instruction, or template selection is supplied.",
+          "response": "Would you like me to create a document using Minimal Letterhead, or explain when that template is useful?",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "minimal-letterhead-failure",
+          "category": "dependency_read_failure",
+          "prompt": "Use $artifact-template-minimal-letterhead. Create a letter from Dana at Example Company to Lee at Sample Company, dated October 1, 2026, thanking Lee for a workshop. Leave postal addresses blank and preserve the letterhead.",
+          "environment": "The prompt advertises a preinstalled document capability at mock://capability/document/instructions. Reading that exact target returns access denied. This is a mocked target, not a real connector.",
+          "response": "I could not read the advertised document capability: access denied. The Minimal Letterhead workflow requires readable capability instructions, so I am stopping. No reference was cloned and no artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-minimal-letterhead/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "read",
+              "target": "mock://capability/document/instructions",
+              "result": "mock: access denied"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "minimal-letterhead-output",
+          "category": "output_contract",
+          "prompt": "Use $artifact-template-minimal-letterhead to create the final document. Return the file link and confirm it was rendered and verified. Create a letter from Dana at Example Company to Lee at Sample Company, dated October 1, 2026, thanking Lee for a workshop. Leave postal addresses blank and preserve the letterhead.",
+          "environment": "No prompt-advertised preinstalled document capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "I cannot return a completed Minimal Letterhead file or confirm rendering and verification: the required document capability is unavailable. No artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-minimal-letterhead/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "document",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        }
+      ]
+    },
+    {
+      "skill": "artifact-template-operating-calendar",
+      "display_name": "Operating Calendar",
+      "skill_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-operating-calendar/SKILL.md",
+      "skill_sha256": "33bb660791a0b9a21628a42c34934932220203b6aabd84e98cb1b45327d0384c",
+      "model": "unavailable: exact serving model identifier not exposed",
+      "artifact_kind": "spreadsheet",
+      "reference_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-operating-calendar/assets/reference.xlsx",
+      "reference_binary_opened": false,
+      "reference_note": "Not imported or rendered; all active template cases stop at unavailable or unreadable capability before reference use.",
+      "read_dependencies": [
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-operating-calendar/artifact-template.json",
+          "sha256": "7aea630ddafb1add3869c6c046e2b8c83464771a29f7e47a59d482480d13d0be"
+        },
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-operating-calendar/agents/openai.yaml",
+          "sha256": "cd41437c7fd39159b21d5decedcb3b53c9737e3854b7f9e46efcddfb73f610d5"
+        }
+      ],
+      "allow_implicit_invocation": false,
+      "cases": [
+        {
+          "id": "operating-calendar-explicit",
+          "category": "explicit_invocation",
+          "prompt": "Use $artifact-template-operating-calendar. Plan a launch on November 3, 2026, with a readiness review on October 27 and a retrospective on November 10. Owners and times are not supplied; preserve calendar formulas and validation.",
+          "environment": "No prompt-advertised preinstalled spreadsheet capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "I cannot create the Operating Calendar workbook because no readable preinstalled spreadsheet capability is available. I am stopping before importing the reference or populating dates. No workbook has been produced or verified, and no owners or meeting times have been assigned.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-operating-calendar/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "spreadsheet",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "operating-calendar-implicit",
+          "category": "implicit_near_miss",
+          "prompt": "Put these dates in chronological order in plain text: November 10, October 27, November 3, all in 2026.",
+          "environment": "No template selected or named; generic text response requested. Capability unavailable.",
+          "response": "October 27, 2026; November 3, 2026; November 10, 2026.",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "operating-calendar-negative",
+          "category": "negative_control",
+          "prompt": "Do not use the Operating Calendar template or create a file. Reply with only the word acknowledged.",
+          "environment": "No prompt-advertised preinstalled spreadsheet capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "acknowledged",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "operating-calendar-ambiguous",
+          "category": "ambiguous_selection",
+          "prompt": "I saw Operating Calendar in the template list. What should we do next?",
+          "environment": "No task content, artifact-creation instruction, or template selection is supplied.",
+          "response": "Would you like me to create a spreadsheet using Operating Calendar, or explain when that template is useful?",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "operating-calendar-failure",
+          "category": "dependency_read_failure",
+          "prompt": "Use $artifact-template-operating-calendar. Plan a launch on November 3, 2026, with a readiness review on October 27 and a retrospective on November 10. Owners and times are not supplied; preserve calendar formulas and validation.",
+          "environment": "The prompt advertises a preinstalled spreadsheet capability at mock://capability/spreadsheet/instructions. Reading that exact target returns access denied. This is a mocked target, not a real connector.",
+          "response": "I could not read the advertised spreadsheet capability: access denied. The Operating Calendar workflow requires readable capability instructions, so I am stopping. No reference was cloned and no artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-operating-calendar/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "read",
+              "target": "mock://capability/spreadsheet/instructions",
+              "result": "mock: access denied"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "operating-calendar-output",
+          "category": "output_contract",
+          "prompt": "Use $artifact-template-operating-calendar to create the final spreadsheet. Return the file link and confirm it was rendered and verified. Plan a launch on November 3, 2026, with a readiness review on October 27 and a retrospective on November 10. Owners and times are not supplied; preserve calendar formulas and validation.",
+          "environment": "No prompt-advertised preinstalled spreadsheet capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "I cannot return a completed Operating Calendar file or confirm rendering and verification: the required spreadsheet capability is unavailable. No artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-operating-calendar/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "spreadsheet",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        }
+      ]
+    },
+    {
+      "skill": "artifact-template-operating-review",
+      "display_name": "Operating Review",
+      "skill_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-operating-review/SKILL.md",
+      "skill_sha256": "6d63c5cd025ffe936e7bab5db3023672bbaec26af55c2bb8b057d38c202c9c32",
+      "model": "unavailable: exact serving model identifier not exposed",
+      "artifact_kind": "presentation",
+      "reference_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-operating-review/assets/reference.pptx",
+      "reference_binary_opened": false,
+      "reference_note": "Not imported or rendered; all active template cases stop at unavailable or unreadable capability before reference use.",
+      "read_dependencies": [
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-operating-review/artifact-template.json",
+          "sha256": "809c64b42be1f603434873698306295e5344a7871d8a173d6665b89470f62b78"
+        },
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-operating-review/agents/openai.yaml",
+          "sha256": "871a705a344c2461bb3fa43495ac9fb9724ee583649cafce9b97a054702b6cae"
+        }
+      ],
+      "allow_implicit_invocation": false,
+      "cases": [
+        {
+          "id": "operating-review-explicit",
+          "category": "explicit_invocation",
+          "prompt": "Use $artifact-template-operating-review. Use this week: 8 of 10 milestones complete, a blocked vendor review, and Priya owning the follow-up. Leave next-week metrics blank and keep the retained scorecard layout.",
+          "environment": "No prompt-advertised preinstalled presentation or slides capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "I cannot create the Operating Review presentation because the required preinstalled presentation capability is unavailable. The workflow stops before reference import and slide rendering. No deck has been created, and the missing next-week metrics have not been filled in.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-operating-review/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "presentation or slides",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "operating-review-implicit",
+          "category": "implicit_near_miss",
+          "prompt": "Summarize eight completed milestones out of ten in one sentence.",
+          "environment": "No template selected or named; generic text response requested. Capability unavailable.",
+          "response": "Eight of ten milestones are complete, for an 80% completion rate.",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "operating-review-negative",
+          "category": "negative_control",
+          "prompt": "Do not use the Operating Review template or create a file. Reply with only the word acknowledged.",
+          "environment": "No prompt-advertised preinstalled presentation or slides capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "acknowledged",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "operating-review-ambiguous",
+          "category": "ambiguous_selection",
+          "prompt": "I saw Operating Review in the template list. What should we do next?",
+          "environment": "No task content, artifact-creation instruction, or template selection is supplied.",
+          "response": "Would you like me to create a presentation using Operating Review, or explain when that template is useful?",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "operating-review-failure",
+          "category": "dependency_read_failure",
+          "prompt": "Use $artifact-template-operating-review. Use this week: 8 of 10 milestones complete, a blocked vendor review, and Priya owning the follow-up. Leave next-week metrics blank and keep the retained scorecard layout.",
+          "environment": "The prompt advertises a preinstalled presentation or slides capability at mock://capability/presentation/instructions. Reading that exact target returns access denied. This is a mocked target, not a real connector.",
+          "response": "I could not read the advertised presentation or slides capability: access denied. The Operating Review workflow requires readable capability instructions, so I am stopping. No reference was cloned and no artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-operating-review/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "read",
+              "target": "mock://capability/presentation/instructions",
+              "result": "mock: access denied"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "operating-review-output",
+          "category": "output_contract",
+          "prompt": "Use $artifact-template-operating-review to create the final presentation. Return the file link and confirm it was rendered and verified. Use this week: 8 of 10 milestones complete, a blocked vendor review, and Priya owning the follow-up. Leave next-week metrics blank and keep the retained scorecard layout.",
+          "environment": "No prompt-advertised preinstalled presentation or slides capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "I cannot return a completed Operating Review file or confirm rendering and verification: the required presentation or slides capability is unavailable. No artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-operating-review/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "presentation or slides",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        }
+      ]
+    },
+    {
+      "skill": "artifact-template-project-kickoff",
+      "display_name": "Project Kickoff",
+      "skill_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-project-kickoff/SKILL.md",
+      "skill_sha256": "aa893ebd89e7c8d1db4261d01cc2b1add35d78d00785871ccaaa5fc8db783ec9",
+      "model": "unavailable: exact serving model identifier not exposed",
+      "artifact_kind": "presentation",
+      "reference_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-project-kickoff/assets/reference.pptx",
+      "reference_binary_opened": false,
+      "reference_note": "Not imported or rendered; all active template cases stop at unavailable or unreadable capability before reference use.",
+      "read_dependencies": [
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-project-kickoff/artifact-template.json",
+          "sha256": "809c64b42be1f603434873698306295e5344a7871d8a173d6665b89470f62b78"
+        },
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-project-kickoff/agents/openai.yaml",
+          "sha256": "3f62c61df6cd23f81c6f412994f40ff176b006d40b913b3c423480279eb4aff5"
+        }
+      ],
+      "allow_implicit_invocation": false,
+      "cases": [
+        {
+          "id": "project-kickoff-explicit",
+          "category": "explicit_invocation",
+          "prompt": "Use $artifact-template-project-kickoff. Create a kickoff for a help-center refresh with scope limited to 20 articles, Sam as lead, and a November 15 deadline. Budget and dependencies are unknown; preserve the template.",
+          "environment": "No prompt-advertised preinstalled presentation or slides capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "I cannot create the Project Kickoff presentation because the required preinstalled presentation capability is unavailable. I am stopping before cloning or rendering its reference slides. No deck has been produced, and the missing budget and dependencies remain unknown.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-project-kickoff/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "presentation or slides",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "project-kickoff-implicit",
+          "category": "implicit_near_miss",
+          "prompt": "Turn this into a concise project objective: refresh 20 help-center articles by November 15.",
+          "environment": "No template selected or named; generic text response requested. Capability unavailable.",
+          "response": "Refresh 20 help-center articles by November 15.",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "project-kickoff-negative",
+          "category": "negative_control",
+          "prompt": "Do not use the Project Kickoff template or create a file. Reply with only the word acknowledged.",
+          "environment": "No prompt-advertised preinstalled presentation or slides capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "acknowledged",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "project-kickoff-ambiguous",
+          "category": "ambiguous_selection",
+          "prompt": "I saw Project Kickoff in the template list. What should we do next?",
+          "environment": "No task content, artifact-creation instruction, or template selection is supplied.",
+          "response": "Would you like me to create a presentation using Project Kickoff, or explain when that template is useful?",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "project-kickoff-failure",
+          "category": "dependency_read_failure",
+          "prompt": "Use $artifact-template-project-kickoff. Create a kickoff for a help-center refresh with scope limited to 20 articles, Sam as lead, and a November 15 deadline. Budget and dependencies are unknown; preserve the template.",
+          "environment": "The prompt advertises a preinstalled presentation or slides capability at mock://capability/presentation/instructions. Reading that exact target returns access denied. This is a mocked target, not a real connector.",
+          "response": "I could not read the advertised presentation or slides capability: access denied. The Project Kickoff workflow requires readable capability instructions, so I am stopping. No reference was cloned and no artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-project-kickoff/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "read",
+              "target": "mock://capability/presentation/instructions",
+              "result": "mock: access denied"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "project-kickoff-output",
+          "category": "output_contract",
+          "prompt": "Use $artifact-template-project-kickoff to create the final presentation. Return the file link and confirm it was rendered and verified. Create a kickoff for a help-center refresh with scope limited to 20 articles, Sam as lead, and a November 15 deadline. Budget and dependencies are unknown; preserve the template.",
+          "environment": "No prompt-advertised preinstalled presentation or slides capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "I cannot return a completed Project Kickoff file or confirm rendering and verification: the required presentation or slides capability is unavailable. No artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-project-kickoff/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "presentation or slides",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        }
+      ]
+    },
+    {
+      "skill": "artifact-template-project-tracker",
+      "display_name": "Project Tracker",
+      "skill_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-project-tracker/SKILL.md",
+      "skill_sha256": "d97d5be20189b7f53dd269b6e1c5f694eaf53e5a72f6559fcb1578911b7cda82",
+      "model": "unavailable: exact serving model identifier not exposed",
+      "artifact_kind": "spreadsheet",
+      "reference_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-project-tracker/assets/reference.xlsx",
+      "reference_binary_opened": false,
+      "reference_note": "Not imported or rendered; all active template cases stop at unavailable or unreadable capability before reference use.",
+      "read_dependencies": [
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-project-tracker/artifact-template.json",
+          "sha256": "7aea630ddafb1add3869c6c046e2b8c83464771a29f7e47a59d482480d13d0be"
+        },
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-project-tracker/agents/openai.yaml",
+          "sha256": "e858f66b2cd5a17a12ce7059be560d47c429faf34c1665b716c62e67b6b10496"
+        }
+      ],
+      "allow_implicit_invocation": false,
+      "cases": [
+        {
+          "id": "project-tracker-explicit",
+          "category": "explicit_invocation",
+          "prompt": "Use $artifact-template-project-tracker. Track task A assigned to Jo due October 7 and task B assigned to Alex due October 9; both are not started. Preserve status validation and Gantt logic, and do not invent dependencies.",
+          "environment": "No prompt-advertised preinstalled spreadsheet capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "I cannot create the Project Tracker workbook because its required preinstalled spreadsheet capability is unavailable. I am stopping before importing the reference or updating its Gantt schedule. No spreadsheet has been generated or verified.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-project-tracker/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "spreadsheet",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "project-tracker-implicit",
+          "category": "implicit_near_miss",
+          "prompt": "List two tasks in plain text: Jo owns A, due October 7; Alex owns B, due October 9.",
+          "environment": "No template selected or named; generic text response requested. Capability unavailable.",
+          "response": "Task A: Jo, due October 7. Task B: Alex, due October 9.",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "project-tracker-negative",
+          "category": "negative_control",
+          "prompt": "Do not use the Project Tracker template or create a file. Reply with only the word acknowledged.",
+          "environment": "No prompt-advertised preinstalled spreadsheet capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "acknowledged",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "project-tracker-ambiguous",
+          "category": "ambiguous_selection",
+          "prompt": "I saw Project Tracker in the template list. What should we do next?",
+          "environment": "No task content, artifact-creation instruction, or template selection is supplied.",
+          "response": "Would you like me to create a spreadsheet using Project Tracker, or explain when that template is useful?",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "project-tracker-failure",
+          "category": "dependency_read_failure",
+          "prompt": "Use $artifact-template-project-tracker. Track task A assigned to Jo due October 7 and task B assigned to Alex due October 9; both are not started. Preserve status validation and Gantt logic, and do not invent dependencies.",
+          "environment": "The prompt advertises a preinstalled spreadsheet capability at mock://capability/spreadsheet/instructions. Reading that exact target returns access denied. This is a mocked target, not a real connector.",
+          "response": "I could not read the advertised spreadsheet capability: access denied. The Project Tracker workflow requires readable capability instructions, so I am stopping. No reference was cloned and no artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-project-tracker/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "read",
+              "target": "mock://capability/spreadsheet/instructions",
+              "result": "mock: access denied"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "project-tracker-output",
+          "category": "output_contract",
+          "prompt": "Use $artifact-template-project-tracker to create the final spreadsheet. Return the file link and confirm it was rendered and verified. Track task A assigned to Jo due October 7 and task B assigned to Alex due October 9; both are not started. Preserve status validation and Gantt logic, and do not invent dependencies.",
+          "environment": "No prompt-advertised preinstalled spreadsheet capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "I cannot return a completed Project Tracker file or confirm rendering and verification: the required spreadsheet capability is unavailable. No artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-project-tracker/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "spreadsheet",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        }
+      ]
+    },
+    {
+      "skill": "artifact-template-sales-pipeline",
+      "display_name": "Sales Pipeline",
+      "skill_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-sales-pipeline/SKILL.md",
+      "skill_sha256": "15cfeeedf440021f16ed3f3ad8c7c1ef6d48898b9447741e223d2fb41cfc9800",
+      "model": "unavailable: exact serving model identifier not exposed",
+      "artifact_kind": "spreadsheet",
+      "reference_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-sales-pipeline/assets/reference.xlsx",
+      "reference_binary_opened": false,
+      "reference_note": "Not imported or rendered; all active template cases stop at unavailable or unreadable capability before reference use.",
+      "read_dependencies": [
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-sales-pipeline/artifact-template.json",
+          "sha256": "7aea630ddafb1add3869c6c046e2b8c83464771a29f7e47a59d482480d13d0be"
+        },
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-sales-pipeline/agents/openai.yaml",
+          "sha256": "ea4d9150379ec34447137c436a7459c5f8863e7532a6a87ef1d0871412ee4410"
+        }
+      ],
+      "allow_implicit_invocation": false,
+      "cases": [
+        {
+          "id": "sales-pipeline-explicit",
+          "category": "explicit_invocation",
+          "prompt": "Use $artifact-template-sales-pipeline. Use opportunity Acme worth $50,000 at 40% probability, owner Riley, and opportunity Beta worth $20,000 with probability unknown. Preserve forecast formulas and do not invent close dates.",
+          "environment": "No prompt-advertised preinstalled spreadsheet capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "I cannot create the Sales Pipeline workbook because no readable preinstalled spreadsheet capability is available. I am stopping before importing the reference or calculating its forecast. No workbook has been created, and the missing probability and close dates remain unspecified.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-sales-pipeline/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "spreadsheet",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "sales-pipeline-implicit",
+          "category": "implicit_near_miss",
+          "prompt": "Calculate the probability-weighted value of a $50,000 opportunity at 40%.",
+          "environment": "No template selected or named; generic text response requested. Capability unavailable.",
+          "response": "The probability-weighted value is $20,000.",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "sales-pipeline-negative",
+          "category": "negative_control",
+          "prompt": "Do not use the Sales Pipeline template or create a file. Reply with only the word acknowledged.",
+          "environment": "No prompt-advertised preinstalled spreadsheet capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "acknowledged",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "sales-pipeline-ambiguous",
+          "category": "ambiguous_selection",
+          "prompt": "I saw Sales Pipeline in the template list. What should we do next?",
+          "environment": "No task content, artifact-creation instruction, or template selection is supplied.",
+          "response": "Would you like me to create a spreadsheet using Sales Pipeline, or explain when that template is useful?",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "sales-pipeline-failure",
+          "category": "dependency_read_failure",
+          "prompt": "Use $artifact-template-sales-pipeline. Use opportunity Acme worth $50,000 at 40% probability, owner Riley, and opportunity Beta worth $20,000 with probability unknown. Preserve forecast formulas and do not invent close dates.",
+          "environment": "The prompt advertises a preinstalled spreadsheet capability at mock://capability/spreadsheet/instructions. Reading that exact target returns access denied. This is a mocked target, not a real connector.",
+          "response": "I could not read the advertised spreadsheet capability: access denied. The Sales Pipeline workflow requires readable capability instructions, so I am stopping. No reference was cloned and no artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-sales-pipeline/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "read",
+              "target": "mock://capability/spreadsheet/instructions",
+              "result": "mock: access denied"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "sales-pipeline-output",
+          "category": "output_contract",
+          "prompt": "Use $artifact-template-sales-pipeline to create the final spreadsheet. Return the file link and confirm it was rendered and verified. Use opportunity Acme worth $50,000 at 40% probability, owner Riley, and opportunity Beta worth $20,000 with probability unknown. Preserve forecast formulas and do not invent close dates.",
+          "environment": "No prompt-advertised preinstalled spreadsheet capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "I cannot return a completed Sales Pipeline file or confirm rendering and verification: the required spreadsheet capability is unavailable. No artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-sales-pipeline/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "spreadsheet",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        }
+      ]
+    },
+    {
+      "skill": "artifact-template-simple-dark-mode",
+      "display_name": "Simple Dark Mode",
+      "skill_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-simple-dark-mode/SKILL.md",
+      "skill_sha256": "b7c8d0c05f75878b9bc21e56a57c41ec1aa29700aca0a24822be0f9f1bd53207",
+      "model": "unavailable: exact serving model identifier not exposed",
+      "artifact_kind": "presentation",
+      "reference_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-simple-dark-mode/assets/reference.pptx",
+      "reference_binary_opened": false,
+      "reference_note": "Not imported or rendered; all active template cases stop at unavailable or unreadable capability before reference use.",
+      "read_dependencies": [
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-simple-dark-mode/artifact-template.json",
+          "sha256": "809c64b42be1f603434873698306295e5344a7871d8a173d6665b89470f62b78"
+        },
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-simple-dark-mode/agents/openai.yaml",
+          "sha256": "a5c3103290b5e28efec73cf5ad7af7c5a9212ff422256e2e831f11b456e995b9"
+        }
+      ],
+      "allow_implicit_invocation": false,
+      "cases": [
+        {
+          "id": "simple-dark-mode-explicit",
+          "category": "explicit_invocation",
+          "prompt": "Use $artifact-template-simple-dark-mode. Make a three-slide fictional product update: shipped search, next priority accessibility, and no new metrics supplied. Keep the dark visual system and do not invent charts.",
+          "environment": "No prompt-advertised preinstalled presentation or slides capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "I cannot create the Simple Dark Mode presentation because the required preinstalled presentation capability is unavailable. I am stopping before importing or rendering its retained slides. No deck or invented metrics have been produced.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-simple-dark-mode/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "presentation or slides",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "simple-dark-mode-implicit",
+          "category": "implicit_near_miss",
+          "prompt": "Give a plain-text outline for a product update covering shipped search and upcoming accessibility work.",
+          "environment": "No template selected or named; generic text response requested. Capability unavailable.",
+          "response": "1. Shipped: search.\n2. Next priority: accessibility.\n3. Open decisions and next steps.",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "simple-dark-mode-negative",
+          "category": "negative_control",
+          "prompt": "Do not use the Simple Dark Mode template or create a file. Reply with only the word acknowledged.",
+          "environment": "No prompt-advertised preinstalled presentation or slides capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "acknowledged",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "simple-dark-mode-ambiguous",
+          "category": "ambiguous_selection",
+          "prompt": "I saw Simple Dark Mode in the template list. What should we do next?",
+          "environment": "No task content, artifact-creation instruction, or template selection is supplied.",
+          "response": "Would you like me to create a presentation using Simple Dark Mode, or explain when that template is useful?",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "simple-dark-mode-failure",
+          "category": "dependency_read_failure",
+          "prompt": "Use $artifact-template-simple-dark-mode. Make a three-slide fictional product update: shipped search, next priority accessibility, and no new metrics supplied. Keep the dark visual system and do not invent charts.",
+          "environment": "The prompt advertises a preinstalled presentation or slides capability at mock://capability/presentation/instructions. Reading that exact target returns access denied. This is a mocked target, not a real connector.",
+          "response": "I could not read the advertised presentation or slides capability: access denied. The Simple Dark Mode workflow requires readable capability instructions, so I am stopping. No reference was cloned and no artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-simple-dark-mode/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "read",
+              "target": "mock://capability/presentation/instructions",
+              "result": "mock: access denied"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "simple-dark-mode-output",
+          "category": "output_contract",
+          "prompt": "Use $artifact-template-simple-dark-mode to create the final presentation. Return the file link and confirm it was rendered and verified. Make a three-slide fictional product update: shipped search, next priority accessibility, and no new metrics supplied. Keep the dark visual system and do not invent charts.",
+          "environment": "No prompt-advertised preinstalled presentation or slides capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "I cannot return a completed Simple Dark Mode file or confirm rendering and verification: the required presentation or slides capability is unavailable. No artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-simple-dark-mode/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "presentation or slides",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        }
+      ]
+    },
+    {
+      "skill": "artifact-template-simple-light-mode",
+      "display_name": "Simple Light Mode",
+      "skill_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-simple-light-mode/SKILL.md",
+      "skill_sha256": "7c68430c6cf57b55b457d4735dbd1a46b889bef135a32222902dd0848b6e1752",
+      "model": "unavailable: exact serving model identifier not exposed",
+      "artifact_kind": "presentation",
+      "reference_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-simple-light-mode/assets/reference.pptx",
+      "reference_binary_opened": false,
+      "reference_note": "Not imported or rendered; all active template cases stop at unavailable or unreadable capability before reference use.",
+      "read_dependencies": [
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-simple-light-mode/artifact-template.json",
+          "sha256": "809c64b42be1f603434873698306295e5344a7871d8a173d6665b89470f62b78"
+        },
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-simple-light-mode/agents/openai.yaml",
+          "sha256": "82d2ce0edb52134049718151db345ad1748a358ae1d20c2efe9e274404a1d029"
+        }
+      ],
+      "allow_implicit_invocation": false,
+      "cases": [
+        {
+          "id": "simple-light-mode-explicit",
+          "category": "explicit_invocation",
+          "prompt": "Use $artifact-template-simple-light-mode. Make a three-slide project update: completed discovery, design underway, testing next. Retain the light visual system; no dates or progress percentages are provided.",
+          "environment": "No prompt-advertised preinstalled presentation or slides capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "I cannot create the Simple Light Mode presentation because its required preinstalled presentation capability is unavailable. I am stopping before importing the reference, so no slides have been created, rendered, or verified. Missing dates and percentages remain unspecified.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-simple-light-mode/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "presentation or slides",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "simple-light-mode-implicit",
+          "category": "implicit_near_miss",
+          "prompt": "Summarize this project status in plain text: discovery complete, design underway, testing next.",
+          "environment": "No template selected or named; generic text response requested. Capability unavailable.",
+          "response": "Discovery is complete, design is underway, and testing is next.",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "simple-light-mode-negative",
+          "category": "negative_control",
+          "prompt": "Do not use the Simple Light Mode template or create a file. Reply with only the word acknowledged.",
+          "environment": "No prompt-advertised preinstalled presentation or slides capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "acknowledged",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "simple-light-mode-ambiguous",
+          "category": "ambiguous_selection",
+          "prompt": "I saw Simple Light Mode in the template list. What should we do next?",
+          "environment": "No task content, artifact-creation instruction, or template selection is supplied.",
+          "response": "Would you like me to create a presentation using Simple Light Mode, or explain when that template is useful?",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "simple-light-mode-failure",
+          "category": "dependency_read_failure",
+          "prompt": "Use $artifact-template-simple-light-mode. Make a three-slide project update: completed discovery, design underway, testing next. Retain the light visual system; no dates or progress percentages are provided.",
+          "environment": "The prompt advertises a preinstalled presentation or slides capability at mock://capability/presentation/instructions. Reading that exact target returns access denied. This is a mocked target, not a real connector.",
+          "response": "I could not read the advertised presentation or slides capability: access denied. The Simple Light Mode workflow requires readable capability instructions, so I am stopping. No reference was cloned and no artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-simple-light-mode/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "read",
+              "target": "mock://capability/presentation/instructions",
+              "result": "mock: access denied"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "simple-light-mode-output",
+          "category": "output_contract",
+          "prompt": "Use $artifact-template-simple-light-mode to create the final presentation. Return the file link and confirm it was rendered and verified. Make a three-slide project update: completed discovery, design underway, testing next. Retain the light visual system; no dates or progress percentages are provided.",
+          "environment": "No prompt-advertised preinstalled presentation or slides capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "I cannot return a completed Simple Light Mode file or confirm rendering and verification: the required presentation or slides capability is unavailable. No artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-simple-light-mode/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "presentation or slides",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        }
+      ]
+    },
+    {
+      "skill": "artifact-template-strategy-memorandum",
+      "display_name": "Strategy Memorandum",
+      "skill_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-strategy-memorandum/SKILL.md",
+      "skill_sha256": "51d7882ac94e8e57b323394825728c33925af878806e37277217c2dc12a912e5",
+      "model": "unavailable: exact serving model identifier not exposed",
+      "artifact_kind": "document",
+      "reference_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-strategy-memorandum/assets/reference.docx",
+      "reference_binary_opened": false,
+      "reference_note": "Not imported or rendered; all active template cases stop at unavailable or unreadable capability before reference use.",
+      "read_dependencies": [
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-strategy-memorandum/artifact-template.json",
+          "sha256": "54586c722449d873eb16ed211e8591a179f31da5e245dcc82800df649380b127"
+        },
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-strategy-memorandum/agents/openai.yaml",
+          "sha256": "1a277cd3a6fd6be41fee1546183f5ea1119ea7c661e1cf156c6cce9b55c65bd3"
+        }
+      ],
+      "allow_implicit_invocation": false,
+      "cases": [
+        {
+          "id": "strategy-memorandum-explicit",
+          "category": "explicit_invocation",
+          "prompt": "Use $artifact-template-strategy-memorandum. Compare a fictional six-week pilot with an immediate broad rollout, with a $20,000 pilot cap and no rollout estimate. Recommend the pilot as requested, labeling missing costs and milestones.",
+          "environment": "No prompt-advertised preinstalled document capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "I cannot create the Strategy Memorandum document because the required preinstalled document capability is unavailable. I am stopping before cloning or rendering the retained reference. No memo has been produced or verified, and no missing rollout estimates have been invented.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-strategy-memorandum/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "document",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "strategy-memorandum-implicit",
+          "category": "implicit_near_miss",
+          "prompt": "Rewrite this sentence concisely: We recommend conducting a pilot before rolling out broadly.",
+          "environment": "No template selected or named; generic text response requested. Capability unavailable.",
+          "response": "We recommend a pilot before a broad rollout.",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "strategy-memorandum-negative",
+          "category": "negative_control",
+          "prompt": "Do not use the Strategy Memorandum template or create a file. Reply with only the word acknowledged.",
+          "environment": "No prompt-advertised preinstalled document capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "acknowledged",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "strategy-memorandum-ambiguous",
+          "category": "ambiguous_selection",
+          "prompt": "I saw Strategy Memorandum in the template list. What should we do next?",
+          "environment": "No task content, artifact-creation instruction, or template selection is supplied.",
+          "response": "Would you like me to create a document using Strategy Memorandum, or explain when that template is useful?",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "strategy-memorandum-failure",
+          "category": "dependency_read_failure",
+          "prompt": "Use $artifact-template-strategy-memorandum. Compare a fictional six-week pilot with an immediate broad rollout, with a $20,000 pilot cap and no rollout estimate. Recommend the pilot as requested, labeling missing costs and milestones.",
+          "environment": "The prompt advertises a preinstalled document capability at mock://capability/document/instructions. Reading that exact target returns access denied. This is a mocked target, not a real connector.",
+          "response": "I could not read the advertised document capability: access denied. The Strategy Memorandum workflow requires readable capability instructions, so I am stopping. No reference was cloned and no artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-strategy-memorandum/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "read",
+              "target": "mock://capability/document/instructions",
+              "result": "mock: access denied"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "strategy-memorandum-output",
+          "category": "output_contract",
+          "prompt": "Use $artifact-template-strategy-memorandum to create the final document. Return the file link and confirm it was rendered and verified. Compare a fictional six-week pilot with an immediate broad rollout, with a $20,000 pilot cap and no rollout estimate. Recommend the pilot as requested, labeling missing costs and milestones.",
+          "environment": "No prompt-advertised preinstalled document capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "I cannot return a completed Strategy Memorandum file or confirm rendering and verification: the required document capability is unavailable. No artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-strategy-memorandum/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "document",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        }
+      ]
+    },
+    {
+      "skill": "artifact-template-system-design",
+      "display_name": "System Design",
+      "skill_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-system-design/SKILL.md",
+      "skill_sha256": "87f7b7ed1b0d8410f5e5971cd7f7db9a4165e2f37069e97e52dbfb469b75a57c",
+      "model": "unavailable: exact serving model identifier not exposed",
+      "artifact_kind": "document",
+      "reference_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-system-design/assets/reference.docx",
+      "reference_binary_opened": false,
+      "reference_note": "Not imported or rendered; all active template cases stop at unavailable or unreadable capability before reference use.",
+      "read_dependencies": [
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-system-design/artifact-template.json",
+          "sha256": "54586c722449d873eb16ed211e8591a179f31da5e245dcc82800df649380b127"
+        },
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-system-design/agents/openai.yaml",
+          "sha256": "fe728562ab2857373f460a25b5954ef532034ab21e10c38b36c739bc5c5ffd77"
+        }
+      ],
+      "allow_implicit_invocation": false,
+      "cases": [
+        {
+          "id": "system-design-explicit",
+          "category": "explicit_invocation",
+          "prompt": "Use $artifact-template-system-design. Document a fictional queue-based image-processing service with upload, worker, and result store components. Traffic, cloud provider, and API routes are unspecified; leave those as open decisions.",
+          "environment": "No prompt-advertised preinstalled document capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "I cannot create the System Design document because the required preinstalled document capability is unavailable. I am stopping before importing or rendering the reference. No architecture artifact has been generated, and the unspecified traffic, provider, and routes remain open.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-system-design/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "document",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "system-design-implicit",
+          "category": "implicit_near_miss",
+          "prompt": "Explain in one sentence why a worker might read jobs from a queue.",
+          "environment": "No template selected or named; generic text response requested. Capability unavailable.",
+          "response": "A worker reads jobs from a queue so it can process them asynchronously as capacity becomes available.",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "system-design-negative",
+          "category": "negative_control",
+          "prompt": "Do not use the System Design template or create a file. Reply with only the word acknowledged.",
+          "environment": "No prompt-advertised preinstalled document capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "acknowledged",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "system-design-ambiguous",
+          "category": "ambiguous_selection",
+          "prompt": "I saw System Design in the template list. What should we do next?",
+          "environment": "No task content, artifact-creation instruction, or template selection is supplied.",
+          "response": "Would you like me to create a document using System Design, or explain when that template is useful?",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "system-design-failure",
+          "category": "dependency_read_failure",
+          "prompt": "Use $artifact-template-system-design. Document a fictional queue-based image-processing service with upload, worker, and result store components. Traffic, cloud provider, and API routes are unspecified; leave those as open decisions.",
+          "environment": "The prompt advertises a preinstalled document capability at mock://capability/document/instructions. Reading that exact target returns access denied. This is a mocked target, not a real connector.",
+          "response": "I could not read the advertised document capability: access denied. The System Design workflow requires readable capability instructions, so I am stopping. No reference was cloned and no artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-system-design/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "read",
+              "target": "mock://capability/document/instructions",
+              "result": "mock: access denied"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "system-design-output",
+          "category": "output_contract",
+          "prompt": "Use $artifact-template-system-design to create the final document. Return the file link and confirm it was rendered and verified. Document a fictional queue-based image-processing service with upload, worker, and result store components. Traffic, cloud provider, and API routes are unspecified; leave those as open decisions.",
+          "environment": "No prompt-advertised preinstalled document capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "I cannot return a completed System Design file or confirm rendering and verification: the required document capability is unavailable. No artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-system-design/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "document",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        }
+      ]
+    },
+    {
+      "skill": "artifact-template-team-alignment",
+      "display_name": "Team Alignment",
+      "skill_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-team-alignment/SKILL.md",
+      "skill_sha256": "26d7cafdcd1899a937b325c5d02ac57c162d45002153be33a934d35f81eb6110",
+      "model": "unavailable: exact serving model identifier not exposed",
+      "artifact_kind": "presentation",
+      "reference_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-team-alignment/assets/reference.pptx",
+      "reference_binary_opened": false,
+      "reference_note": "Not imported or rendered; all active template cases stop at unavailable or unreadable capability before reference use.",
+      "read_dependencies": [
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-team-alignment/artifact-template.json",
+          "sha256": "809c64b42be1f603434873698306295e5344a7871d8a173d6665b89470f62b78"
+        },
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-team-alignment/agents/openai.yaml",
+          "sha256": "dea3d32230b1e7e62d3f4844d3b1ddceb5f2855cd5fbe31e0849e51e1aa11c1d"
+        }
+      ],
+      "allow_implicit_invocation": false,
+      "cases": [
+        {
+          "id": "team-alignment-explicit",
+          "category": "explicit_invocation",
+          "prompt": "Use $artifact-template-team-alignment. Prepare an offsite for five people focused on reducing support response times; no baseline or target is supplied. Include a decision log and unassigned actions without fabricating owners.",
+          "environment": "No prompt-advertised preinstalled presentation or slides capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "I cannot create the Team Alignment presentation because the required preinstalled presentation capability is unavailable. I am stopping before importing or rendering the retained slide deck. No presentation has been produced, and no target, baseline, or action owners have been invented.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-team-alignment/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "presentation or slides",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "team-alignment-implicit",
+          "category": "implicit_near_miss",
+          "prompt": "Suggest one discussion question for a team trying to reduce support response time.",
+          "environment": "No template selected or named; generic text response requested. Capability unavailable.",
+          "response": "Which step in our support process causes the longest delay, and what evidence do we have?",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "team-alignment-negative",
+          "category": "negative_control",
+          "prompt": "Do not use the Team Alignment template or create a file. Reply with only the word acknowledged.",
+          "environment": "No prompt-advertised preinstalled presentation or slides capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "acknowledged",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "team-alignment-ambiguous",
+          "category": "ambiguous_selection",
+          "prompt": "I saw Team Alignment in the template list. What should we do next?",
+          "environment": "No task content, artifact-creation instruction, or template selection is supplied.",
+          "response": "Would you like me to create a presentation using Team Alignment, or explain when that template is useful?",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "team-alignment-failure",
+          "category": "dependency_read_failure",
+          "prompt": "Use $artifact-template-team-alignment. Prepare an offsite for five people focused on reducing support response times; no baseline or target is supplied. Include a decision log and unassigned actions without fabricating owners.",
+          "environment": "The prompt advertises a preinstalled presentation or slides capability at mock://capability/presentation/instructions. Reading that exact target returns access denied. This is a mocked target, not a real connector.",
+          "response": "I could not read the advertised presentation or slides capability: access denied. The Team Alignment workflow requires readable capability instructions, so I am stopping. No reference was cloned and no artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-team-alignment/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "read",
+              "target": "mock://capability/presentation/instructions",
+              "result": "mock: access denied"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "team-alignment-output",
+          "category": "output_contract",
+          "prompt": "Use $artifact-template-team-alignment to create the final presentation. Return the file link and confirm it was rendered and verified. Prepare an offsite for five people focused on reducing support response times; no baseline or target is supplied. Include a decision log and unassigned actions without fabricating owners.",
+          "environment": "No prompt-advertised preinstalled presentation or slides capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "I cannot return a completed Team Alignment file or confirm rendering and verification: the required presentation or slides capability is unavailable. No artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-team-alignment/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "presentation or slides",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        }
+      ]
+    },
+    {
+      "skill": "artifact-template-three-statement-forecast",
+      "display_name": "Three-Statement Forecast",
+      "skill_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-three-statement-forecast/SKILL.md",
+      "skill_sha256": "74f4a5cccec0107b861548b157e04c51d9b58ec13a990c86394b4c529b8ecf41",
+      "model": "unavailable: exact serving model identifier not exposed",
+      "artifact_kind": "spreadsheet",
+      "reference_path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-three-statement-forecast/assets/reference.xlsx",
+      "reference_binary_opened": false,
+      "reference_note": "Not imported or rendered; all active template cases stop at unavailable or unreadable capability before reference use.",
+      "read_dependencies": [
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-three-statement-forecast/artifact-template.json",
+          "sha256": "7aea630ddafb1add3869c6c046e2b8c83464771a29f7e47a59d482480d13d0be"
+        },
+        {
+          "path": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-three-statement-forecast/agents/openai.yaml",
+          "sha256": "240d75e1e7b2f33a16a10538e125342ee6c701637e12c0fbe0d8aad5919b48eb"
+        }
+      ],
+      "allow_implicit_invocation": false,
+      "cases": [
+        {
+          "id": "three-statement-forecast-explicit",
+          "category": "explicit_invocation",
+          "prompt": "Use $artifact-template-three-statement-forecast. Use fictional opening cash $100,000, no debt, paid-in capital $100,000, and projected cash sales $10,000 per month. Costs and working-capital assumptions are unknown; keep statements integrated and flag incomplete inputs.",
+          "environment": "No prompt-advertised preinstalled spreadsheet capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "I cannot create the Three-Statement Forecast workbook because its required preinstalled spreadsheet capability is unavailable. I am stopping before importing the reference or calculating the linked statements. No forecast has been produced or verified, and the missing costs and working-capital assumptions remain unknown.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-three-statement-forecast/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "spreadsheet",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "three-statement-forecast-implicit",
+          "category": "implicit_near_miss",
+          "prompt": "What are the three financial statements called? Answer only their names.",
+          "environment": "No template selected or named; generic text response requested. Capability unavailable.",
+          "response": "Income statement, balance sheet, and cash flow statement.",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "three-statement-forecast-negative",
+          "category": "negative_control",
+          "prompt": "Do not use the Three-Statement Forecast template or create a file. Reply with only the word acknowledged.",
+          "environment": "No prompt-advertised preinstalled spreadsheet capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "acknowledged",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "three-statement-forecast-ambiguous",
+          "category": "ambiguous_selection",
+          "prompt": "I saw Three-Statement Forecast in the template list. What should we do next?",
+          "environment": "No task content, artifact-creation instruction, or template selection is supplied.",
+          "response": "Would you like me to create a spreadsheet using Three-Statement Forecast, or explain when that template is useful?",
+          "requested_mocked_actions": [],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "three-statement-forecast-failure",
+          "category": "dependency_read_failure",
+          "prompt": "Use $artifact-template-three-statement-forecast. Use fictional opening cash $100,000, no debt, paid-in capital $100,000, and projected cash sales $10,000 per month. Costs and working-capital assumptions are unknown; keep statements integrated and flag incomplete inputs.",
+          "environment": "The prompt advertises a preinstalled spreadsheet capability at mock://capability/spreadsheet/instructions. Reading that exact target returns access denied. This is a mocked target, not a real connector.",
+          "response": "I could not read the advertised spreadsheet capability: access denied. The Three-Statement Forecast workflow requires readable capability instructions, so I am stopping. No reference was cloned and no artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-three-statement-forecast/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "read",
+              "target": "mock://capability/spreadsheet/instructions",
+              "result": "mock: access denied"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        },
+        {
+          "id": "three-statement-forecast-output",
+          "category": "output_contract",
+          "prompt": "Use $artifact-template-three-statement-forecast to create the final spreadsheet. Return the file link and confirm it was rendered and verified. Use fictional opening cash $100,000, no debt, paid-in capital $100,000, and projected cash sales $10,000 per month. Costs and working-capital assumptions are unknown; keep statements integrated and flag incomplete inputs.",
+          "environment": "No prompt-advertised preinstalled spreadsheet capability or readable capability target is available. Local template metadata is readable. Sources consist only of the synthetic user prompt.",
+          "response": "I cannot return a completed Three-Statement Forecast file or confirm rendering and verification: the required spreadsheet capability is unavailable. No artifact was created.",
+          "requested_mocked_actions": [
+            {
+              "operation": "read",
+              "target": "/home/aaron/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-three-statement-forecast/artifact-template.json",
+              "result": "mock: success; metadata supplied from audited file"
+            },
+            {
+              "operation": "inspect_prompt_advertised_capabilities",
+              "target": "spreadsheet",
+              "result": "mock: none identified; stop"
+            }
+          ],
+          "simulation": true,
+          "actions_executed": false,
+          "artifact_produced": false
+        }
+      ]
+    }
+  ]
+}

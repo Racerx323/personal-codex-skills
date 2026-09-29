@@ -1,0 +1,67 @@
+{
+  "installed_source_equality": [
+    {
+      "skill": "clear-writing",
+      "all_files_match": true
+    },
+    {
+      "skill": "likec4-dsl",
+      "all_files_match": true
+    },
+    {
+      "skill": "playwright-cli",
+      "all_files_match": true
+    }
+  ],
+  "literal_markdown_link_candidates": [
+    {
+      "skill": "$HOME/.agents/skills/playwright-cli/SKILL.md",
+      "links": [
+        {
+          "file": "references/commands.md",
+          "target": ".playwright-cli/page-2026-02-14T19-22-42-679Z.yml"
+        }
+      ]
+    },
+    {
+      "skill": "$HOME/.codex/skills/.system/skill-creator/SKILL.md",
+      "links": [
+        {
+          "file": "SKILL.md",
+          "target": "references/redlining.md"
+        },
+        {
+          "file": "SKILL.md",
+          "target": "references/ooxml.md"
+        }
+      ]
+    },
+    {
+      "skill": "$HOME/.codex/plugins/cache/openai-curated-remote/pages/0.1.18/skills/write-page/SKILL.md",
+      "links": [
+        {
+          "file": "references/page-content.md",
+          "target": "project-file:<id>"
+        },
+        {
+          "file": "references/page-content.md",
+          "target": "project-file:<id>"
+        },
+        {
+          "file": "references/page-content.md",
+          "target": "visualize:<file-id>"
+        }
+      ]
+    },
+    {
+      "skill": "$HOME/code/personal-codex-skills/skills/playwright-cli/SKILL.md",
+      "links": [
+        {
+          "file": "references/commands.md",
+          "target": ".playwright-cli/page-2026-02-14T19-22-42-679Z.yml"
+        }
+      ]
+    }
+  ],
+  "note": "Link candidates require semantic review; placeholders, code examples and cross-plugin virtual paths may be intentional."
+}

@@ -1,0 +1,146 @@
+{
+  "cli_version": "codex-cli 0.159.1",
+  "isolation": "Disposable CODEX_HOME with copied skill bundle only; no configuration, authentication, plugin installation state or model execution",
+  "initialize_error": null,
+  "result": {
+    "id": 2,
+    "result": {
+      "data": [
+        {
+          "cwd": "$DISPOSABLE/repo",
+          "skills": [
+            {
+              "name": "plugin-creator",
+              "path": "$DISPOSABLE/repo/.agents/skills/plugin-creator/SKILL.md",
+              "scope": "repo",
+              "enabled": true
+            },
+            {
+              "name": "clear-writing",
+              "path": "$HOME/.agents/skills/clear-writing/SKILL.md",
+              "scope": "user",
+              "enabled": true
+            },
+            {
+              "name": "likec4-dsl",
+              "path": "$HOME/.agents/skills/likec4-dsl/SKILL.md",
+              "scope": "user",
+              "enabled": true
+            },
+            {
+              "name": "playwright-cli",
+              "path": "$HOME/.agents/skills/playwright-cli/SKILL.md",
+              "scope": "user",
+              "enabled": true
+            },
+            {
+              "name": "imagegen",
+              "path": "$DISPOSABLE/codex/skills/.system/imagegen/SKILL.md",
+              "scope": "system",
+              "enabled": true
+            },
+            {
+              "name": "openai-docs",
+              "path": "$DISPOSABLE/codex/skills/.system/openai-docs/SKILL.md",
+              "scope": "system",
+              "enabled": true
+            },
+            {
+              "name": "review-agent",
+              "path": "$DISPOSABLE/codex/skills/.system/review-agent/SKILL.md",
+              "scope": "system",
+              "enabled": true
+            },
+            {
+              "name": "skill-creator",
+              "path": "$DISPOSABLE/codex/skills/.system/skill-creator/SKILL.md",
+              "scope": "system",
+              "enabled": true
+            },
+            {
+              "name": "skill-installer",
+              "path": "$DISPOSABLE/codex/skills/.system/skill-installer/SKILL.md",
+              "scope": "system",
+              "enabled": true
+            }
+          ],
+          "errors": []
+        },
+        {
+          "cwd": "$HOME/code",
+          "skills": [
+            {
+              "name": "clear-writing",
+              "path": "$HOME/.agents/skills/clear-writing/SKILL.md",
+              "scope": "user",
+              "enabled": true
+            },
+            {
+              "name": "likec4-dsl",
+              "path": "$HOME/.agents/skills/likec4-dsl/SKILL.md",
+              "scope": "user",
+              "enabled": true
+            },
+            {
+              "name": "playwright-cli",
+              "path": "$HOME/.agents/skills/playwright-cli/SKILL.md",
+              "scope": "user",
+              "enabled": true
+            },
+            {
+              "name": "imagegen",
+              "path": "$DISPOSABLE/codex/skills/.system/imagegen/SKILL.md",
+              "scope": "system",
+              "enabled": true
+            },
+            {
+              "name": "openai-docs",
+              "path": "$DISPOSABLE/codex/skills/.system/openai-docs/SKILL.md",
+              "scope": "system",
+              "enabled": true
+            },
+            {
+              "name": "review-agent",
+              "path": "$DISPOSABLE/codex/skills/.system/review-agent/SKILL.md",
+              "scope": "system",
+              "enabled": true
+            },
+            {
+              "name": "skill-creator",
+              "path": "$DISPOSABLE/codex/skills/.system/skill-creator/SKILL.md",
+              "scope": "system",
+              "enabled": true
+            },
+            {
+              "name": "skill-installer",
+              "path": "$DISPOSABLE/codex/skills/.system/skill-installer/SKILL.md",
+              "scope": "system",
+              "enabled": true
+            }
+          ],
+          "errors": []
+        }
+      ]
+    }
+  },
+  "system_changes": {
+    "removed": [
+      ".system/plugin-creator/SKILL.md",
+      ".system/plugin-creator/agents/openai.yaml",
+      ".system/plugin-creator/assets/plugin-creator-small.svg",
+      ".system/plugin-creator/assets/plugin-creator.png",
+      ".system/plugin-creator/references/installing-and-updating.md",
+      ".system/plugin-creator/references/plugin-json-spec.md",
+      ".system/plugin-creator/scripts/create_basic_plugin.py",
+      ".system/plugin-creator/scripts/identifier_validation.py",
+      ".system/plugin-creator/scripts/read_marketplace_name.py",
+      ".system/plugin-creator/scripts/update_plugin_cachebuster.py",
+      ".system/plugin-creator/scripts/validate_plugin.py"
+    ],
+    "added": [],
+    "modified": [
+      ".system/.codex-system-skills.marker"
+    ]
+  },
+  "active_system_unchanged": true
+}

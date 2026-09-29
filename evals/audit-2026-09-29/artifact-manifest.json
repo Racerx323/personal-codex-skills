@@ -1,0 +1,146 @@
+{
+  "algorithm": "sha256",
+  "self_excluded": true,
+  "files": [
+    {
+      "path": "evals/audit-2026-09-29/architecture.json",
+      "sha256": "2e1e286546eefeb800cb12796ed583e9c2a223d7b432c55f5494d730a4270ae0"
+    },
+    {
+      "path": "evals/audit-2026-09-29/blind-retests.json",
+      "sha256": "82e58fa6472bb775646d462897985a8861c7ec0f432fe74e426c5d36d0ab7c27"
+    },
+    {
+      "path": "evals/audit-2026-09-29/browser-runtime.json",
+      "sha256": "047767d83db8917e574b2d766357baa446570fbc89ff22169a29e580f0d33b8a"
+    },
+    {
+      "path": "evals/audit-2026-09-29/coverage-matrix.json",
+      "sha256": "83916d9c22e646a30fb383ac18e65a811986aecf2fdb06ab3db71e5e7d5fd513"
+    },
+    {
+      "path": "evals/audit-2026-09-29/coverage-matrix.md",
+      "sha256": "76d84ff445f3b4c99e1121287f885c53990048bb751f982f582576ac61d2150f"
+    },
+    {
+      "path": "evals/audit-2026-09-29/findings.json",
+      "sha256": "94fdf32829d7ff06ef1569c60ad06190a9e4141f6d2dfe4b52f9ec2d6b38dd23"
+    },
+    {
+      "path": "evals/audit-2026-09-29/grade_results.py",
+      "sha256": "226b259c95d79ac903545786034386df8de4692e266b6ec3d305cf09dbc3caf6"
+    },
+    {
+      "path": "evals/audit-2026-09-29/grades.json",
+      "sha256": "6f7a2abe782920127cbc30353415964c7bc3e364c8c0e8ce351a76690879551c"
+    },
+    {
+      "path": "evals/audit-2026-09-29/grading-criteria.json",
+      "sha256": "f5fb2940844db14246a6b77cd124f2604233960a37d84e067514b8ef4296c624"
+    },
+    {
+      "path": "evals/audit-2026-09-29/helper-review.json",
+      "sha256": "48cd7bbff68ff44bc4580f744f57ac32c4410b1ee5b90750cc6376cc1ff4ea3d"
+    },
+    {
+      "path": "evals/audit-2026-09-29/installer-fixture.json",
+      "sha256": "f23993faf1c3fcee7a5f4c5fce2650f57f1278c15d8dfb9814d954c0cdd1d0ab"
+    },
+    {
+      "path": "evals/audit-2026-09-29/installer_fixture.py",
+      "sha256": "a1d6abe99f1fba0697ccb5adac770c67a023c992ed449f754b960af36fd89313"
+    },
+    {
+      "path": "evals/audit-2026-09-29/inventory/README.md",
+      "sha256": "043cdc93db7c42c48bfefc628c77b7d02ae845569efeb433c280356435efef21"
+    },
+    {
+      "path": "evals/audit-2026-09-29/inventory/collect_inventory.py",
+      "sha256": "3d4cb43583b2af8eec224ff9f521eb8af304d4932c9c3432009835618595e6e7"
+    },
+    {
+      "path": "evals/audit-2026-09-29/inventory/config-selection.json",
+      "sha256": "7ec5b76ea270335a1038c9ff42614e35419bcad10322d52e4bbf2b8a3e2ae211"
+    },
+    {
+      "path": "evals/audit-2026-09-29/inventory/isolated-cli-discovery.json",
+      "sha256": "33936818df2a73431ade8fb7c613811b0a8b47a3f62584bedd3e5a727787f9f0"
+    },
+    {
+      "path": "evals/audit-2026-09-29/inventory/plugins.json",
+      "sha256": "d2a70187c7cfa02034493e0595897d9d6e3fe025f861e6e9e839ff4648873e43"
+    },
+    {
+      "path": "evals/audit-2026-09-29/inventory/reproduce_discovery.py",
+      "sha256": "863df520cf255f15b6c1188a90aeb1582ff19fee71ef253c5e0f133e8aab5a6c"
+    },
+    {
+      "path": "evals/audit-2026-09-29/inventory/skills-filesystem.json",
+      "sha256": "14a6eb97f2345b1e82fb4d56349c515d04ac10e4cec4a778c80eb8879476072a"
+    },
+    {
+      "path": "evals/audit-2026-09-29/inventory/static-inventory-checks.json",
+      "sha256": "796777afc2e8d3734186f940172c01af85693a69be978444220ddc731c1aa003"
+    },
+    {
+      "path": "evals/audit-2026-09-29/likec4-runtime.json",
+      "sha256": "32a1aa4d9434f4a761a9a70e01f4079e074889caa1d98529d501ff29cdfecec4"
+    },
+    {
+      "path": "evals/audit-2026-09-29/likec4-semantics.json",
+      "sha256": "a9deab41e28492007d62ccd94a7113272bb94e40f244196a069d85739302d6e2"
+    },
+    {
+      "path": "evals/audit-2026-09-29/metadata-validation.json",
+      "sha256": "15817e53d158efbb5b8d9cf0919aafa09afc96a698806f054fac655a448f706e"
+    },
+    {
+      "path": "evals/audit-2026-09-29/personal-evaluations.json",
+      "sha256": "35f850bb8bc5e74643e610ae2d6159f529bd8c9d3b24bdc7fcde32109c633124"
+    },
+    {
+      "path": "evals/audit-2026-09-29/plugin-evaluations.json",
+      "sha256": "3f450dbeacfd57970178579e784869d3c26be95247887d13ac0e109b4fecd8a2"
+    },
+    {
+      "path": "evals/audit-2026-09-29/runtime_checks.py",
+      "sha256": "6b6c83a72ce22f9a556b3c1f468a820b1fae7815ee541365cefb1f745b50178d"
+    },
+    {
+      "path": "evals/audit-2026-09-29/security-baseline.json",
+      "sha256": "83c6d19c2e7bdf60f641910d33f69544a64ac13aa93854f8fba1cf2237719089"
+    },
+    {
+      "path": "evals/audit-2026-09-29/security-scan/coverage.json",
+      "sha256": "680b2e9e71f4e658c0e989d2eb28bd593a1245e83507a52aaaf364946aca0af3"
+    },
+    {
+      "path": "evals/audit-2026-09-29/security-scan/findings.json",
+      "sha256": "c8c79b0e986592dd902acd960105fd6be399457a1f228f3e479276d57226daf7"
+    },
+    {
+      "path": "evals/audit-2026-09-29/security-scan/report.md",
+      "sha256": "a087486a305ebda2e7f709d782842300456b497855a04cea9a2806ff27890c37"
+    },
+    {
+      "path": "evals/audit-2026-09-29/security-scan/scan-manifest.json",
+      "sha256": "2ec646d855d4f48c2d310349db32d3eadfc07996dafb16600a21f583c7886af6"
+    },
+    {
+      "path": "evals/audit-2026-09-29/selected-security-source-hashes.json",
+      "sha256": "386875d7d0a205cc55388a517d7038ae106095165bf49d8030a1c04c63e2dfb5"
+    },
+    {
+      "path": "evals/audit-2026-09-29/template-evaluations.json",
+      "sha256": "805f5fad1cb375b5285794a82115c59826d0d092cbf4faf3b3018d8304c4d01a"
+    },
+    {
+      "path": "evals/audit-2026-09-29/validation.json",
+      "sha256": "28d29a8954038b9d8b4a74760d9e9b4d7c0ea1b6c2c3955e42942e24ae9b6847"
+    },
+    {
+      "path": "docs/skills-audit-2026-09-29.md",
+      "sha256": "e38227328a69e649e7701ad68d7fc4a63c7a958835b27aa3da7605d3b71558ac"
+    }
+  ]
+}

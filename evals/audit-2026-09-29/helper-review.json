@@ -1,0 +1,113 @@
+{
+  "scope": "Installed helper scripts only; offline static review of all 31 requested scripts. This reviewer executed no helper and modified no source.",
+  "findings": [
+    {
+      "title": "Unverified shared temporary parent permits another local user to replace staged skills",
+      "rule": "CWE-377",
+      "related_cwe": [
+        "CWE-367"
+      ],
+      "severity": "low",
+      "confidence": "high",
+      "status": "Static finding; parent separately reports two successful same-UID parent-owner simulations through actual installer main/validation/copy with mocked download. No real cross-user race tested.",
+      "file": "/home/aaron/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py",
+      "lines": {
+        "root_cause": [
+          50,
+          53
+        ],
+        "staging": [
+          326,
+          328
+        ],
+        "validation_and_install": [
+          339,
+          341
+        ],
+        "copy_sink": [
+          219,
+          223
+        ]
+      },
+      "code": "base = os.path.join(tempfile.gettempdir(), \"codex\")\nos.makedirs(base, exist_ok=True)\n...\ntmp_dir = tempfile.mkdtemp(prefix=\"skill-install-\", dir=_tmp_root())\n...\n_validate_skill(skill_src, repo_root)\n_copy_skill(skill_src, dest_dir)",
+      "attacker": "Another local account able to precreate the predictable codex directory under the shared system temporary directory before the victim's first installation, with permissions allowing victim child creation. No attacker control of GitHub or the authorized skill repository is required.",
+      "invariant": "The downloaded or checked-out skill validated and installed must remain under exclusive control of the installing user until copied to the trusted skill destination.",
+      "source_to_sink": "_tmp_root accepts an existing parent without verifying its owner, mode or file type. Although mkdtemp creates an unpredictable private child, the attacker owning its parent can enumerate its name, rename that child and replace its pathname with an attacker-controlled directory. Subsequent archive writes/extraction and skill validation/copy use the pathname again. The attacker can supply or modify a regular SKILL.md and other skill files beneath the replacement tree before _validate_skill/_copy_skill installs them.",
+      "impact": "Integrity compromise of installed agent instructions or helper code under the victim's skill discovery directory. A replacement staging tree can also expose downloaded private repository content. Actual later instruction execution depends on skill use; current workstation exploitation or staging-parent ownership was not tested.",
+      "counterevidence": "mkdtemp supplies a random name and private child permissions; ZIP extraction checks realpath containment, selected paths are constrained and source symlinks are checked. These controls do not establish ownership of the reusable parent and do not prevent its owner from renaming/replacing the child or editing regular files in the replacement directory. Existing destination directories are refused, but an authorized new installation still copies compromised source files. If the parent is already owned by the victim and not attacker-writable, or the system temp root is owner-private, this precondition is absent.",
+      "remediation": "Create the random staging directory directly beneath the system temporary root using mkdtemp, or use an owner-private verified parent and reject symlinked, foreign-owned or writable-by-other-user parents. Keep subsequent staging paths within that ownership boundary. Do not treat source symlink validation as parent ownership verification.",
+      "severity_rationale": "Requires another local account to precreate or control the predictable staging parent before use, plus correctly timed pathname replacement. No remote attacker-only path or observed current compromise. Parent calibrated to low."
+    }
+  ],
+  "resolved_questions": [
+    {
+      "question": "Shell injection and dependency execution",
+      "resolution": "The installer passes Git arguments as a list to subprocess.run with no shell. Skill and plugin names are normalized or checked before filesystem use. Other supplemental helper directories had no matches in the targeted subprocess/shell/os.system/exec/eval/urlopen/requests/rmtree/unlink/tempfile sweep. No standalone script from this review was executed."
+    },
+    {
+      "question": "Archive path traversal and symlink copies",
+      "resolution": "Installer ZIP handling validates realpath containment before extraction. _validate_skill rejects selected path symlinks and requires nested symlink targets to be regular files within the skill. Ordinary remote archive traversal or outside-skill symlink disclosure was therefore not reported; the shared-parent ownership problem is distinct."
+    },
+    {
+      "question": "Image output traversal and credential disclosure",
+      "resolution": "image_gen.py was read fully. Batch per-job output paths are reduced to base.name before joining the requested output directory. No API key value is printed; key presence is reported only. Image edits deliberately open the caller-selected image and mask for API upload. Other arbitrary CLI input/output paths are tool functionality, without an established lower-trust attacker controlling them. Existing-output checks are not atomic, but no shared-path default comparable to the installer was established."
+    },
+    {
+      "question": "Creator helpers and YAML",
+      "resolution": "Read all skill-creator and plugin-creator scripts fully. YAML parsing uses yaml.safe_load; YAML output quoting escapes backslashes, quotes and newlines. Names are normalized or validated. Plugin asset references are resolved and checked against the allowed plugin root. Companion JSON and skill YAML are parsed as data, not executed. Some writes follow existing destination symlinks, but caller-selected project paths and explicit force semantics alone do not establish a security-boundary violation."
+    },
+    {
+      "question": "Pet filesystem handling",
+      "resolution": "All 18 pet scripts were read fully. Mirroring uses fixed decoded filenames and requires explicit suitability confirmation and a decision note. Preparation normalizes pet IDs, uses fixed state names and output components, copies caller-selected references, and refuses nonempty runs unless forced. Extraction and inspection validate selected states against fixed whitelists. Atlas assembly resolves CLI-selected inputs and outputs and emits a basename-only spritesheet reference. No helper downloads data, invokes subprocesses/shells, executes prompt text, or performs filesystem deletion. No additional concrete security vulnerability was found."
+    },
+    {
+      "question": "Pet quality gates and resource consumption",
+      "resolution": "validate_pet_quality binds the structural-validation report to final atlas bytes, byte length and path, and independently inspects jump and look geometry. Other visual QA reports are caller-provided workflow evidence, not authenticated security attestations; missing provenance alone was not classified as a security vulnerability. Input images can drive substantial memory/CPU work and malformed dimensions can cause errors; no service availability boundary or bypass of Pillow's normal image handling was established. Unbounded caller-selected scaling/radius values were not treated as attacker-controlled service vulnerabilities."
+    }
+  ],
+  "fully_reviewed_files": [
+    "/home/aaron/.codex/plugins/cache/openai-curated-remote/work-pets/0.1.6/skills/create-pet/scripts/assemble_extended_atlas.py",
+    "/home/aaron/.codex/plugins/cache/openai-curated-remote/work-pets/0.1.6/skills/create-pet/scripts/combine_direction_blind_verdicts.py",
+    "/home/aaron/.codex/plugins/cache/openai-curated-remote/work-pets/0.1.6/skills/create-pet/scripts/compose_atlas.py",
+    "/home/aaron/.codex/plugins/cache/openai-curated-remote/work-pets/0.1.6/skills/create-pet/scripts/compose_cardinal_anchor_strip.py",
+    "/home/aaron/.codex/plugins/cache/openai-curated-remote/work-pets/0.1.6/skills/create-pet/scripts/derive_running_left_from_running_right.py",
+    "/home/aaron/.codex/plugins/cache/openai-curated-remote/work-pets/0.1.6/skills/create-pet/scripts/despill_chroma_edges.py",
+    "/home/aaron/.codex/plugins/cache/openai-curated-remote/work-pets/0.1.6/skills/create-pet/scripts/extract_cardinal_anchors.py",
+    "/home/aaron/.codex/plugins/cache/openai-curated-remote/work-pets/0.1.6/skills/create-pet/scripts/extract_strip_frames.py",
+    "/home/aaron/.codex/plugins/cache/openai-curated-remote/work-pets/0.1.6/skills/create-pet/scripts/inspect_frames.py",
+    "/home/aaron/.codex/plugins/cache/openai-curated-remote/work-pets/0.1.6/skills/create-pet/scripts/make_contact_sheet.py",
+    "/home/aaron/.codex/plugins/cache/openai-curated-remote/work-pets/0.1.6/skills/create-pet/scripts/make_direction_blind_qa_sheet.py",
+    "/home/aaron/.codex/plugins/cache/openai-curated-remote/work-pets/0.1.6/skills/create-pet/scripts/make_direction_qa_sheet.py",
+    "/home/aaron/.codex/plugins/cache/openai-curated-remote/work-pets/0.1.6/skills/create-pet/scripts/measure_direction_continuity.py",
+    "/home/aaron/.codex/plugins/cache/openai-curated-remote/work-pets/0.1.6/skills/create-pet/scripts/prepare_pet_run.py",
+    "/home/aaron/.codex/plugins/cache/openai-curated-remote/work-pets/0.1.6/skills/create-pet/scripts/render_animation_previews.py",
+    "/home/aaron/.codex/plugins/cache/openai-curated-remote/work-pets/0.1.6/skills/create-pet/scripts/validate_atlas.py",
+    "/home/aaron/.codex/plugins/cache/openai-curated-remote/work-pets/0.1.6/skills/create-pet/scripts/validate_direction_blind_verdicts.py",
+    "/home/aaron/.codex/plugins/cache/openai-curated-remote/work-pets/0.1.6/skills/create-pet/scripts/validate_pet_quality.py",
+    "/home/aaron/.codex/skills/.system/imagegen/scripts/image_gen.py",
+    "/home/aaron/.codex/skills/.system/imagegen/scripts/remove_chroma_key.py",
+    "/home/aaron/.codex/skills/.system/plugin-creator/scripts/create_basic_plugin.py",
+    "/home/aaron/.codex/skills/.system/plugin-creator/scripts/identifier_validation.py",
+    "/home/aaron/.codex/skills/.system/plugin-creator/scripts/read_marketplace_name.py",
+    "/home/aaron/.codex/skills/.system/plugin-creator/scripts/update_plugin_cachebuster.py",
+    "/home/aaron/.codex/skills/.system/plugin-creator/scripts/validate_plugin.py",
+    "/home/aaron/.codex/skills/.system/skill-creator/scripts/generate_openai_yaml.py",
+    "/home/aaron/.codex/skills/.system/skill-creator/scripts/init_skill.py",
+    "/home/aaron/.codex/skills/.system/skill-creator/scripts/quick_validate.py",
+    "/home/aaron/.codex/skills/.system/skill-installer/scripts/github_utils.py",
+    "/home/aaron/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py",
+    "/home/aaron/.codex/skills/.system/skill-installer/scripts/list-skills.py"
+  ],
+  "supporting_files_read": [
+    "/home/aaron/.codex/skills/.system/skill-installer/SKILL.md"
+  ],
+  "partially_reviewed_files": [],
+  "sink_search_only_files": [],
+  "limitations": [
+    "All 31 requested helper scripts fully read; 8,652 source lines. Supporting skill-installer/SKILL.md read as audit evidence.",
+    "This reviewer performed no network access, application/helper execution, installation, upload, authentication change, remediation or exploit execution.",
+    "Parent independently reported two same-UID mocked-download replacement simulations; this does not demonstrate a real cross-user race or current host compromise.",
+    "Installed source was read in place; this supplemental reviewer did not establish an immutable snapshot or runtime ownership state.",
+    "Findings address source-level security behavior; complete reading does not establish runtime safety or third-party dependency security."
+  ]
+}

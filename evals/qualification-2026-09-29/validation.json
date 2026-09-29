@@ -1,0 +1,18 @@
+{
+  "personal_tracked_precommit": "passed",
+  "new_files_precommit": "passed",
+  "likec4_metadata_and_relative_links": "passed",
+  "python_ast_and_evidence_json": "passed",
+  "homelab_docs_precommit_with_documented_browser_override": "passed",
+  "default_mermaid_browser": "unavailable; override required",
+  "original_audit_hashes_matched": 35,
+  "vexp": "unavailable: workspace root is not git repository",
+  "gitleaks_evidence_scan": {
+    "raw_matches": 2,
+    "classification": "Both matches are verified SHA256 file values in installation before/after manifests",
+    "files": [
+      "likec4-dsl/references/style-tokens-colors.md"
+    ],
+    "confirmed_secrets": 0
+  }
+}

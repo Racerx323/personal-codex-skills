@@ -10,6 +10,8 @@
     "AGENTS.md",
     "**/AGENTS.md",
     ".github/copilot-instructions.md",
-    "LICENSE.md"
+    "LICENSE.md",
+    // Preserve the byte-for-byte canonical security report covered by its manifest.
+    "evals/audit-2026-09-29/security-scan/report.md"
   ]
 }

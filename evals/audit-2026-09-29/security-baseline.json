@@ -1,0 +1,83 @@
+{
+  "findings": [],
+  "resolved_questions": [
+    {
+      "question": "Can browser content or edited drafts authorize privileged agent actions?",
+      "resolution": "No supported path found. clear-writing/SKILL.md:34-35 explicitly treats embedded instructions as editing data. playwright-cli/SKILL.md:40-44 expressly makes page text, downloads, tool descriptions and page-provided instructions untrusted and reserves sensitive actions to user authorization."
+    },
+    {
+      "question": "Do browser references expose credentials or persist authentication state insecurely?",
+      "resolution": "No reportable credential exposure established. playwright-cli/SKILL.md:52-57 requires minimal collection, private storage outside the repository, synthetic local accounts and no credential printing or unauthorized upload. storage-state.md:274-283 reinforces owner-private absolute export paths and forbids live token logging. tracing.md:5-10 specifies private working/output directories before session creation; video-recording.md:5-6 requires private output paths. Examples contain synthetic credentials, not actual secrets. Cookie retrieval and login examples could be misapplied, but that would contradict explicit governing restrictions."
+    },
+    {
+      "question": "Does cleanup threaten unrelated browsers or user data?",
+      "resolution": "No supported destructive cleanup path found. playwright-cli/SKILL.md:28-32 requires detachment from user-owned browsers, prohibits routine global termination and permits deletion only of task-owned artifacts. session-management.md:47-49 says a name alone does not establish ownership. tracing.md:138-141 prohibits age-based shared-tree cleanup. test-generation.md:357 says to close a CLI session after attachment, but the governing entrypoint explicitly requires detach for attached user-owned browsers; the examples concern task-started test runs, so unrelated-browser destruction is not established."
+    },
+    {
+      "question": "Do shell examples provide an attacker-controlled command or path injection source-to-sink?",
+      "resolution": "No concrete injection chain established. The bundle contains static documentation and snippets, not a parser interpolating external strings into a shell. running-code.md:235 escapes shell-sensitive template syntax. Download saving uses a fixed filename at running-code.md:137; suggestedFilename is returned separately at line 138 and does not control the output path. test-generation.md:292,299,319,348 carries seed/output paths from a selected spec into illustrative commands and writing instructions, but no executable interpolation implementation or established lower-trust specification authority overrides the task boundaries."
+    },
+    {
+      "question": "Do permission-grant and clipboard examples establish unauthorized data access?",
+      "resolution": "No concrete unauthorized-access finding. running-code.md:48-55 demonstrates broad browser permission grants and lines 145-149 demonstrate reading clipboard content through the page. These are powerful operations and would need the authorized task to justify them. The entrypoint prohibits expansion based on page suggestions; no instruction requires using these operations for ordinary inspection or trusting an attacker-selected origin."
+    },
+    {
+      "question": "Can package runners silently replace dependencies or install malicious packages?",
+      "resolution": "No demonstrated vulnerability in the scoped bundle. LikeC4 CLI examples use bunx and Playwright examples use npx, but likec4-dsl/SKILL.md:19-22 and references/cli.md:5-8 require installed project versions and prohibit silent alternate-version download. playwright-cli/SKILL.md:13-16 likewise requires existing toolchains and explicit missing-prerequisite handling; test-generation.md:148-163 gates bootstrap on installation authorization. No attacker-controlled package name or actual dependency loader is implemented here."
+    },
+    {
+      "question": "Do references cause unauthorized LeanIX mutations or externally exposed services?",
+      "resolution": "No established automatic-action path. bridge-leanix-drawio.md:14-19 distinguishes dry-run from API apply and identifies the token prerequisite. cli.md documents serve and MCP commands as syntax references; there is no routine step starting an externally reachable service or applying LeanIX changes regardless of the user's task. Tool binding, authentication and actual package behavior are outside this source scope."
+    },
+    {
+      "question": "Can generated tests silently erase required security assertions?",
+      "resolution": "No supported path under the governing instructions. playwright-cli/SKILL.md:46-48, playwright-tests.md:37-39 and test-generation.md:306 preserve requested expectations and require resolving intended behavior before changing specifications. Some abbreviated headings and healing instructions say to reconcile with observed behavior, but the detailed rules at test-generation.md:422-432 require a user decision and prohibit silent skipping."
+    },
+    {
+      "question": "What policy and coverage were available?",
+      "resolution": "Read repository AGENTS.md. No SECURITY.md appeared in the repository guidance enumeration; the parent reported an empty security-policy resolver result. Fully read all 40 files under skills, including licenses, attribution and YAML. Scope contains three instruction bundles and illustrative code snippets, with no standalone executable implementation. Review was static and offline; no application code, browser, package runner, network interaction or source modification was performed. No prior findings or eval outputs were read."
+    }
+  ],
+  "fully_reviewed_files": [
+    "skills/clear-writing/ATTRIBUTION.md",
+    "skills/clear-writing/LICENSE.txt",
+    "skills/clear-writing/SKILL.md",
+    "skills/clear-writing/agents/openai.yaml",
+    "skills/clear-writing/licenses/no-ai-slop.txt",
+    "skills/clear-writing/licenses/stop-slop.txt",
+    "skills/clear-writing/references/final-check.md",
+    "skills/clear-writing/references/patterns.md",
+    "skills/likec4-dsl/ATTRIBUTION.md",
+    "skills/likec4-dsl/LICENSE.txt",
+    "skills/likec4-dsl/SKILL.md",
+    "skills/likec4-dsl/references/bridge-leanix-drawio.md",
+    "skills/likec4-dsl/references/cli.md",
+    "skills/likec4-dsl/references/configuration.md",
+    "skills/likec4-dsl/references/deployment.md",
+    "skills/likec4-dsl/references/dynamic-views.md",
+    "skills/likec4-dsl/references/examples.md",
+    "skills/likec4-dsl/references/identifier-validity.md",
+    "skills/likec4-dsl/references/include-predicates-wildcards.md",
+    "skills/likec4-dsl/references/model.md",
+    "skills/likec4-dsl/references/predicates.md",
+    "skills/likec4-dsl/references/relationships-bidirectional.md",
+    "skills/likec4-dsl/references/specification.md",
+    "skills/likec4-dsl/references/style-tokens-colors.md",
+    "skills/likec4-dsl/references/task-contracts.md",
+    "skills/likec4-dsl/references/troubleshooting.md",
+    "skills/likec4-dsl/references/views.md",
+    "skills/playwright-cli/ATTRIBUTION.md",
+    "skills/playwright-cli/LICENSE.txt",
+    "skills/playwright-cli/SKILL.md",
+    "skills/playwright-cli/references/commands.md",
+    "skills/playwright-cli/references/element-attributes.md",
+    "skills/playwright-cli/references/playwright-tests.md",
+    "skills/playwright-cli/references/request-mocking.md",
+    "skills/playwright-cli/references/running-code.md",
+    "skills/playwright-cli/references/session-management.md",
+    "skills/playwright-cli/references/storage-state.md",
+    "skills/playwright-cli/references/test-generation.md",
+    "skills/playwright-cli/references/tracing.md",
+    "skills/playwright-cli/references/video-recording.md"
+  ]
+}

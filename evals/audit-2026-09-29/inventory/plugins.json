@@ -1,0 +1,99 @@
+{
+  "installed": [
+    {
+      "pluginId": "context7@context7-marketplace",
+      "name": "context7",
+      "marketplaceName": "context7-marketplace",
+      "version": "1.0.1",
+      "installed": true,
+      "enabled": true,
+      "marketplaceSource": {
+        "sourceType": "git",
+        "source": "https://github.com/upstash/context7.git"
+      },
+      "installPolicy": "AVAILABLE",
+      "authPolicy": "ON_USE"
+    },
+    {
+      "pluginId": "github@openai-curated-remote",
+      "name": "github",
+      "marketplaceName": "openai-curated-remote",
+      "version": "0.1.12-5f7cd798dc99",
+      "installed": true,
+      "enabled": true,
+      "installPolicy": "AVAILABLE",
+      "authPolicy": "ON_INSTALL"
+    },
+    {
+      "pluginId": "codex-security@openai-curated-remote",
+      "name": "codex-security",
+      "marketplaceName": "openai-curated-remote",
+      "version": "0.1.31",
+      "installed": true,
+      "enabled": true,
+      "installPolicy": "AVAILABLE",
+      "authPolicy": "ON_INSTALL"
+    },
+    {
+      "pluginId": "app-6a4d5a687f0881918be3cb8b4b93773d@openai-curated-remote",
+      "name": "app-6a4d5a687f0881918be3cb8b4b93773d",
+      "marketplaceName": "openai-curated-remote",
+      "version": "1.0.0",
+      "installed": true,
+      "enabled": true,
+      "installPolicy": "AVAILABLE",
+      "authPolicy": "ON_INSTALL"
+    },
+    {
+      "pluginId": "coderabbit@openai-curated-remote",
+      "name": "coderabbit",
+      "marketplaceName": "openai-curated-remote",
+      "version": "1.1.4",
+      "installed": true,
+      "enabled": true,
+      "installPolicy": "AVAILABLE",
+      "authPolicy": "ON_INSTALL"
+    },
+    {
+      "pluginId": "openai-templates@openai-curated-remote",
+      "name": "openai-templates",
+      "marketplaceName": "openai-curated-remote",
+      "version": "0.1.1",
+      "installed": true,
+      "enabled": true,
+      "installPolicy": "INSTALLED_BY_DEFAULT",
+      "authPolicy": "ON_USE"
+    },
+    {
+      "pluginId": "pages@openai-curated-remote",
+      "name": "pages",
+      "marketplaceName": "openai-curated-remote",
+      "version": "0.1.18",
+      "installed": true,
+      "enabled": true,
+      "installPolicy": "INSTALLED_BY_DEFAULT",
+      "authPolicy": "ON_USE"
+    },
+    {
+      "pluginId": "plugin-management@openai-curated-remote",
+      "name": "plugin-management",
+      "marketplaceName": "openai-curated-remote",
+      "version": "0.1.0",
+      "installed": true,
+      "enabled": true,
+      "installPolicy": "INSTALLED_BY_DEFAULT",
+      "authPolicy": "ON_USE"
+    },
+    {
+      "pluginId": "work-pets@openai-curated-remote",
+      "name": "work-pets",
+      "marketplaceName": "openai-curated-remote",
+      "version": "0.1.6",
+      "installed": true,
+      "enabled": true,
+      "installPolicy": "INSTALLED_BY_DEFAULT",
+      "authPolicy": "ON_USE"
+    }
+  ],
+  "available": []
+}

@@ -1,0 +1,1459 @@
+{
+  "rows": [
+    {
+      "skill": "clear-writing",
+      "path": "$HOME/.agents/skills/clear-writing/SKILL.md",
+      "scope": "personal",
+      "sha256": "ac4bb2b2e4ddfc1b62d08834ccb5e1cbe2d40b270793c803c50b1c1475f4df53",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "cw01",
+        "cw02",
+        "cw03",
+        "cw04",
+        "cw05",
+        "cw06",
+        "cw07",
+        "cw08",
+        "cw09",
+        "cw10",
+        "blind-A",
+        "blind-B",
+        "blind-C"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "likec4-dsl",
+      "path": "$HOME/.agents/skills/likec4-dsl/SKILL.md",
+      "scope": "personal",
+      "sha256": "f4052a008dbbfe266bdb3d2a04373826a6a935c7ceac3372b5435acf9cb856b7",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "lc01",
+        "lc02",
+        "lc03",
+        "lc04",
+        "lc05",
+        "lc06",
+        "lc07",
+        "lc08",
+        "lc09",
+        "lc10",
+        "blind-D"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "playwright-cli",
+      "path": "$HOME/.agents/skills/playwright-cli/SKILL.md",
+      "scope": "personal",
+      "sha256": "52449480c0e112f90cd56b21ee35bfd8faf7ee29609c34d3dceadc426158e5b6",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "pw01",
+        "pw02",
+        "pw03",
+        "pw04",
+        "pw05",
+        "pw06",
+        "pw07",
+        "pw08",
+        "pw09",
+        "pw10"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "imagegen",
+      "path": "$HOME/.codex/skills/.system/imagegen/SKILL.md",
+      "scope": "system-or-compatibility",
+      "sha256": "681ddb4ad6d06a2acc78a3535b583f8d0c1ea800ecda3d56370d3310fd2cd4ba",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "imagegen-01",
+        "imagegen-02",
+        "imagegen-03",
+        "imagegen-04",
+        "imagegen-05",
+        "imagegen-06",
+        "imagegen-07"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "openai-docs",
+      "path": "$HOME/.codex/skills/.system/openai-docs/SKILL.md",
+      "scope": "system-or-compatibility",
+      "sha256": "aa6829e21df2223167c85d2e49b6337a7345c84c1033f1ec10182c7882b36d45",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "openai-docs-01",
+        "openai-docs-02",
+        "openai-docs-03",
+        "openai-docs-04",
+        "openai-docs-05",
+        "openai-docs-06",
+        "openai-docs-07"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "plugin-creator",
+      "path": "$HOME/.codex/skills/.system/plugin-creator/SKILL.md",
+      "scope": "system-or-compatibility",
+      "sha256": "71b95b8219644f95d633721e7f7cd3c469edfc8fe50f8415d400dfb2d74bc7b9",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "plugin-creator-01",
+        "plugin-creator-02",
+        "plugin-creator-03",
+        "plugin-creator-04",
+        "plugin-creator-05",
+        "plugin-creator-06",
+        "plugin-creator-07"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "review-agent",
+      "path": "$HOME/.codex/skills/.system/review-agent/SKILL.md",
+      "scope": "system-or-compatibility",
+      "sha256": "07079efd0dc76f05fade424e5dfb048dce1de2df7626e1a4f56292a4f3f92228",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "review-agent-01",
+        "review-agent-02",
+        "review-agent-03",
+        "review-agent-04",
+        "review-agent-05",
+        "review-agent-06",
+        "review-agent-07"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "skill-creator",
+      "path": "$HOME/.codex/skills/.system/skill-creator/SKILL.md",
+      "scope": "system-or-compatibility",
+      "sha256": "6656e54755638e8efcf275a472b9672eaa8a9a1b9e59dc210e275b03b59e1e66",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "skill-creator-01",
+        "skill-creator-02",
+        "skill-creator-03",
+        "skill-creator-04",
+        "skill-creator-05",
+        "skill-creator-06",
+        "skill-creator-07"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "skill-installer",
+      "path": "$HOME/.codex/skills/.system/skill-installer/SKILL.md",
+      "scope": "system-or-compatibility",
+      "sha256": "d68b77e5bbb34dedab89d134da52855f140fc4b4299b80104f534e3b9e98f8ee",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "skill-installer-01",
+        "skill-installer-02",
+        "skill-installer-03",
+        "skill-installer-04",
+        "skill-installer-05",
+        "skill-installer-06",
+        "skill-installer-07"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "context7-mcp",
+      "path": "$HOME/.codex/plugins/cache/context7-marketplace/context7/1.0.1/skills/context7-mcp/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "29ef59d342876991f1a07297959748b57647063b1f7c7db4761fd36137655ade",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "context7-mcp-01",
+        "context7-mcp-02",
+        "context7-mcp-03",
+        "context7-mcp-04",
+        "context7-mcp-05",
+        "context7-mcp-06",
+        "context7-mcp-07",
+        "context7-mcp-08",
+        "context7-mcp-09"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "code-review",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/coderabbit/1.1.4/skills/coderabbit-review/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "515ef4f096ff4ee9cd034e6bf110bbb002f15abefcac3da7d9ff9db526d8e40f",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "coderabbit-review-01",
+        "coderabbit-review-02",
+        "coderabbit-review-03",
+        "coderabbit-review-04",
+        "coderabbit-review-05",
+        "coderabbit-review-06",
+        "coderabbit-review-07"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "assess-patch-risk",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/codex-security/0.1.31/skills/assess-patch-risk/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "b7337a909fe0ea7f3b203178df60161ea42236405c0bb8697d43ec5736be744b",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "assess-patch-risk-01",
+        "assess-patch-risk-02",
+        "assess-patch-risk-03",
+        "assess-patch-risk-04",
+        "assess-patch-risk-05",
+        "assess-patch-risk-06",
+        "assess-patch-risk-07"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "attack-path-analysis",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/codex-security/0.1.31/skills/attack-path-analysis/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "9f9f45603c68a1e796d8151b3373842aa7e89f0e1dc8e985f7ab1bb342547444",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "attack-path-analysis-01",
+        "attack-path-analysis-02",
+        "attack-path-analysis-03",
+        "attack-path-analysis-04",
+        "attack-path-analysis-05",
+        "attack-path-analysis-06",
+        "attack-path-analysis-07"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "deep-security-scan",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/codex-security/0.1.31/skills/deep-security-scan/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "e3e758d1a6b96b42453fc631b58e04e851cec71318b18d53e2d1c344f6edc4db",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "deep-security-scan-01",
+        "deep-security-scan-02",
+        "deep-security-scan-03",
+        "deep-security-scan-04",
+        "deep-security-scan-05",
+        "deep-security-scan-06",
+        "deep-security-scan-07"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "define-security-policy",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/codex-security/0.1.31/skills/define-security-policy/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "2817e1a03980a7ebea478c8d9e6c622e3c6205123e767a1e32f0204c06729cc7",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "define-security-policy-01",
+        "define-security-policy-02",
+        "define-security-policy-03",
+        "define-security-policy-04",
+        "define-security-policy-05",
+        "define-security-policy-06",
+        "define-security-policy-07"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "finding-discovery",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/codex-security/0.1.31/skills/finding-discovery/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "1d3a159a5ed83722ddf7369dad9f7788e283454a8ee963cef35ccd8102ea8b0e",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "finding-discovery-01",
+        "finding-discovery-02",
+        "finding-discovery-03",
+        "finding-discovery-04",
+        "finding-discovery-05",
+        "finding-discovery-06",
+        "finding-discovery-07"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "fix-finding",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/codex-security/0.1.31/skills/fix-finding/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "ba7311f43b2c0742da0d5c6bdb2f0b26601c09cc59747cf8c62a09f8d0bb86d2",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "fix-finding-01",
+        "fix-finding-02",
+        "fix-finding-03",
+        "fix-finding-04",
+        "fix-finding-05",
+        "fix-finding-06",
+        "fix-finding-07"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "propose-security-hardening",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/codex-security/0.1.31/skills/propose-security-hardening/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "ad07d88da7c2bc9e551849cdde686b0daad380ed0aac798e6c06444681d75959",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "propose-security-hardening-01",
+        "propose-security-hardening-02",
+        "propose-security-hardening-03",
+        "propose-security-hardening-04",
+        "propose-security-hardening-05",
+        "propose-security-hardening-06",
+        "propose-security-hardening-07"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "security-diff-scan",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/codex-security/0.1.31/skills/security-diff-scan/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "0a4c519ad713585876ea7eb0a8af4b59892c86746f4c69851db9ab347b7fad2f",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "security-diff-scan-01",
+        "security-diff-scan-02",
+        "security-diff-scan-03",
+        "security-diff-scan-04",
+        "security-diff-scan-05",
+        "security-diff-scan-06",
+        "security-diff-scan-07"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "security-scan",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/codex-security/0.1.31/skills/security-scan/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "5b8f5d7debeca14c6b37e8e7ba737671362b8eb4b7f49e693c99c6bd04bc8fa0",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "security-scan-01",
+        "security-scan-02",
+        "security-scan-03",
+        "security-scan-04",
+        "security-scan-05",
+        "security-scan-06",
+        "security-scan-07"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "threat-model",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/codex-security/0.1.31/skills/threat-model/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "f45f02d9f607ec6797b730c71b15310f971403193cc56a984a1cbb1710b495ee",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "threat-model-01",
+        "threat-model-02",
+        "threat-model-03",
+        "threat-model-04",
+        "threat-model-05",
+        "threat-model-06",
+        "threat-model-07"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "track-findings",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/codex-security/0.1.31/skills/track-findings/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "8e3726e86ef0df509f1a635961f268e1bf04a4622a83e21c1d079f546cc61dcb",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "track-findings-01",
+        "track-findings-02",
+        "track-findings-03",
+        "track-findings-04",
+        "track-findings-05",
+        "track-findings-06",
+        "track-findings-07"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "triage-finding",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/codex-security/0.1.31/skills/triage-finding/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "70b0e771f286443ea32bbf466ad378b36f9123b4aa171ab02c6680fdbdb704f9",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "triage-finding-01",
+        "triage-finding-02",
+        "triage-finding-03",
+        "triage-finding-04",
+        "triage-finding-05",
+        "triage-finding-06",
+        "triage-finding-07"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "validation",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/codex-security/0.1.31/skills/validation/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "3c4660f79b12a92728e6bb25027064c3a911d0960d39aeafc8fda9e42ce517a5",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "validation-01",
+        "validation-02",
+        "validation-03",
+        "validation-04",
+        "validation-05",
+        "validation-06",
+        "validation-07"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "verify-fix",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/codex-security/0.1.31/skills/verify-fix/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "3d4530484c7e4c18b6afe7c6527247e96517dce1ebd1bda9d349cd367ecb0ae3",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "verify-fix-01",
+        "verify-fix-02",
+        "verify-fix-03",
+        "verify-fix-04",
+        "verify-fix-05",
+        "verify-fix-06",
+        "verify-fix-07"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "vulnerability-writeup",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/codex-security/0.1.31/skills/vulnerability-writeup/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "d08582d9963ce3bfbc3fe81b6e85a01e6fe306713d7951bfd8dd2fbc3df75de4",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "vulnerability-writeup-01",
+        "vulnerability-writeup-02",
+        "vulnerability-writeup-03",
+        "vulnerability-writeup-04",
+        "vulnerability-writeup-05",
+        "vulnerability-writeup-06",
+        "vulnerability-writeup-07"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "artifact-template-analytics-dashboard",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-analytics-dashboard/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "cf5360fd8b197673bb237c52c603c97fa319c875c3dfa2cd8efff52d4422f513",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "analytics-dashboard-explicit",
+        "analytics-dashboard-implicit",
+        "analytics-dashboard-negative",
+        "analytics-dashboard-ambiguous",
+        "analytics-dashboard-failure",
+        "analytics-dashboard-output"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "artifact-template-business-review",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-business-review/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "27721fc1d67d1b41949caa75ac8f94f81952ff124406878af6524047929e60d2",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "business-review-explicit",
+        "business-review-implicit",
+        "business-review-negative",
+        "business-review-ambiguous",
+        "business-review-failure",
+        "business-review-output"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "artifact-template-design-report",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-design-report/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "563722f53854e606f8a9f87e37e72d7ef70a22d46d5836b8e4d6abfb1b79e9e0",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "design-report-explicit",
+        "design-report-implicit",
+        "design-report-negative",
+        "design-report-ambiguous",
+        "design-report-failure",
+        "design-report-output"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "artifact-template-experiment-analysis",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-experiment-analysis/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "0b05effc47df0a14f8e0c3e3597e6722224747435546385d38a2cae279bd20b9",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "experiment-analysis-explicit",
+        "experiment-analysis-implicit",
+        "experiment-analysis-negative",
+        "experiment-analysis-ambiguous",
+        "experiment-analysis-failure",
+        "experiment-analysis-output"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "artifact-template-financial-budget",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-financial-budget/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "c0b6b7a62a15597aaf2b1ec679e21da48f533b756127f0aef957cdfe9f3da738",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "financial-budget-explicit",
+        "financial-budget-implicit",
+        "financial-budget-negative",
+        "financial-budget-ambiguous",
+        "financial-budget-failure",
+        "financial-budget-output"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "artifact-template-investment-committee-memo",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-investment-committee-memo/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "68abd08cfe5e073e3c446a3f675f44c5bf98f57434dba679e8acd8a763379a8b",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "investment-committee-memo-explicit",
+        "investment-committee-memo-implicit",
+        "investment-committee-memo-negative",
+        "investment-committee-memo-ambiguous",
+        "investment-committee-memo-failure",
+        "investment-committee-memo-output"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "artifact-template-legal-memorandum",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-legal-memorandum/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "51fb9d21baf6119c4ccb1903638a6bac0e859210de63460fffa7025d52e997e0",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "legal-memorandum-explicit",
+        "legal-memorandum-implicit",
+        "legal-memorandum-negative",
+        "legal-memorandum-ambiguous",
+        "legal-memorandum-failure",
+        "legal-memorandum-output"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "artifact-template-market-trends-report",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-market-trends-report/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "d58d019b89cb6f292ac3ab991d561489eef477ff53ce05fb024a0c936f5af26a",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "market-trends-report-explicit",
+        "market-trends-report-implicit",
+        "market-trends-report-negative",
+        "market-trends-report-ambiguous",
+        "market-trends-report-failure",
+        "market-trends-report-output"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "artifact-template-minimal-letterhead",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-minimal-letterhead/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "880ef094d4d0c89a7bde5ce9bbe4086625c186651e9e6efc8ba8bdd7cc77f9d5",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "minimal-letterhead-explicit",
+        "minimal-letterhead-implicit",
+        "minimal-letterhead-negative",
+        "minimal-letterhead-ambiguous",
+        "minimal-letterhead-failure",
+        "minimal-letterhead-output"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "artifact-template-operating-calendar",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-operating-calendar/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "33bb660791a0b9a21628a42c34934932220203b6aabd84e98cb1b45327d0384c",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "operating-calendar-explicit",
+        "operating-calendar-implicit",
+        "operating-calendar-negative",
+        "operating-calendar-ambiguous",
+        "operating-calendar-failure",
+        "operating-calendar-output"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "artifact-template-operating-review",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-operating-review/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "6d63c5cd025ffe936e7bab5db3023672bbaec26af55c2bb8b057d38c202c9c32",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "operating-review-explicit",
+        "operating-review-implicit",
+        "operating-review-negative",
+        "operating-review-ambiguous",
+        "operating-review-failure",
+        "operating-review-output"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "artifact-template-project-kickoff",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-project-kickoff/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "aa893ebd89e7c8d1db4261d01cc2b1add35d78d00785871ccaaa5fc8db783ec9",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "project-kickoff-explicit",
+        "project-kickoff-implicit",
+        "project-kickoff-negative",
+        "project-kickoff-ambiguous",
+        "project-kickoff-failure",
+        "project-kickoff-output"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "artifact-template-project-tracker",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-project-tracker/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "d97d5be20189b7f53dd269b6e1c5f694eaf53e5a72f6559fcb1578911b7cda82",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "project-tracker-explicit",
+        "project-tracker-implicit",
+        "project-tracker-negative",
+        "project-tracker-ambiguous",
+        "project-tracker-failure",
+        "project-tracker-output"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "artifact-template-sales-pipeline",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-sales-pipeline/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "15cfeeedf440021f16ed3f3ad8c7c1ef6d48898b9447741e223d2fb41cfc9800",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "sales-pipeline-explicit",
+        "sales-pipeline-implicit",
+        "sales-pipeline-negative",
+        "sales-pipeline-ambiguous",
+        "sales-pipeline-failure",
+        "sales-pipeline-output"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "artifact-template-simple-dark-mode",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-simple-dark-mode/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "b7c8d0c05f75878b9bc21e56a57c41ec1aa29700aca0a24822be0f9f1bd53207",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "simple-dark-mode-explicit",
+        "simple-dark-mode-implicit",
+        "simple-dark-mode-negative",
+        "simple-dark-mode-ambiguous",
+        "simple-dark-mode-failure",
+        "simple-dark-mode-output"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "artifact-template-simple-light-mode",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-simple-light-mode/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "7c68430c6cf57b55b457d4735dbd1a46b889bef135a32222902dd0848b6e1752",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "simple-light-mode-explicit",
+        "simple-light-mode-implicit",
+        "simple-light-mode-negative",
+        "simple-light-mode-ambiguous",
+        "simple-light-mode-failure",
+        "simple-light-mode-output"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "artifact-template-strategy-memorandum",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-strategy-memorandum/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "51d7882ac94e8e57b323394825728c33925af878806e37277217c2dc12a912e5",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "strategy-memorandum-explicit",
+        "strategy-memorandum-implicit",
+        "strategy-memorandum-negative",
+        "strategy-memorandum-ambiguous",
+        "strategy-memorandum-failure",
+        "strategy-memorandum-output"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "artifact-template-system-design",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-system-design/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "87f7b7ed1b0d8410f5e5971cd7f7db9a4165e2f37069e97e52dbfb469b75a57c",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "system-design-explicit",
+        "system-design-implicit",
+        "system-design-negative",
+        "system-design-ambiguous",
+        "system-design-failure",
+        "system-design-output"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "artifact-template-team-alignment",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-team-alignment/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "26d7cafdcd1899a937b325c5d02ac57c162d45002153be33a934d35f81eb6110",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "team-alignment-explicit",
+        "team-alignment-implicit",
+        "team-alignment-negative",
+        "team-alignment-ambiguous",
+        "team-alignment-failure",
+        "team-alignment-output"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "artifact-template-three-statement-forecast",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-three-statement-forecast/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "74f4a5cccec0107b861548b157e04c51d9b58ec13a990c86394b4c529b8ecf41",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "three-statement-forecast-explicit",
+        "three-statement-forecast-implicit",
+        "three-statement-forecast-negative",
+        "three-statement-forecast-ambiguous",
+        "three-statement-forecast-failure",
+        "three-statement-forecast-output"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "maintain-space",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/pages/0.1.18/skills/maintain-space/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "334bf85b62e733cf6a392ab8421ef768a9f6e5d74c16db2c4cb3fcbb3f8c496c",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "maintain-space-01",
+        "maintain-space-02",
+        "maintain-space-03",
+        "maintain-space-04",
+        "maintain-space-05",
+        "maintain-space-06",
+        "maintain-space-07"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "manage-schedules",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/pages/0.1.18/skills/manage-schedules/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "e0a464a83f15a6e896c5536cab775f667ebd0dd61eb64fe3c877a41935d64bd9",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "manage-schedules-01",
+        "manage-schedules-02",
+        "manage-schedules-03",
+        "manage-schedules-04",
+        "manage-schedules-05",
+        "manage-schedules-06",
+        "manage-schedules-07"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "organize-space",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/pages/0.1.18/skills/organize-space/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "dfa8bfae86785a98e43b1ca0af67a9c89b90c658eee7fc7ad4ccfe8cc84a267b",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "organize-space-01",
+        "organize-space-02",
+        "organize-space-03",
+        "organize-space-04",
+        "organize-space-05",
+        "organize-space-06",
+        "organize-space-07"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "write-page",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/pages/0.1.18/skills/write-page/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "553c41b3d9716ac0f35608cc31aecc9a36c2d25b0486207c2a41b2b27b162387",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "write-page-01",
+        "write-page-02",
+        "write-page-03",
+        "write-page-04",
+        "write-page-05",
+        "write-page-06",
+        "write-page-07"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "plugin-management",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/plugin-management/0.1.0/skills/plugin-management/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "653841cc21205269f08b0ce135891e1518dac616a766bcfb0b57d788d3f68b10",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "plugin-management-01",
+        "plugin-management-02",
+        "plugin-management-03",
+        "plugin-management-04",
+        "plugin-management-05",
+        "plugin-management-06",
+        "plugin-management-07"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "create-pet",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/work-pets/0.1.6/skills/create-pet/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "841354fb8116f8fdfd3b643b30828f5180196c594d3fed9b669b948b88892af1",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "create-pet-01",
+        "create-pet-02",
+        "create-pet-03",
+        "create-pet-04",
+        "create-pet-05",
+        "create-pet-06",
+        "create-pet-07"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "pets",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/work-pets/0.1.6/skills/pets/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "1bf5d45fd6a6390aab777229293fb05cef7cf898aac882f8955e40c378e52fcd",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "pets-01",
+        "pets-02",
+        "pets-03",
+        "pets-04",
+        "pets-05",
+        "pets-06",
+        "pets-07"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    },
+    {
+      "skill": "update-pet",
+      "path": "$HOME/.codex/plugins/cache/openai-curated-remote/work-pets/0.1.6/skills/update-pet/SKILL.md",
+      "scope": "plugin-cache",
+      "sha256": "c63c98d67b6ad781a72a8f9837ba1fb5e2d2a8054a2562e4025890a97d8a0e67",
+      "statuses": {
+        "explicit": "pass",
+        "implicit": "pass",
+        "negative": "pass",
+        "ambiguous": "pass",
+        "missing_dependency": "pass",
+        "failure": "pass",
+        "output_contract": "pass",
+        "native_routing": "untested",
+        "full_live_workflow": "untested"
+      },
+      "cases": [
+        "update-pet-01",
+        "update-pet-02",
+        "update-pet-03",
+        "update-pet-04",
+        "update-pet-05",
+        "update-pet-06",
+        "update-pet-07"
+      ],
+      "limits": "pass means simulated scoped response only; full live and native routing untested"
+    }
+  ],
+  "count": 54,
+  "legend": "S=pass in simulated response; F=observed failure; U=untested. Runtime checks separate."
+}

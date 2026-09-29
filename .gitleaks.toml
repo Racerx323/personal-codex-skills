@@ -2,5 +2,10 @@
 useDefault = true
 
 [allowlist]
-description = "Ignore generated vexp index metadata"
+description = "Ignore generated vexp metadata and an exact verified audit checksum"
 paths = ['''^\.vexp/''']
+
+# SHA256 of style-tokens-colors.md, recorded in before/after audit manifests.
+# Match this exact checksum field; retain scanning for every other value.
+regexTarget = "match"
+regexes = ['''tokens-colors\.md": "5b247cb006255d24d56a50fa0ba469b2198d45c9c042b3c5ec348ba59098f16b"''']

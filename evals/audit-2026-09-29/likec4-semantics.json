@@ -1,0 +1,299 @@
+{
+  "fixture": "specification { element system element service }\nmodel { external = service cloud = system { api = service worker = service { deep = service } } }\nviews { view full { include cloud.** } view withExternal { include external include cloud.** } }\n",
+  "command": [
+    "likec4",
+    "export",
+    "json",
+    "--skip-layout",
+    "-o",
+    "<fixture>/model.json",
+    "<fixture>"
+  ],
+  "exit": 0,
+  "stdout": "23:02:11.011 INF likec4\u00b7lang layout wasm\n23:02:11.025 INF likec4\u00b7lang workspace: <fixture>\n23:02:11.515 INF likec4\u00b7lang workspace: found 1 source files\n23:02:11.515 INF likec4\u00b7c4:export workspace: Found 1 projects\n23:02:11.516 INF likec4\u00b7c4:export Generate model for project default (skip layout)\n23:02:11.542 INF likec4\u00b7c4:export generated model.json\n23:02:11.542 INF likec4\u00b7c4:export \u2713 export in 532ms\n",
+  "stderr": "",
+  "computed_model": {
+    "_stage": "computed",
+    "projectId": "default",
+    "project": {
+      "id": "default",
+      "title": "default"
+    },
+    "specification": {
+      "tags": {},
+      "elements": {
+        "system": {
+          "style": {}
+        },
+        "service": {
+          "style": {}
+        }
+      },
+      "relationships": {},
+      "deployments": {},
+      "customColors": {}
+    },
+    "elements": {
+      "external": {
+        "style": {},
+        "title": "external",
+        "kind": "service",
+        "id": "external"
+      },
+      "cloud": {
+        "style": {},
+        "title": "cloud",
+        "kind": "system",
+        "id": "cloud"
+      },
+      "cloud.api": {
+        "style": {},
+        "title": "api",
+        "kind": "service",
+        "id": "cloud.api"
+      },
+      "cloud.worker": {
+        "style": {},
+        "title": "worker",
+        "kind": "service",
+        "id": "cloud.worker"
+      },
+      "cloud.worker.deep": {
+        "style": {},
+        "title": "deep",
+        "kind": "service",
+        "id": "cloud.worker.deep"
+      }
+    },
+    "relations": {},
+    "globals": {
+      "predicates": {},
+      "dynamicPredicates": {},
+      "styles": {}
+    },
+    "views": {
+      "index": {
+        "_stage": "computed",
+        "_type": "element",
+        "id": "index",
+        "title": "Landscape view",
+        "description": null,
+        "autoLayout": {
+          "direction": "TB"
+        },
+        "edges": [],
+        "nodes": [
+          {
+            "id": "external",
+            "parent": null,
+            "level": 0,
+            "children": [],
+            "inEdges": [],
+            "outEdges": [],
+            "title": "external",
+            "modelRef": "external",
+            "shape": "rectangle",
+            "color": "primary",
+            "style": {
+              "opacity": 15,
+              "size": "md"
+            },
+            "tags": [],
+            "kind": "service"
+          },
+          {
+            "id": "cloud",
+            "parent": null,
+            "level": 0,
+            "children": [],
+            "inEdges": [],
+            "outEdges": [],
+            "title": "cloud",
+            "modelRef": "cloud",
+            "shape": "rectangle",
+            "color": "primary",
+            "style": {
+              "opacity": 15,
+              "size": "md"
+            },
+            "tags": [],
+            "kind": "system"
+          }
+        ],
+        "hash": "Jad3qMY5kDPdb0qx_sxfrsst1hfWLPUrQUOg-dzjg-s"
+      },
+      "full": {
+        "_type": "element",
+        "tags": null,
+        "links": null,
+        "_stage": "computed",
+        "sourcePath": "model.c4",
+        "description": null,
+        "title": null,
+        "id": "full",
+        "autoLayout": {
+          "direction": "TB"
+        },
+        "edges": [],
+        "nodes": [
+          {
+            "id": "cloud.api",
+            "parent": null,
+            "level": 0,
+            "children": [],
+            "inEdges": [],
+            "outEdges": [],
+            "title": "api",
+            "modelRef": "cloud.api",
+            "shape": "rectangle",
+            "color": "primary",
+            "style": {
+              "opacity": 15,
+              "size": "md"
+            },
+            "tags": [],
+            "kind": "service"
+          },
+          {
+            "id": "cloud.worker",
+            "parent": null,
+            "level": 0,
+            "children": [
+              "cloud.worker.deep"
+            ],
+            "inEdges": [],
+            "outEdges": [],
+            "title": "worker",
+            "modelRef": "cloud.worker",
+            "shape": "rectangle",
+            "color": "primary",
+            "style": {
+              "opacity": 15,
+              "size": "md"
+            },
+            "tags": [],
+            "kind": "service",
+            "depth": 1
+          },
+          {
+            "id": "cloud.worker.deep",
+            "parent": "cloud.worker",
+            "level": 1,
+            "children": [],
+            "inEdges": [],
+            "outEdges": [],
+            "title": "deep",
+            "modelRef": "cloud.worker.deep",
+            "shape": "rectangle",
+            "color": "primary",
+            "style": {
+              "opacity": 15,
+              "size": "md"
+            },
+            "tags": [],
+            "kind": "service"
+          }
+        ],
+        "hash": "H80TPXHT_5AjcURx4iS9tgc4kKFJVM9rTB-nLJpYdX4"
+      },
+      "withExternal": {
+        "_type": "element",
+        "tags": null,
+        "links": null,
+        "_stage": "computed",
+        "sourcePath": "model.c4",
+        "description": null,
+        "title": null,
+        "id": "withExternal",
+        "autoLayout": {
+          "direction": "TB"
+        },
+        "edges": [],
+        "nodes": [
+          {
+            "id": "external",
+            "parent": null,
+            "level": 0,
+            "children": [],
+            "inEdges": [],
+            "outEdges": [],
+            "title": "external",
+            "modelRef": "external",
+            "shape": "rectangle",
+            "color": "primary",
+            "style": {
+              "opacity": 15,
+              "size": "md"
+            },
+            "tags": [],
+            "kind": "service"
+          },
+          {
+            "id": "cloud.api",
+            "parent": null,
+            "level": 0,
+            "children": [],
+            "inEdges": [],
+            "outEdges": [],
+            "title": "api",
+            "modelRef": "cloud.api",
+            "shape": "rectangle",
+            "color": "primary",
+            "style": {
+              "opacity": 15,
+              "size": "md"
+            },
+            "tags": [],
+            "kind": "service"
+          },
+          {
+            "id": "cloud.worker",
+            "parent": null,
+            "level": 0,
+            "children": [
+              "cloud.worker.deep"
+            ],
+            "inEdges": [],
+            "outEdges": [],
+            "title": "worker",
+            "modelRef": "cloud.worker",
+            "shape": "rectangle",
+            "color": "primary",
+            "style": {
+              "opacity": 15,
+              "size": "md"
+            },
+            "tags": [],
+            "kind": "service",
+            "depth": 1
+          },
+          {
+            "id": "cloud.worker.deep",
+            "parent": "cloud.worker",
+            "level": 1,
+            "children": [],
+            "inEdges": [],
+            "outEdges": [],
+            "title": "deep",
+            "modelRef": "cloud.worker.deep",
+            "shape": "rectangle",
+            "color": "primary",
+            "style": {
+              "opacity": 15,
+              "size": "md"
+            },
+            "tags": [],
+            "kind": "service"
+          }
+        ],
+        "hash": "1DO1ivGZI3L4QLOpxq1K8eZQZLsoF9VogXT57PgrjM0"
+      }
+    },
+    "deployments": {
+      "elements": {},
+      "relations": {}
+    },
+    "imports": {},
+    "manualLayouts": {}
+  }
+}

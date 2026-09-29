@@ -1,0 +1,14 @@
+{
+  "latest_registry_release": "12.0.0",
+  "installed_cli": "12.0.0",
+  "repository_pin": "12.0.0",
+  "registry_query": "npm view @mermaid-js/mermaid-cli version --json",
+  "default_browser_status": "Missing chrome-headless-shell 154.0.8037.57",
+  "override_browser": "/home/aaron/.cache/ms-playwright/chromium-1247/chrome-linux64/chrome",
+  "override_browser_version": "Google Chrome for Testing 155.0.8059.12",
+  "command": "MERMAID_PUPPETEER_CONFIG=<private config> pre-commit run --all-files",
+  "exit": 0,
+  "stdout": "ShellCheck...............................................................Passed\nshfmt....................................................................Passed\nmarkdownlint-cli2........................................................Passed\nyamllint.................................................................Passed\nValidate GitHub Actions workflows........................................Passed\nValidate GitHub issue forms..............................................Passed\nValidate GitHub issue configuration......................................Passed\nValidate Compose configuration.......................(no files to check)Skipped\nValidate JSON with jq....................................................Passed\nCheck LikeC4 formatting..................................................Passed\nValidate LikeC4 workspace................................................Passed\nValidate Mermaid diagrams................................................Passed\nGitleaks.................................................................Passed\n",
+  "stderr": "",
+  "runtime_installations": false
+}

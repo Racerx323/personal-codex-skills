@@ -1,0 +1,17 @@
+{
+  "evaluator": "fresh agent predicate_evaluator; no inherited task history",
+  "method": "Reference-only fixed questions; no prior answers or audit reports supplied",
+  "questions": [
+    "Given group g with children a and b, and b child c, no relationships: what does include g.** select, and does preceding include external change descendants?",
+    "Distinguish g.*, g._, g.**.",
+    "Explain validate --no-layout and export json --skip-layout evidence limits and file-filter safeguards."
+  ],
+  "answers": [
+    "g.a, g.b, g.b.c; g itself excluded; preceding external adds external without changing descendants.",
+    "g.* selects g.a and g.b; g._ selects none without accumulated relationships; g.** selects all recursive descendants.",
+    "No-layout validation is source validation, not rendered correctness. Use absolute repeated file filters, expected filteredFiles, filteredErrors, totalErrors and exit status. Skip-layout JSON can establish inspected computed membership, not rendered correctness or whole-project validation."
+  ],
+  "parent_grade": {"fixed_questions_passed": 3, "fixed_questions_total": 3},
+  "additional_observation": "Evaluator flagged adjacent ambiguity: unary incoming relationships are described as from accumulated result in predicates.md, while wildcard guidance says relationship predicates can introduce neighboring endpoints. Not runtime-validated or changed in this narrowly scoped descendant correction.",
+  "limitations": "Independent reference reasoning, not an independent browser/runtime qualification. Runtime semantics were checked separately by the parent harness."
+}

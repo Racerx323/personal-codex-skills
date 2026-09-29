@@ -1,0 +1,15 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "evals/qualification-2026-09-29/installation.json": "e067545d16ef59ef73d9dcf2b76fc999c6fa143132db5dad748338160a858796",
+    "evals/qualification-2026-09-29/likec4-descendants.png": "efd656d91e4ec6cb320f960d52d74573162c1398b113384b0aa4fa8d7ecd5c85",
+    "evals/qualification-2026-09-29/likec4-independent-evaluator.json": "453da1877f0f80a65ebdc43d434fc12ea42ac43934c523b3551c08de66a78a21",
+    "evals/qualification-2026-09-29/likec4-parser.json": "32a1aa4d9434f4a761a9a70e01f4079e074889caa1d98529d501ff29cdfecec4",
+    "evals/qualification-2026-09-29/likec4-semantics.json": "8291cee2377b2ca2fe971aef3b000aedfcccdb890891df65fdf6c20b73cbff42",
+    "evals/qualification-2026-09-29/mermaid.json": "655ae6988b33bf45548014d9867cd0a5e86d358708dd971eeeceb863efe98337",
+    "evals/qualification-2026-09-29/playwright-lifecycle-initial.json": "c326897cbfb482e8092b599930ff886c0bfef8a42df81f34c4b15b6cf24d7463",
+    "evals/qualification-2026-09-29/playwright-lifecycle.json": "53ec0039d19b52dbf96a66935b90076c2354477e25dc4b5464b23811a0f81289",
+    "evals/qualification-2026-09-29/toolstack-live.json": "4dfa39bd3334d703a0714c12363ecb98239e9fa4e988d7478e24afc7884d4127",
+    "evals/qualification-2026-09-29/validation.json": "5a12e93cd3e9b0f61d18415a61f0607443d71b31e80bbae44d152f378087b018"
+  }
+}

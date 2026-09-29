@@ -1,0 +1,38 @@
+{
+  "completeness": "partial",
+  "deferred": [],
+  "documentType": "codex-security.coverage",
+  "excludePaths": [],
+  "explicitExclusions": [],
+  "includePaths": [
+    "skills"
+  ],
+  "inventoryStrategy": "scoped_path",
+  "mode": "scoped_path",
+  "openQuestions": [],
+  "scanId": "ff299486-7d2a-4d8b-ae8c-4e649b4a8345",
+  "schemaVersion": "1.0",
+  "surfaces": [
+    {
+      "disposition": "no_issue_found",
+      "id": "surface_all-40-personal-skill-files",
+      "label": "All 40 personal skill files",
+      "notes": "Independent baseline fully read all 40 files. Draft/page authority, private storage, browser ownership, shell examples, dependencies, conditional LeanIX mutation and assertion integrity traced. No source-supported exploitable vulnerability found.",
+      "receiptRefs": []
+    },
+    {
+      "disposition": "needs_follow_up",
+      "id": "surface_external-runtime-enforcement",
+      "label": "External runtime enforcement",
+      "notes": "External host/browser/CLI enforcement and authenticated integrations unavailable to this scoped source review. These are assurance limits, not unreviewed files within skills/.",
+      "receiptRefs": []
+    },
+    {
+      "disposition": "no_issue_found",
+      "id": "surface_independent-baseline-all-40-personal-skill-source-files",
+      "label": "Independent baseline all 40 personal skill source files",
+      "notes": "Independent baseline returned no reportable vulnerabilities; parent reconciliation pending. Draft/page instruction trust, browser private state, owned cleanup, package-runner scope and assertion integrity reviewed.",
+      "receiptRefs": []
+    }
+  ]
+}

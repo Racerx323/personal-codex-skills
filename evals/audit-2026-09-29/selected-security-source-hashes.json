@@ -1,0 +1,37 @@
+[
+  {
+    "path": "$HOME/.codex/skills/.system/openai-docs/scripts/fetch-codex-manual.mjs",
+    "sha256": "f53eb6d2f286e9efcc397e8bee93a938e37296c90953e4e06e94899ef1b6c363",
+    "coverage": "read for cache/storage boundary"
+  },
+  {
+    "path": "$HOME/.local/share/codex-hardening/fetch-manual-private.py",
+    "sha256": "4e16ab5346a350e9dcb06c291312ed0c5ca73e4f44a70c5d74bfbae732285bc9",
+    "coverage": "read for cache/storage boundary"
+  },
+  {
+    "path": "$HOME/.codex/plugins/cache/openai-curated-remote/codex-security/0.1.31/mcp/server.mjs",
+    "sha256": "c58624aa4c4bd3efbb67601c9c2e98759f167f608320a6cd342814b2f2e6a636",
+    "coverage": "read for cache/storage boundary"
+  },
+  {
+    "path": "$HOME/.codex/plugins/cache/openai-curated-remote/codex-security/0.1.31/scripts/finalize_scan_contract.py",
+    "sha256": "7f191c50ded50600b0a70be1e11b724f0355f166a690312226990d88e895d159",
+    "coverage": "selected mechanism trace only, not full file review"
+  },
+  {
+    "path": "$HOME/.codex/plugins/cache/openai-curated-remote/codex-security/0.1.31/scripts/workbench_saved_results.py",
+    "sha256": "db445b651bd677359ef0a5c2bbb70e896eccd60becbd80e8c7a77aa3010f289c",
+    "coverage": "selected mechanism trace only, not full file review"
+  },
+  {
+    "path": "$HOME/.codex/plugins/cache/openai-curated-remote/codex-security/0.1.31/mcp/server.mjs.br.part-000",
+    "sha256": "0259e86ae3ceb3c555521d959fd9cddb0d67e2921fc1db9fd27a55d849a48806",
+    "coverage": "selected mechanism trace only, not full file review"
+  },
+  {
+    "path": "$HOME/.codex/plugins/cache/openai-curated-remote/codex-security/0.1.31/mcp/server.mjs.br.part-001",
+    "sha256": "3c6c93cd01ac739436e91ffe2685c5267672cf18794dbe1b19ac1ac5f93d421f",
+    "coverage": "selected mechanism trace only, not full file review"
+  }
+]

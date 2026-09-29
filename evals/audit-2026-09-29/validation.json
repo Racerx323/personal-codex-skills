@@ -1,0 +1,53 @@
+{
+  "checks": [
+    {
+      "check": "JSON parse and Python AST",
+      "result": "pass"
+    },
+    {
+      "check": "new authored Markdown relative links",
+      "result": "pass",
+      "broken": []
+    },
+    {
+      "check": "pre-commit explicit generated artifact list",
+      "exit": 1,
+      "stdout": "ShellCheck...........................................(no files to check)Skipped\nshfmt................................................(no files to check)Skipped\nmarkdownlint-cli2........................................................Failed\n- hook id: markdownlint-cli2\n- exit code: 1\n\nmarkdownlint-cli2 v0.23.3 (markdownlint v0.41.1)\nFinding: evals/audit-2026-09-29/inventory/README.md evals/audit-2026-09-29/coverage-matrix.md evals/audit-2026-09-29/security-scan/report.md docs/skills-audit-2026-09-29.md !.vexp/** !**/.vexp/** !.agents/** !**/.agents/** !AGENTS.md !**/AGENTS.md !.github/copilot-instructions.md !LICENSE.md\nLinting: 4 files\nSummary: 1 issue in 1 file\nevals/audit-2026-09-29/security-scan/report.md:17 error MD032/blanks-around-lists Lists should be surrounded by blank lines [Context: \"- Installed system/plugin code...\"]\n\nyamllint.............................................(no files to check)Skipped\nValidate GitHub Actions workflows....................(no files to check)Skipped\nValidate GitHub issue forms..........................(no files to check)Skipped\nValidate GitHub issue configuration..................(no files to check)Skipped\nValidate Compose configuration.......................(no files to check)Skipped\nValidate JSON with jq....................................................Passed\nGitleaks.................................................................Passed\n",
+      "stderr": ""
+    },
+    {
+      "check": "pre-commit run --all-files (tracked repository baseline)",
+      "exit": 0,
+      "result": "pass"
+    },
+    {
+      "check": "installed manifest file hashes unchanged",
+      "files": 282,
+      "drift": [],
+      "result": "pass"
+    },
+    {
+      "check": "gitleaks untracked artifact scan",
+      "source": "/home/aaron/code/personal-codex-skills/evals/audit-2026-09-29",
+      "exit": 0,
+      "output": "\u001b[90m6:15PM\u001b[0m \u001b[32mINF\u001b[0m scan completed in 113ms\n\u001b[90m6:15PM\u001b[0m \u001b[32mINF\u001b[0m no leaks found\n"
+    },
+    {
+      "check": "gitleaks untracked artifact scan",
+      "source": "/home/aaron/code/personal-codex-skills/docs/skills-audit-2026-09-29.md",
+      "exit": 0,
+      "output": "\u001b[90m6:15PM\u001b[0m \u001b[32mINF\u001b[0m scan completed in 21.6ms\n\u001b[90m6:15PM\u001b[0m \u001b[32mINF\u001b[0m no leaks found\n"
+    },
+    {
+      "check": "authored Markdown lint",
+      "exit": 0,
+      "output": "markdownlint-cli2........................................................Passed\n"
+    }
+  ],
+  "vexp": "unavailable: shared workspace root not a git repository; no impacted tests returned",
+  "limitations": [
+    "Byte-preserved canonical security report fails MD032 at line17; sealed native report retained unchanged. Authored Markdown passes.",
+    "vexp unavailable; not counted as verification.",
+    "Installed-file comparison covers recorded file contents, not every runtime cache/log outside skill bundles."
+  ]
+}

@@ -24,3 +24,24 @@ selected MIT for new content; upstream MIT notices remain in the skill bundle.
 
 Keep one deployed writing skill. Do not install the upstream skills alongside
 Clear Writing as an update mechanism. Taste Skill is excluded by user decision.
+
+## LikeC4 and Playwright maintenance sources
+
+LikeC4's upstream source is `likec4/likec4`, directory `skills/likec4-dsl`.
+The homelab LikeC4 installation guide documents the Vercel Skills CLI command
+using `https://likec4.dev/`; the installer's lock points to that site's well-known
+skill tarball. The GitHub repository is the source, the tarball is the delivery
+method, and `vercel-labs/skills` supplies the installer;
+the original immutable revision was not recorded. Compared against
+`likec4/likec4@33dbc2d34c399a99daf96e92fc28fe5d280a7fd5`. Its MIT notice is
+preserved in the bundle. Existing evaluations were retained under evals/likec4-dsl.
+
+Playwright's installed skill predates or differs from the bundled npm entrypoint.
+Its original installed revision is unknown. Compared with `@playwright/cli` 0.1.22
+and `microsoft/playwright-cli@b85c7a736bb473bf55b584e54a09ffa698d6d871`. The
+Apache-2.0 license is preserved; this derived bundle is not relicensed as MIT.
+
+Comparison commits are not claims about the original installed revisions.
+Adaptations shorten entrypoints, move catalogs to references, correct verified
+DSL/CLI errors, remove unsafe cleanup/storage suggestions and preserve test
+assertions. Imported Markdown formatting was normalized to repository checks.

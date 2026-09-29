@@ -1,0 +1,125 @@
+{
+  "version": "1.59.4",
+  "layout_tested": false,
+  "results": [
+    {
+      "case": "trailing-hyphen",
+      "expected_valid": true,
+      "passed": true,
+      "exit": 0,
+      "stats": {
+        "totalFiles": 2,
+        "totalErrors": 0,
+        "filteredFiles": 2,
+        "filteredErrors": 0
+      }
+    },
+    {
+      "case": "named-instance",
+      "expected_valid": true,
+      "passed": true,
+      "exit": 0,
+      "stats": {
+        "totalFiles": 2,
+        "totalErrors": 0,
+        "filteredFiles": 2,
+        "filteredErrors": 0
+      }
+    },
+    {
+      "case": "root-instance-rejected",
+      "expected_valid": false,
+      "passed": true,
+      "exit": 1,
+      "stats": {
+        "totalFiles": 2,
+        "totalErrors": 2,
+        "filteredFiles": 2,
+        "filteredErrors": 2
+      }
+    },
+    {
+      "case": "typed-extension",
+      "expected_valid": true,
+      "passed": true,
+      "exit": 0,
+      "stats": {
+        "totalFiles": 2,
+        "totalErrors": 0,
+        "filteredFiles": 2,
+        "filteredErrors": 0
+      }
+    },
+    {
+      "case": "binary-bidirectional",
+      "expected_valid": true,
+      "passed": true,
+      "exit": 0,
+      "stats": {
+        "totalFiles": 2,
+        "totalErrors": 0,
+        "filteredFiles": 2,
+        "filteredErrors": 0
+      }
+    },
+    {
+      "case": "either-direction",
+      "expected_valid": true,
+      "passed": true,
+      "exit": 0,
+      "stats": {
+        "totalFiles": 2,
+        "totalErrors": 0,
+        "filteredFiles": 2,
+        "filteredErrors": 0
+      }
+    },
+    {
+      "case": "prefix-bidirectional-rejected",
+      "expected_valid": false,
+      "passed": true,
+      "exit": 1,
+      "stats": {
+        "totalFiles": 2,
+        "totalErrors": 1,
+        "filteredFiles": 2,
+        "filteredErrors": 1
+      }
+    },
+    {
+      "case": "return-steps",
+      "expected_valid": true,
+      "passed": true,
+      "exit": 0,
+      "stats": {
+        "totalFiles": 2,
+        "totalErrors": 0,
+        "filteredFiles": 2,
+        "filteredErrors": 0
+      }
+    },
+    {
+      "case": "nested-parallel-rejected",
+      "expected_valid": false,
+      "passed": true,
+      "exit": 1,
+      "stats": {
+        "totalFiles": 2,
+        "totalErrors": 1,
+        "filteredFiles": 2,
+        "filteredErrors": 1
+      }
+    },
+    {
+      "case": "empty-filter-detection",
+      "passed": true,
+      "exit": 0,
+      "stats": {
+        "totalFiles": 2,
+        "totalErrors": 1,
+        "filteredFiles": 0,
+        "filteredErrors": 0
+      }
+    }
+  ]
+}

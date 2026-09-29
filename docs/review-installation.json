@@ -1,0 +1,147 @@
+{
+  "date": "20260929T215749Z",
+  "source_revision": "986a39d239a1a7a6911a29768005937fc813d625",
+  "backup": "$HOME/.local/state/personal-codex-skills/backups/20260929T215749Z-pr-review",
+  "skills": [
+    {
+      "name": "likec4-dsl",
+      "installed": [
+        {
+          "path": "ATTRIBUTION.md",
+          "sha256": "bd9544f83b84da0b2813da3b546f535d8de0255e221dbd7ad9b303c683601890"
+        },
+        {
+          "path": "LICENSE.txt",
+          "sha256": "536b1e1c961552038f0bda5c755fff467883f914c21535c5d20a7f08c2a5ead2"
+        },
+        {
+          "path": "SKILL.md",
+          "sha256": "f4052a008dbbfe266bdb3d2a04373826a6a935c7ceac3372b5435acf9cb856b7"
+        },
+        {
+          "path": "references/bridge-leanix-drawio.md",
+          "sha256": "795ac716418d84e2d1366c72bbff07b8e6eb59b13156b232b064c8e97097ff79"
+        },
+        {
+          "path": "references/cli.md",
+          "sha256": "c85981519b38985ae7f6e08789e8a8f7bee29f31e043abe7d539e66d7aa58217"
+        },
+        {
+          "path": "references/configuration.md",
+          "sha256": "20be9b23e1c3a003f5dbdf6bb6ad386ac1f34a899407363b46ac935e4d5a9dd9"
+        },
+        {
+          "path": "references/deployment.md",
+          "sha256": "a5097b6ea8977649284fb142f37017f47617eef992f517e715e42ab713630239"
+        },
+        {
+          "path": "references/dynamic-views.md",
+          "sha256": "67bd9de83ba1d56055aae08705016a15dd9ea4da9aefef12c112a0b61da5a430"
+        },
+        {
+          "path": "references/examples.md",
+          "sha256": "3c5d9ea0a6b56331a490dc8236328a3b8cfed83859136fe3eeb82129de2f663a"
+        },
+        {
+          "path": "references/identifier-validity.md",
+          "sha256": "634400df64dc607e078670190efc930743e5587369439eceeadef8de1953f11f"
+        },
+        {
+          "path": "references/include-predicates-wildcards.md",
+          "sha256": "b9b5598b27b37f8cababa12adbba8163622d37ec71afd47e6622d7ab6352445f"
+        },
+        {
+          "path": "references/model.md",
+          "sha256": "2f47038e8a6c99987b9b0ea12f18c4275e8371ab9839d313ed08b2a6071e08b9"
+        },
+        {
+          "path": "references/predicates.md",
+          "sha256": "f36ec2553c7f07ff1180f9d6ec6214b9e011fab351295d131458591dbfed0fb7"
+        },
+        {
+          "path": "references/relationships-bidirectional.md",
+          "sha256": "fc8d1367fee9b5543b8da260f33bf257441f4183791419f47af7c32a7826328b"
+        },
+        {
+          "path": "references/specification.md",
+          "sha256": "6eaa1857159e4b5e1f0c7e3b1d15bf9867c404cd654f8b2172ffd399a5530f02"
+        },
+        {
+          "path": "references/style-tokens-colors.md",
+          "sha256": "5b247cb006255d24d56a50fa0ba469b2198d45c9c042b3c5ec348ba59098f16b"
+        },
+        {
+          "path": "references/task-contracts.md",
+          "sha256": "c949448a9431739e0185ed00b782cece7ae8fa1fddc2ebba3ab1fdad13756450"
+        },
+        {
+          "path": "references/troubleshooting.md",
+          "sha256": "c23bd744141d037cd0caa5f34b7337d1f9d11327e5a98e809d02aa6eae9ea2cf"
+        },
+        {
+          "path": "references/views.md",
+          "sha256": "35cae72d775435f01eba91b05b7876de4a1bf360f8b6d1304201c499a89024f4"
+        }
+      ],
+      "backup_verified": true
+    },
+    {
+      "name": "playwright-cli",
+      "installed": [
+        {
+          "path": "ATTRIBUTION.md",
+          "sha256": "6c59e83afdaee00b93798ccb11f98e98e6001febc116f96e0f05b6d2c3edfad0"
+        },
+        {
+          "path": "LICENSE.txt",
+          "sha256": "c16f8dcf1a368b83be78d826ea23de4079fe1b4469a0ab9ee20563f37ff3d44b"
+        },
+        {
+          "path": "SKILL.md",
+          "sha256": "52449480c0e112f90cd56b21ee35bfd8faf7ee29609c34d3dceadc426158e5b6"
+        },
+        {
+          "path": "references/commands.md",
+          "sha256": "5886a571e73f51e38f3451fac76ae04956404f33a96f63ce2dc0f8ec41ab5289"
+        },
+        {
+          "path": "references/element-attributes.md",
+          "sha256": "bf19aa4671e0a50a0fefa9c790f39124e803060eefe395042b723c29fcb7faa2"
+        },
+        {
+          "path": "references/playwright-tests.md",
+          "sha256": "72ca2205168f643e79105f6c7e90bd3d6691b70c961c200f5ca9c23bd74bf130"
+        },
+        {
+          "path": "references/request-mocking.md",
+          "sha256": "8fd2ba18af06b646f8b87f7677d9805cfcfb35d458a94aa95bc700ee0b070a65"
+        },
+        {
+          "path": "references/running-code.md",
+          "sha256": "e4fab1c67bbe81f4319af28cd2af7ac1f614798de7175531fe7a71971272378e"
+        },
+        {
+          "path": "references/session-management.md",
+          "sha256": "d2037a7a00062ded6fb38636091ca7b6c4d0bb7337cac65c516e3fa9a1599b2c"
+        },
+        {
+          "path": "references/storage-state.md",
+          "sha256": "00183bebe9d71d88741e12776db187bcd21501d8f7bdc3df9c8355129b0dc940"
+        },
+        {
+          "path": "references/test-generation.md",
+          "sha256": "bd4113a88a3683d87eccef0d6ba4a1bbf222193af998171b04e69f28bdeb54cf"
+        },
+        {
+          "path": "references/tracing.md",
+          "sha256": "4f52f845bfa01efae45c8a918f66e9d17284282331bd6531668c5135711bd735"
+        },
+        {
+          "path": "references/video-recording.md",
+          "sha256": "3551e5aaec6360e8c5839a5a6e5c6f7df4018dac7a6781c525a3e55bac493f87"
+        }
+      ],
+      "backup_verified": true
+    }
+  ]
+}

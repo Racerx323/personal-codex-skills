@@ -1,0 +1,289 @@
+{
+  "date": "2026-09-29T21:17:53.121750+00:00",
+  "source_revision": "5cf28da7508d39be42e6920058e0ebe1926be3e9",
+  "backup": "$HOME/.local/state/personal-codex-skills/backups/20260929T211752Z-maintenance",
+  "baseline_files_verified": 285,
+  "skills": [
+    {
+      "name": "likec4-dsl",
+      "rollback_rehearsal": "passed",
+      "before": [
+        {
+          "path": "SKILL.md",
+          "sha256": "7a05826fe49ce9dc592cdefa25fea3d8287189509054efc2fa0c8cf2965ad962"
+        },
+        {
+          "path": "evals/evals-public.json",
+          "sha256": "fe468e77c06ff66982cd8249c3ec55ddbdb2c6e43c8fc806a5b2f95b40b3b1c0"
+        },
+        {
+          "path": "evals/grading-spec.json",
+          "sha256": "0458fea0fb779d2be11cf68082f6bd2288889f284e0b52b62df6983253a0aa98"
+        },
+        {
+          "path": "references/bridge-leanix-drawio.md",
+          "sha256": "920a338bea6ffb1a6acc282e0898a53300ed01eb431b077600f7d4c640d84d57"
+        },
+        {
+          "path": "references/cli.md",
+          "sha256": "84f1b7fc172d4c7bc33d514f2b190b639701bcf23751c89aa2c848e6ddae70a5"
+        },
+        {
+          "path": "references/configuration.md",
+          "sha256": "7b93d8ed30545571e4c0f2f8fe6b6ea9501e760954544e6f359bd7ab39211313"
+        },
+        {
+          "path": "references/deployment.md",
+          "sha256": "86746299ae774def257371d09fff6cc8a9ebed3c0884a7bd55b8500367cf7681"
+        },
+        {
+          "path": "references/dynamic-views.md",
+          "sha256": "5fbea86dc954d033b202ee8b443f9c887af657a92a131e9aae970661aaa79c50"
+        },
+        {
+          "path": "references/examples.md",
+          "sha256": "209762dbef6dc0d79b05ca015aa7fd4ea163d64417e11c265091526f61ee6ef0"
+        },
+        {
+          "path": "references/identifier-validity.md",
+          "sha256": "8f2b2d68138f7eff6ba809556384e85e5a58fd2821c43972d650358a23f171d4"
+        },
+        {
+          "path": "references/include-predicates-wildcards.md",
+          "sha256": "6d5621dac31ffa21d7cb5be96f8b0092f135c43c608b1aebf96fe2598cf1100d"
+        },
+        {
+          "path": "references/model.md",
+          "sha256": "e76995bb40431a6232373558567d682b558989135fcef7a884cdac9058af6d2f"
+        },
+        {
+          "path": "references/predicates.md",
+          "sha256": "cf4eb07094f03cacfce24ead191f2318d0174b552c0abd567c0e646b1a53a5d8"
+        },
+        {
+          "path": "references/relationships-bidirectional.md",
+          "sha256": "a95ca40cf2289363bda162a2e788e82d0a0103b3da92928e41a6bf3f4efa8c34"
+        },
+        {
+          "path": "references/specification.md",
+          "sha256": "124098a42223e4f6aed64ea50f9752f3e3ff8ec04c546999e89d4119d7d1b11f"
+        },
+        {
+          "path": "references/style-tokens-colors.md",
+          "sha256": "12637c777840ee7e722c37be069d187f869124b10dd82b9911f2ece666b36f33"
+        },
+        {
+          "path": "references/troubleshooting.md",
+          "sha256": "28fe644ca6b970285bc0e99318c9ebc40bb46abffc68c2ded96bc63738fdec49"
+        },
+        {
+          "path": "references/views.md",
+          "sha256": "5c548a3a90027cb05ccf00acb5983f4609543d931836a4edc7acc4d97be50a55"
+        }
+      ],
+      "installed": [
+        {
+          "path": "ATTRIBUTION.md",
+          "sha256": "bd9544f83b84da0b2813da3b546f535d8de0255e221dbd7ad9b303c683601890"
+        },
+        {
+          "path": "LICENSE.txt",
+          "sha256": "536b1e1c961552038f0bda5c755fff467883f914c21535c5d20a7f08c2a5ead2"
+        },
+        {
+          "path": "SKILL.md",
+          "sha256": "f4052a008dbbfe266bdb3d2a04373826a6a935c7ceac3372b5435acf9cb856b7"
+        },
+        {
+          "path": "references/bridge-leanix-drawio.md",
+          "sha256": "920a338bea6ffb1a6acc282e0898a53300ed01eb431b077600f7d4c640d84d57"
+        },
+        {
+          "path": "references/cli.md",
+          "sha256": "c85981519b38985ae7f6e08789e8a8f7bee29f31e043abe7d539e66d7aa58217"
+        },
+        {
+          "path": "references/configuration.md",
+          "sha256": "20be9b23e1c3a003f5dbdf6bb6ad386ac1f34a899407363b46ac935e4d5a9dd9"
+        },
+        {
+          "path": "references/deployment.md",
+          "sha256": "a5097b6ea8977649284fb142f37017f47617eef992f517e715e42ab713630239"
+        },
+        {
+          "path": "references/dynamic-views.md",
+          "sha256": "c183fcf6e22133181bd3547cbbd668662b06a5c0835e9774e187114af5730d08"
+        },
+        {
+          "path": "references/examples.md",
+          "sha256": "209762dbef6dc0d79b05ca015aa7fd4ea163d64417e11c265091526f61ee6ef0"
+        },
+        {
+          "path": "references/identifier-validity.md",
+          "sha256": "634400df64dc607e078670190efc930743e5587369439eceeadef8de1953f11f"
+        },
+        {
+          "path": "references/include-predicates-wildcards.md",
+          "sha256": "aac0172187c83988b64a5576fee3feea11bf603ed18b153505104ecf87e19b06"
+        },
+        {
+          "path": "references/model.md",
+          "sha256": "6cbdcff9eb3100a46c9e0cec57ed0b2f48090e11e10cef9d57eefdb1f10f67aa"
+        },
+        {
+          "path": "references/predicates.md",
+          "sha256": "f36ec2553c7f07ff1180f9d6ec6214b9e011fab351295d131458591dbfed0fb7"
+        },
+        {
+          "path": "references/relationships-bidirectional.md",
+          "sha256": "a95ca40cf2289363bda162a2e788e82d0a0103b3da92928e41a6bf3f4efa8c34"
+        },
+        {
+          "path": "references/specification.md",
+          "sha256": "6eaa1857159e4b5e1f0c7e3b1d15bf9867c404cd654f8b2172ffd399a5530f02"
+        },
+        {
+          "path": "references/style-tokens-colors.md",
+          "sha256": "5b247cb006255d24d56a50fa0ba469b2198d45c9c042b3c5ec348ba59098f16b"
+        },
+        {
+          "path": "references/task-contracts.md",
+          "sha256": "c949448a9431739e0185ed00b782cece7ae8fa1fddc2ebba3ab1fdad13756450"
+        },
+        {
+          "path": "references/troubleshooting.md",
+          "sha256": "cd6cfc1cf2e848d75ca07165aaba1323168f45a266a5979774632909214db29c"
+        },
+        {
+          "path": "references/views.md",
+          "sha256": "2a55efcd23c38970d15eb721db0c2146236309d27ae8c179d89f6895a875de8c"
+        }
+      ]
+    },
+    {
+      "name": "playwright-cli",
+      "rollback_rehearsal": "passed",
+      "before": [
+        {
+          "path": "SKILL.md",
+          "sha256": "29c0b669a524d42b51934d7db9144c1c07a566d0549ae6fb6ccd810e5a3cf61b"
+        },
+        {
+          "path": "references/element-attributes.md",
+          "sha256": "bf19aa4671e0a50a0fefa9c790f39124e803060eefe395042b723c29fcb7faa2"
+        },
+        {
+          "path": "references/playwright-tests.md",
+          "sha256": "c5b0719fef2cfdff50bd744051b2f9afc119775db4b48e9b2882c1cf3886797c"
+        },
+        {
+          "path": "references/request-mocking.md",
+          "sha256": "54e801c9663fc2b6d68ceb058cb1c360724c2499f42acc7852a68e83e5b5f37c"
+        },
+        {
+          "path": "references/running-code.md",
+          "sha256": "d95c539a5990b71d02d8bdf1d9414df16191eb6cff95b0063820518b7a13dcb2"
+        },
+        {
+          "path": "references/session-management.md",
+          "sha256": "cd3e261b8763bf952f1e371b876cb78d054379afec85482f9250633e1b7e6c44"
+        },
+        {
+          "path": "references/storage-state.md",
+          "sha256": "9ac47f9ae4a1aedcd2077f8ac9ab1ba6bee1962cb83ff51adcd36fb6d83b5ec6"
+        },
+        {
+          "path": "references/test-generation.md",
+          "sha256": "12f54cfa718d9e559bad918120a4ca4f11c933167713d1b9c5f99872eddaf749"
+        },
+        {
+          "path": "references/tracing.md",
+          "sha256": "792e0ac7705e56ac48df84c0f5400221ce86107897c671590a64a4ea6a82508e"
+        },
+        {
+          "path": "references/video-recording.md",
+          "sha256": "8555ab5400df0d90e66318aacc0a8a4418fbf872e7463824d55d5c41615abd83"
+        }
+      ],
+      "installed": [
+        {
+          "path": "ATTRIBUTION.md",
+          "sha256": "6c59e83afdaee00b93798ccb11f98e98e6001febc116f96e0f05b6d2c3edfad0"
+        },
+        {
+          "path": "LICENSE.txt",
+          "sha256": "c16f8dcf1a368b83be78d826ea23de4079fe1b4469a0ab9ee20563f37ff3d44b"
+        },
+        {
+          "path": "SKILL.md",
+          "sha256": "52449480c0e112f90cd56b21ee35bfd8faf7ee29609c34d3dceadc426158e5b6"
+        },
+        {
+          "path": "references/commands.md",
+          "sha256": "4ea726f06d7b7fb17d2fd0d23408df52051851150f65efb6b127d3fb0b57546b"
+        },
+        {
+          "path": "references/element-attributes.md",
+          "sha256": "bf19aa4671e0a50a0fefa9c790f39124e803060eefe395042b723c29fcb7faa2"
+        },
+        {
+          "path": "references/playwright-tests.md",
+          "sha256": "7224eae40d3789e71e17538f085899e2bf719a883926bca0a993ffddf678ac73"
+        },
+        {
+          "path": "references/request-mocking.md",
+          "sha256": "8fd2ba18af06b646f8b87f7677d9805cfcfb35d458a94aa95bc700ee0b070a65"
+        },
+        {
+          "path": "references/running-code.md",
+          "sha256": "24e958b0862b8a7a404e6a1513b3cae32588038482112ffb418bd1f2d4307b7a"
+        },
+        {
+          "path": "references/session-management.md",
+          "sha256": "f285a51513f84c53e2dfef208be6c4cc9e48f3ad4e3c3edc962e86614b9025ac"
+        },
+        {
+          "path": "references/storage-state.md",
+          "sha256": "53045249752f7551b1d149929df1e006abf9713e47d7586b039b21a3373cc49f"
+        },
+        {
+          "path": "references/test-generation.md",
+          "sha256": "f31eadbb1bbd0f2dbb427de3cdd630e647b47da8292a2407c28e0ed2370c0290"
+        },
+        {
+          "path": "references/tracing.md",
+          "sha256": "f7929bad36790ad00bec0cf6c6dc3e4c5ee5e6f8b3222de39df7ce9573df197d"
+        },
+        {
+          "path": "references/video-recording.md",
+          "sha256": "419e1f2fdd19cd3f6ac8cf0abf4716ad8c67ef020442b946d0d9c30f264f85e7"
+        }
+      ]
+    }
+  ],
+  "system_files_hand_edited": false,
+  "status": "installed_verified_and_discovered",
+  "clear_writing_unchanged": true,
+  "cli_version": "0.159.1",
+  "cli_discovery": {
+    "enabled_names": [
+      "clear-writing",
+      "context7:context7-mcp",
+      "imagegen",
+      "likec4-dsl",
+      "openai-docs",
+      "playwright-cli",
+      "review-agent",
+      "skill-creator",
+      "skill-installer"
+    ],
+    "load_errors": []
+  },
+  "initial_behavior_revision": "f5404bf9425d6704dfde074bf66bcb00d9e49e9a",
+  "upstream_updater_record": {
+    "skill": "likec4-dsl",
+    "action": "removed only original upstream tracking entry after backing up entire lock; retained all other settings",
+    "before_sha256": "8e24b4ffcd0b8d35b76efcbd2f0ddc0d902cdd3fc06a611b052682939741186c",
+    "after_sha256": "784ffc5dd98d7abfd4bed53389b667f1da7bae4b96535a16460a6b6021ccaced"
+  }
+}

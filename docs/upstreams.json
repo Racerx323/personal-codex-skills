@@ -43,6 +43,23 @@
           "sha256": "b7a7fe370cc4c9e974528c7cea7841cf8ac886bc9ed947edb11b289441fba4a8"
         }
       ]
+    },
+    {
+      "repository": "https://github.com/likec4/likec4",
+      "comparison_commit": "33dbc2d34c399a99daf96e92fc28fe5d280a7fd5",
+      "original_install_commit": null,
+      "installed_source": "https://likec4.dev/.well-known/agent-skills/likec4-dsl.tar.gz",
+      "license": "MIT",
+      "source_path": "skills/likec4-dsl",
+      "installation_guide": "homelab-docs/docs/likec4-installation-and-configuration.md",
+      "documented_install_command": "npx skills add https://likec4.dev/ --skill likec4-dsl --agent codex --global --yes"
+    },
+    {
+      "repository": "https://github.com/microsoft/playwright-cli",
+      "comparison_commit": "b85c7a736bb473bf55b584e54a09ffa698d6d871",
+      "original_install_commit": null,
+      "comparison_package": "@playwright/cli 0.1.22",
+      "license": "Apache-2.0"
     }
   ],
   "structure_reference": {

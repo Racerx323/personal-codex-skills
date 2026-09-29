@@ -1,0 +1,118 @@
+{
+  "grader": "implementing parent, separate from both response-generating agents",
+  "method": "Single independent baseline and candidate response per request; targeted retest after repairs. Not statistical reliability or exhaustive routing coverage.",
+  "grades": [
+    {
+      "case_id": 1,
+      "baseline": "pass",
+      "initial_candidate": "pass",
+      "final_candidate": "pass",
+      "basis": "Parent review of recorded independent response; runtime corroboration only where separately recorded."
+    },
+    {
+      "case_id": 2,
+      "baseline": "pass",
+      "initial_candidate": "pass",
+      "final_candidate": "pass",
+      "basis": "Parent review of recorded independent response; runtime corroboration only where separately recorded."
+    },
+    {
+      "case_id": 3,
+      "baseline": "pass",
+      "initial_candidate": "pass",
+      "final_candidate": "pass",
+      "basis": "Parent review of recorded independent response; runtime corroboration only where separately recorded."
+    },
+    {
+      "case_id": 4,
+      "baseline": "pass",
+      "initial_candidate": "fail",
+      "final_candidate": "pass",
+      "basis": "Initial candidate placed instanceOf at deployment root: rejected by CLI. Retest returns correctly scoped insertion fragment without invented topology."
+    },
+    {
+      "case_id": 5,
+      "baseline": "pass",
+      "initial_candidate": "fail",
+      "final_candidate": "pass",
+      "basis": "Initial candidate relative --file paths selected zero files when cwd differed. Retest uses absolute file filters."
+    },
+    {
+      "case_id": 6,
+      "baseline": "pass",
+      "initial_candidate": "pass",
+      "final_candidate": "pass",
+      "basis": "Parent review of recorded independent response; runtime corroboration only where separately recorded."
+    },
+    {
+      "case_id": 7,
+      "baseline": "pass",
+      "initial_candidate": "pass",
+      "final_candidate": "pass",
+      "basis": "Parent review of recorded independent response; runtime corroboration only where separately recorded."
+    },
+    {
+      "case_id": 8,
+      "baseline": "pass",
+      "initial_candidate": "pass",
+      "final_candidate": "pass",
+      "basis": "Parent review of recorded independent response; runtime corroboration only where separately recorded."
+    },
+    {
+      "case_id": 9,
+      "baseline": "pass",
+      "initial_candidate": "pass",
+      "final_candidate": "pass",
+      "basis": "Parent review of recorded independent response; runtime corroboration only where separately recorded."
+    },
+    {
+      "case_id": 10,
+      "baseline": "pass",
+      "initial_candidate": "pass",
+      "final_candidate": "pass",
+      "basis": "Parent review of recorded independent response; runtime corroboration only where separately recorded."
+    },
+    {
+      "case_id": 11,
+      "baseline": "pass",
+      "initial_candidate": "pass",
+      "final_candidate": "pass",
+      "basis": "Parent review of recorded independent response; runtime corroboration only where separately recorded."
+    },
+    {
+      "case_id": 12,
+      "baseline": "pass",
+      "initial_candidate": "pass",
+      "final_candidate": "pass",
+      "basis": "Parent review of recorded independent response; runtime corroboration only where separately recorded."
+    },
+    {
+      "case_id": 13,
+      "baseline": "not_run",
+      "initial_candidate": "not_run",
+      "final_candidate": "pass",
+      "basis": "Parent review of recorded independent response; runtime corroboration only where separately recorded."
+    },
+    {
+      "case_id": 14,
+      "baseline": "not_run",
+      "initial_candidate": "not_run",
+      "final_candidate": "pass",
+      "basis": "Parent review of recorded independent response; runtime corroboration only where separately recorded."
+    },
+    {
+      "case_id": 15,
+      "baseline": "not_run",
+      "initial_candidate": "not_run",
+      "final_candidate": "pass",
+      "basis": "Parent review of recorded independent response; runtime corroboration only where separately recorded."
+    },
+    {
+      "case_id": 16,
+      "baseline": "not_run",
+      "initial_candidate": "not_run",
+      "final_candidate": "pass",
+      "basis": "Parent review of recorded independent response; runtime corroboration only where separately recorded."
+    }
+  ]
+}

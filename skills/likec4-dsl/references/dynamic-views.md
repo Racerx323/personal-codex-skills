@@ -244,12 +244,8 @@ dynamic view with-notes {
     """
   }
 
-  backend -> db "query" {
-    metadata {
-      latency "50ms"
-      cached false
-    }
-  }
+  backend -> db "query"
+  // Custom metadata belongs on the corresponding model relationship.
 }
 ```
 
@@ -259,7 +255,8 @@ dynamic view with-notes {
 - `technology` — technology/protocol used
 - `description` — detailed description
 - `notes` — markdown-formatted notes/commentary
-- `metadata` — key-value pairs for custom data
+Dynamic steps do not accept `metadata`. Put custom data on the logical model
+relationship; step bodies support presentation overrides.
 
 ## Navigation & Drill-down
 

@@ -37,7 +37,7 @@ the original immutable revision was not recorded. Compared against
 preserved in the bundle. Existing evaluations were retained under evals/likec4-dsl.
 
 Playwright's installed skill predates or differs from the bundled npm entrypoint.
-Its original installed revision is unknown. Compared with @playwright/cli0.1.22
+Its original installed revision is unknown. Compared with `@playwright/cli` 0.1.22
 and `microsoft/playwright-cli@b85c7a736bb473bf55b584e54a09ffa698d6d871`. The
 Apache-2.0 license is preserved; this derived bundle is not relicensed as MIT.
 

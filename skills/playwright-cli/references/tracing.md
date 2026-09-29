@@ -2,6 +2,13 @@
 
 Capture detailed execution traces for debugging and analysis. Traces include DOM snapshots, screenshots, network activity, and console logs.
 
+Before recording, start the task-owned session from a verified owner-private
+working directory outside the repository and set the launch configuration's
+`outputDir` to that private directory. The installed CLI also accepts
+`PLAYWRIGHT_MCP_OUTPUT_DIR` at session startup. Set it before `open`, not after
+tracing starts. Keep generated traces and network data there; use only the
+named session owned by this task.
+
 ## Basic Usage
 
 ```bash
@@ -19,7 +26,7 @@ playwright-cli tracing-stop
 
 ## Trace Output Files
 
-When you start tracing, Playwright creates a `traces/` directory with several files:
+When you start tracing, Playwright creates a `traces/` directory beneath its configured task output with several files:
 
 ### `trace-{timestamp}.trace`
 

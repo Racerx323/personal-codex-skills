@@ -31,6 +31,13 @@ CASES = [
     ("deployment-bidirectional", 'deployment { x = host { aa = instanceOf a } y = host { bb = instanceOf b } x.aa <-> y.bb }', True),
     ("dot-kind", 'model { a .sync c "calls" }', True),
     ("dot-kind-extra-arrow-rejected", 'model { a .sync -> c "calls" }', False),
+    ("qualified-descendants", 'model { parent = service { child = service } } views { view all { include parent.** } }', True),
+    ("qualified-related-children", 'model { parent = service { child = service } } views { view all { include a include parent._ } }', True),
+    ("bare-descendants-rejected", 'views { view all { include ** } }', False),
+    ("bare-underscore-rejected", 'views { view all { include _ } }', False),
+    ("dynamic-metadata-rejected", 'views { dynamic view flow { a -> b { metadata { latency "50ms" } } } }', False),
+    ("model-metadata", 'model { extend a -[async]-> b "publishes" { metadata { latency "50ms" } } }', True),
+    ("mixed-direction-chain-rejected", 'views { dynamic view flow { a -> b -> c <- b } }', False),
     ("either-direction", 'views { view all { include -> a -> } }', True),
     ("prefix-bidirectional-rejected", 'views { view all { include <-> b } }', False),
     ("return-steps", 'views { dynamic view flow {\n a -> b -> c\n b <- c\n a <- b\n} }', True),
@@ -64,6 +71,17 @@ def main():
         run = subprocess.run(["likec4", "validate", "--json", "--no-layout", "--file", "missing.c4", str(project)], cwd=root, capture_output=True, text=True, timeout=30)
         data = json.loads(run.stdout)
         results.append({"case": "empty-filter-detection", "passed": run.returncode == 0 and data["valid"] is True and data["stats"]["filteredFiles"] == 0 and data["stats"]["filteredErrors"] == 0 and data["stats"]["totalErrors"] > 0, "exit": run.returncode, "stats": data["stats"]})
+        project = root / "trailing-hyphen"
+        config = project / "likec4.config.json"
+        config.write_text(json.dumps({"name": "filter-test"}))
+        run = subprocess.run([
+            "likec4", "validate", "--json", "--no-layout",
+            "--file", str(project / "model.c4"),
+            "--file", str(project / "views.c4"),
+            "--file", str(config), str(project),
+        ], capture_output=True, text=True, timeout=30)
+        data = json.loads(run.stdout)
+        results.append({"case": "configuration-is-not-dsl", "passed": run.returncode == 0 and data["valid"] is True and data["stats"]["filteredFiles"] == 2, "exit": run.returncode, "stats": data["stats"]})
     report = {"version": version, "layout_tested": False, "results": results}
     text = json.dumps(report, indent=2) + "\n"
     if args.output:

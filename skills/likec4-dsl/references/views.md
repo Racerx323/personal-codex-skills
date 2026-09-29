@@ -179,7 +179,9 @@ customer -> frontend "places order" {
 }
 ```
 
-Step properties: `title`, `description`, `technology`, `notes`, `navigateTo`, all relationship properties.
+Step properties include `title`, `description`, `technology`, `notes`, and
+`navigateTo`; they are presentation overrides, not all model relationship
+properties. For example, `metadata` belongs on the model relationship.
 
 ### Chained Steps
 
@@ -190,7 +192,8 @@ customer
   -> frontend "opens"     // Read as "customer opens frontend"
   -> backend "requests"   // Read as "frontend requests backend"
   -> database "queries"   // Read as "backend queries database"
-  <- backend "responds"   // Read as "database responds to backend"
+
+backend <- database "responds"  // Separate response step
 ```
 
 Each arrow in the chain creates a separate step. The target of the previous step becomes the source of the next.

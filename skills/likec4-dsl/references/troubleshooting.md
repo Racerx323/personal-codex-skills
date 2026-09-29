@@ -17,7 +17,7 @@ Load this file when encountering validation errors, unexpected rendering, or whe
 | Error | Cause | Fix |
 | ------- | ------- | ----- |
 | Element shows but relationships don't render | Relationship references FQN incorrectly | Use exact FQN matching the model hierarchy |
-| "Can't define relationship from parent to child" | Direct parent-child relationships are forbidden | Move the relationship outside the parent element or use implicit notation |
+| "Can't define relationship from parent to child" | Direct parent-child relationships are forbidden | Keep containment as nesting; remove the relationship or choose non-parent/child endpoints |
 | Child element not visible from other files | Referencing by short name instead of FQN | Import or use full FQN: `cloud.backend.api` |
 | Extend block adds duplicate tags | Tags stack on merge | Use consistent tag names; duplicates are not deduplicated automatically |
 
@@ -55,7 +55,7 @@ Load this file when encountering validation errors, unexpected rendering, or whe
 | Most Common | Solution |
 | --- | --- |
 | `validate` reports config not found | Ensure `likec4.config.json` exists in the project root directory |
-| Imported file shows "Module not resolved" | Use correct relative path: `import { x } from './path/to/file.c4'` |
+| Imported file shows "Module not resolved" | Import from the loaded project name, not a source-file path; use configuration `include.paths` for shared source directories |
 | Symbol from import invisible in model | Symbol must be public (defined at top level); nested elements need FQN |
 | Large error count in project but your file is clean | Use `likec4 validate --json --no-layout --file <edited-file> <project-dir>` and check `filteredErrors`/`filteredFiles`; text mode may still print upstream diagnostics |
 
@@ -77,7 +77,10 @@ When encountering errors, follow these steps in order:
    likec4 validate --json --no-layout --file <your-file> <project-dir>
    ```
 
-   If `filteredErrors` = 0 but `totalErrors` > 0, your file is clean; the error is in an upstream file.
+   First prove the intended DSL file is included in `filteredFiles`. Only then
+   does `filteredErrors = 0` establish that it has no reported errors. With
+   `totalErrors > 0`, other loaded files still have errors. An unmatched filter
+   proves nothing about the edited file.
 
 2. **Check FQN integrity:** Find the identifier from the error message and verify it matches the model hierarchy exactly.
 

@@ -111,6 +111,90 @@
       }
     },
     {
+      "case": "qualified-descendants",
+      "expected_valid": true,
+      "passed": true,
+      "exit": 0,
+      "stats": {
+        "totalFiles": 2,
+        "totalErrors": 0,
+        "filteredFiles": 2,
+        "filteredErrors": 0
+      }
+    },
+    {
+      "case": "qualified-related-children",
+      "expected_valid": true,
+      "passed": true,
+      "exit": 0,
+      "stats": {
+        "totalFiles": 2,
+        "totalErrors": 0,
+        "filteredFiles": 2,
+        "filteredErrors": 0
+      }
+    },
+    {
+      "case": "bare-descendants-rejected",
+      "expected_valid": false,
+      "passed": true,
+      "exit": 1,
+      "stats": {
+        "totalFiles": 2,
+        "totalErrors": 1,
+        "filteredFiles": 2,
+        "filteredErrors": 1
+      }
+    },
+    {
+      "case": "bare-underscore-rejected",
+      "expected_valid": false,
+      "passed": true,
+      "exit": 1,
+      "stats": {
+        "totalFiles": 2,
+        "totalErrors": 2,
+        "filteredFiles": 2,
+        "filteredErrors": 2
+      }
+    },
+    {
+      "case": "dynamic-metadata-rejected",
+      "expected_valid": false,
+      "passed": true,
+      "exit": 1,
+      "stats": {
+        "totalFiles": 2,
+        "totalErrors": 6,
+        "filteredFiles": 2,
+        "filteredErrors": 6
+      }
+    },
+    {
+      "case": "model-metadata",
+      "expected_valid": true,
+      "passed": true,
+      "exit": 0,
+      "stats": {
+        "totalFiles": 2,
+        "totalErrors": 0,
+        "filteredFiles": 2,
+        "filteredErrors": 0
+      }
+    },
+    {
+      "case": "mixed-direction-chain-rejected",
+      "expected_valid": false,
+      "passed": true,
+      "exit": 1,
+      "stats": {
+        "totalFiles": 2,
+        "totalErrors": 3,
+        "filteredFiles": 2,
+        "filteredErrors": 3
+      }
+    },
+    {
       "case": "either-direction",
       "expected_valid": true,
       "passed": true,
@@ -166,6 +250,17 @@
         "totalFiles": 2,
         "totalErrors": 1,
         "filteredFiles": 0,
+        "filteredErrors": 0
+      }
+    },
+    {
+      "case": "configuration-is-not-dsl",
+      "passed": true,
+      "exit": 0,
+      "stats": {
+        "totalFiles": 2,
+        "totalErrors": 0,
+        "filteredFiles": 2,
         "filteredErrors": 0
       }
     }

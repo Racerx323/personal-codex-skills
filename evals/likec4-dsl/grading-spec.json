@@ -12,7 +12,7 @@
         "The response mentions `filteredFiles` and `filteredErrors` as the key fields for the targeted file check.",
         "The response distinguishes those filtered fields from `totalErrors` or other project-wide counts."
       ],
-      "grading_guidance": "Accept any reasonable version pin in the command (`npx likec4@latest`, `npx likec4@X.Y.Z`, or bare `npx likec4`). Never require `2>/dev/null` or other platform-specific redirections. The semantic invariants — `--json`, `--no-layout`, `--file <path>`, correct project path, and accurate interpretation of `filteredFiles`/`filteredErrors`/`totalErrors` — must all be present for full credit."
+      "grading_guidance": "Accept any reasonable version pin in the command (`npx likec4@latest`, `npx likec4@X.Y.Z`, or bare `npx likec4`). Never require `2>/dev/null` or other platform-specific redirections. The semantic invariants \u2014 `--json`, `--no-layout`, `--file <path>`, correct project path, and accurate interpretation of `filteredFiles`/`filteredErrors`/`totalErrors` \u2014 must all be present for full credit."
     },
     {
       "id": 1,
@@ -73,7 +73,7 @@
         "Each named instance uses `instanceOf cloud.api`.",
         "The response does not treat two anonymous `instanceOf cloud.api` lines as satisfying the request."
       ],
-      "grading_guidance": "This eval is primarily about named deployment instances inside one node. If the answer uses anonymous instances or leaves the naming ambiguity unresolved, it should lose clearly even if the surrounding deployment block is otherwise valid. Do not over-weight extra explanation once the naming requirement is either satisfied or violated. Note: `instanceOf` is a DSL keyword, not a `deploymentNode` kind — the structural snippet checker may incorrectly flag `instanceOf` as an 'Unknown LikeC4 kind'; this is a checker limitation and should not count as a content error."
+      "grading_guidance": "This eval is primarily about named deployment instances inside one node. If the answer uses anonymous instances or leaves the naming ambiguity unresolved, it should lose clearly even if the surrounding deployment block is otherwise valid. Do not over-weight extra explanation once the naming requirement is either satisfied or violated. Note: `instanceOf` is a DSL keyword, not a `deploymentNode` kind \u2014 the structural snippet checker may incorrectly flag `instanceOf` as an 'Unknown LikeC4 kind'; this is a checker limitation and should not count as a content error."
     },
     {
       "id": 6,
@@ -110,7 +110,7 @@
         "Both views use `global predicate core-services` to apply the shared group.",
         "Each view demonstrates an additional distinct rule: one adds a `style` rule and the other adds an `include` rule."
       ],
-      "grading_guidance": "This is a contrastive syntax eval. The exact reusable-predicate mechanism matters: prefer answers that literally use `global { predicateGroup ... }` and `global predicate core-services`, and penalize substitutions such as style groups, prose-only explanations, or other reusable constructs even if they look conceptually adjacent. Accept `include -> cloud.* ->` as valid — it is the `-> expr ->` predicate that means 'relationships between elements matching expr and the accumulated result'. The structural snippet checker may flag `*` after `->` as an 'Unknown relationship kind'; this is a checker false positive. Grade on semantic correctness of the predicate, not on structural-checker output."
+      "grading_guidance": "This is a contrastive syntax eval. The exact reusable-predicate mechanism matters: prefer answers that literally use `global { predicateGroup ... }` and `global predicate core-services`, and penalize substitutions such as style groups, prose-only explanations, or other reusable constructs even if they look conceptually adjacent. Accept `include -> cloud.* ->` as valid \u2014 it is the `-> expr ->` predicate that means 'relationships between elements matching expr and the accumulated result'. The structural snippet checker may flag `*` after `->` as an 'Unknown relationship kind'; this is a checker false positive. Grade on semantic correctness of the predicate, not on structural-checker output."
     },
     {
       "id": 9,
@@ -320,7 +320,7 @@
         "The final snippet uses bare `include api` rather than `include cloud.backend.api`.",
         "The final snippet adds an incoming relationship predicate for `cloud.backend`."
       ],
-      "grading_guidance": "This eval is contrastive: answers that redeclare the scope or claim redeclaration is required should lose clearly, even if the rest of the snippet is plausible. Items 1–2 (binary verdict `Valid as written.` and scope-inheritance explanation) are the primary grading signals and account for roughly 60% of the score. Missing the exact opening phrase should noticeably reduce score even if the later explanation is correct. Items 3–5 (snippet correctness) are secondary completeness checks. Eval 21 is a validation task; eval 7 is the complementary construction task — assess each against its own primary objective."
+      "grading_guidance": "This eval is contrastive: answers that redeclare the scope or claim redeclaration is required should lose clearly, even if the rest of the snippet is plausible. Items 1\u20132 (binary verdict `Valid as written.` and scope-inheritance explanation) are the primary grading signals and account for roughly 60% of the score. Missing the exact opening phrase should noticeably reduce score even if the later explanation is correct. Items 3\u20135 (snippet correctness) are secondary completeness checks. Eval 21 is a validation task; eval 7 is the complementary construction task \u2014 assess each against its own primary objective."
     },
     {
       "id": 22,
@@ -363,16 +363,16 @@
     },
     {
       "id": 25,
-      "expected_output": "The response provides a `likec4 validate` command with `--json`, `--no-layout`, and three repeated `--file` flags for the edited template files, explains the roles of `filteredFiles`, `filteredErrors`, and `totalErrors`, and states that `filteredFiles = 2` means one intended file was not actually included in the filter set.",
+      "expected_output": "Provide syntax/semantic-only validation with --json, --no-layout, repeated --file flags for the two edited DSL files, and the project directory. Explain that filteredFiles counts DSL source files: 2 is expected for two .c4 files plus configuration JSON. Configuration is loaded and validated separately; inspect configuration diagnostics. Explain filteredErrors and totalErrors and prove the two intended DSL paths match.",
       "files": [],
       "expectations": [
-        "The command uses `npx likec4 validate --json --no-layout`.",
-        "The command passes three `--file` arguments, one per edited file.",
-        "The command includes the template project path argument.",
-        "The response explains `filteredFiles`, `filteredErrors`, and `totalErrors` distinctly.",
-        "The response explains that `filteredFiles = 2` means one of the intended files was not actually filtered by the command."
+        "Uses the project toolchain for likec4 validate --json --no-layout.",
+        "Includes each edited .c4 file with a repeated --file flag and the template project directory.",
+        "Does not require configuration JSON to count as a third DSL file.",
+        "Explains filteredFiles, filteredErrors, and totalErrors distinctly and verifies intended DSL coverage.",
+        "Explains that filteredFiles = 2 may be correct here and checks configuration diagnostics separately."
       ],
-      "grading_guidance": "Do not give full credit to answers that only restate the command. This eval checks partial filter coverage interpretation: `filteredFiles = 2` means one of the three intended files was not captured, and the response must state this explicitly. Prefer answers that put the command on the first line by itself when the prompt requires it. Accept any reasonable version pin (`npx likec4@latest`, `npx likec4@X.Y.Z`, or bare `npx likec4`). The semantic invariants — three `--file` flags, correct project path, accurate distinction of all three JSON fields, and the `filteredFiles = 2` interpretation — are strict and non-negotiable."
+      "grading_guidance": "Accept two filtered DSL files for the two .c4 inputs. Do not infer a filter failure merely because likec4.config.json is the third edited file. A redundant config --file flag is not proof of config validation; require a distinction between loaded configuration and filtered DSL diagnostics. Prefer the existing pinned project toolchain, not an unsolicited upgrade."
     },
     {
       "id": 26,

@@ -95,14 +95,17 @@ another client's catalog; this run cannot refresh its own initial catalog.
 
 The first PR reviews identified contradictions left in supporting references.
 The follow-up corrects model/deployment bidirectional declarations, typed dot
-connectors, dynamic response direction, and wildcard descriptions. Four added
+connectors, dynamic response direction, and wildcard descriptions. Added
 CLI fixtures and the strengthened empty-filter check pass on LikeC4 1.59.4
-(14 total); see [review runtime results](../evals/maintenance-2026-09-29/review-likec4-runtime.json).
+(22 total); see [review runtime results](../evals/maintenance-2026-09-29/review-likec4-runtime.json).
 
 Playwright references now preserve assertions, scope cleanup to owned resources,
 keep state files in private directories, and distinguish reusable fixtures from
 standalone seed setup. Fixture imports follow the generated test's directory.
-Missing dependencies require authorization before bootstrap.
+Missing dependencies require authorization before bootstrap. Further CodeRabbit
+findings corrected scoped wildcard examples, dynamic-step properties, project
+imports, round-trip export wording, and the evaluation rubric that incorrectly
+counted configuration JSON as a third DSL source.
 
 The [plugin-creator reproduction](https://github.com/openai/codex/issues/19265#issuecomment-5899517948)
 was submitted as related evidence; shared root cause and an upstream fix remain

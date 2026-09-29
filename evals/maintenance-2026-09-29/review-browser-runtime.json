@@ -1,0 +1,13 @@
+{
+  "scope": "loopback synthetic IndexedDB fixture; exact reference snippet",
+  "results": [
+    {
+      "case": "successful-deletion-waits",
+      "passed": true
+    },
+    {
+      "case": "blocked-deletion-rejects",
+      "passed": true
+    }
+  ]
+}

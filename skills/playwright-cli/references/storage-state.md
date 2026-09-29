@@ -221,9 +221,12 @@ playwright-cli run-code "async page => {
 
 ```bash
 playwright-cli run-code "async page => {
-  await page.evaluate(() => {
-    indexedDB.deleteDatabase('myDatabase');
-  });
+  await page.evaluate(() => new Promise((resolve, reject) => {
+    const request = indexedDB.deleteDatabase('myDatabase');
+    request.onsuccess = () => resolve();
+    request.onerror = () => reject(request.error);
+    request.onblocked = () => reject(new Error('Database deletion blocked by an open connection'));
+  }));
 }"
 ```
 

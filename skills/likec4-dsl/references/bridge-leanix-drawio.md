@@ -22,7 +22,7 @@ From the project root (see `@likec4/leanix-bridge` README for details):
 
 **Draw.io LeanIX profile** (`leanix`): adds `bridgeManaged=true`, `likec4Id`, `likec4Kind`, `likec4ViewId`, optional `likec4ProjectId` on vertices; `likec4RelationId` on edges — for round-trip and LeanIX alignment.
 
-Other useful flags: `likec4 export drawio --roundtrip` (embed layout in DSL comments), `--all-in-one`, `--uncompressed`.
+Other useful flags: `likec4 export drawio --roundtrip` (apply existing DSL round-trip comments to the export), `--all-in-one`, `--uncompressed`.
 
 ## Round-trip mental model
 

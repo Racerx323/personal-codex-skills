@@ -1,6 +1,6 @@
 {
   "date": "2026-09-29T21:17:53.121750+00:00",
-  "source_revision": "f5404bf9425d6704dfde074bf66bcb00d9e49e9a",
+  "source_revision": "5cf28da7508d39be42e6920058e0ebe1926be3e9",
   "backup": "$HOME/.local/state/personal-codex-skills/backups/20260929T211752Z-maintenance",
   "baseline_files_verified": 285,
   "skills": [
@@ -84,7 +84,7 @@
       "installed": [
         {
           "path": "ATTRIBUTION.md",
-          "sha256": "518e863eb50b46161c406f25c9a24dc6a5be24d643be424111a0c6520b4eeca7"
+          "sha256": "bd9544f83b84da0b2813da3b546f535d8de0255e221dbd7ad9b303c683601890"
         },
         {
           "path": "LICENSE.txt",
@@ -278,5 +278,12 @@
       "skill-installer"
     ],
     "load_errors": []
+  },
+  "initial_behavior_revision": "f5404bf9425d6704dfde074bf66bcb00d9e49e9a",
+  "upstream_updater_record": {
+    "skill": "likec4-dsl",
+    "action": "removed only original upstream tracking entry after backing up entire lock; retained all other settings",
+    "before_sha256": "8e24b4ffcd0b8d35b76efcbd2f0ddc0d902cdd3fc06a611b052682939741186c",
+    "after_sha256": "784ffc5dd98d7abfd4bed53389b667f1da7bae4b96535a16460a6b6021ccaced"
   }
 }

@@ -77,7 +77,10 @@ completion must not be mistaken for complete end-to-end host assurance.
 
 ## Deployment evidence
 
-Deployment completed from source commit `f5404bf9425d6704dfde074bf66bcb00d9e49e9a`.
+Behavioral deployment used source commit `f5404bf9425d6704dfde074bf66bcb00d9e49e9a`.
+The attribution-only correction was synchronized from `5cf28da7508d39be42e6920058e0ebe1926be3e9` (see the full
+revision in the installation record). The original LikeC4 upstream updater
+entry was backed up and retired; all other installer settings were retained.
 [Installation evidence](maintenance-installation.json) records all 285 verified
 baseline files, rollback rehearsals, exact deployed hashes and nine enabled CLI
 skills with no load errors. Backups are under

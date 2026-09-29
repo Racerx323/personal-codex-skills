@@ -1,6 +1,7 @@
-# Draft upstream report: shared system-skill refresh removes plugin-creator
+# Upstream report: shared system-skill refresh removes plugin-creator
 
-Prepared locally; no upstream issue has been submitted.
+Submitted as a related reproduction on [Codex issue #19265](https://github.com/openai/codex/issues/19265#issuecomment-5899517948).
+The original reproduction differs; a shared root cause is not yet established.
 
 ## Environment and observed behavior
 

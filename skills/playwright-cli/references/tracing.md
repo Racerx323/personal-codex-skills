@@ -128,12 +128,10 @@ playwright-cli tracing-stop
 
 ### 2. Clean Up Old Traces
 
-Traces can consume significant disk space:
-
-```bash
-# Remove traces older than 7 days
-find .playwright-cli/traces -mtime +7 -delete
-```
+Traces can contain sensitive state. Retain the evidence required for the task.
+Delete only an identified directory created by this task after verifying ownership
+and retention requirements. Age alone does not establish ownership; do not sweep
+the shared `.playwright-cli/traces` tree.
 
 ## Limitations
 

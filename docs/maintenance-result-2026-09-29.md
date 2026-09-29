@@ -90,3 +90,22 @@ resolved. vexp verification was unavailable because the shared workspace root
 is not a Git repository, so it is not counted as a passed check.
 Backups remain outside discovery. A fresh conversation is required to confirm
 another client's catalog; this run cannot refresh its own initial catalog.
+
+## PR review follow-up
+
+The first PR reviews identified contradictions left in supporting references.
+The follow-up corrects model/deployment bidirectional declarations, typed dot
+connectors, dynamic response direction, and wildcard descriptions. Four added
+CLI fixtures and the strengthened empty-filter check pass on LikeC4 1.59.4
+(14 total); see [review runtime results](../evals/maintenance-2026-09-29/review-likec4-runtime.json).
+
+Playwright references now preserve assertions, scope cleanup to owned resources,
+keep state files in private directories, and distinguish reusable fixtures from
+standalone seed setup. Fixture imports follow the generated test's directory.
+Missing dependencies require authorization before bootstrap.
+
+The [plugin-creator reproduction](https://github.com/openai/codex/issues/19265#issuecomment-5899517948)
+was submitted as related evidence; shared root cause and an upstream fix remain
+unconfirmed. The two security findings remain open. A private local manual-cache
+wrapper and persistent-only supplemental artifact policy mitigate the selected
+workflows; private temporary runtime enforcement and upstream fixes remain pending.

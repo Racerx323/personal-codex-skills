@@ -173,6 +173,6 @@ views {
 | `**` | All descendants recursively | Any depth |
 | `include -> element` | Inbound relationships to element | Shows external sources |
 | `include element ->` | Outbound relationships from element | Shows targets |
-| `include <-> element` | Bidirectional relationships | Shows symmetric dependencies |
+| `include -> element ->` | Incoming and outgoing relationships | Includes neighbors in both directions |
 
 **In scoped views:** `include *` establishes a base set of the scope parent + immediate children. Relationship predicates like `->` and `<->` can bring in neighboring elements needed to render those relationships.

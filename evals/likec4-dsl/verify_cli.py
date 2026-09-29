@@ -27,6 +27,10 @@ CASES = [
     ("root-instance-rejected", 'deployment { api = instanceOf a }', False),
     ("typed-extension", 'model { extend a -[async]-> b "publishes" { metadata { checked "yes" } } }', True),
     ("binary-bidirectional", 'views { view all { include a <-> b } }', True),
+    ("model-bidirectional", 'model { a <-> c "mutual" }', True),
+    ("deployment-bidirectional", 'deployment { x = host { aa = instanceOf a } y = host { bb = instanceOf b } x.aa <-> y.bb }', True),
+    ("dot-kind", 'model { a .sync c "calls" }', True),
+    ("dot-kind-extra-arrow-rejected", 'model { a .sync -> c "calls" }', False),
     ("either-direction", 'views { view all { include -> a -> } }', True),
     ("prefix-bidirectional-rejected", 'views { view all { include <-> b } }', False),
     ("return-steps", 'views { dynamic view flow {\n a -> b -> c\n b <- c\n a <- b\n} }', True),
@@ -59,7 +63,7 @@ def main():
         # A wrong relative filter can report success without checking any file.
         run = subprocess.run(["likec4", "validate", "--json", "--no-layout", "--file", "missing.c4", str(project)], cwd=root, capture_output=True, text=True, timeout=30)
         data = json.loads(run.stdout)
-        results.append({"case": "empty-filter-detection", "passed": data["stats"]["filteredFiles"] == 0 and data["stats"]["totalErrors"] > 0, "exit": run.returncode, "stats": data["stats"]})
+        results.append({"case": "empty-filter-detection", "passed": run.returncode == 0 and data["valid"] is True and data["stats"]["filteredFiles"] == 0 and data["stats"]["filteredErrors"] == 0 and data["stats"]["totalErrors"] > 0, "exit": run.returncode, "stats": data["stats"]})
     report = {"version": version, "layout_tested": False, "results": results}
     text = json.dumps(report, indent=2) + "\n"
     if args.output:

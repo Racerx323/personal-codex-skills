@@ -143,7 +143,7 @@ dynamic view checkout {
     api -> notifications "send confirmation"
   }
 
-  payments <- api "payment result" {
+  api <- payments "payment result" {
     navigateTo payment-detail        // link to another view
   }
 
@@ -262,7 +262,8 @@ views {
     exclude * -> * where target.metadata.zone is "restricted"
 
     // Wildcard with expansion
-    include cloud._                  // direct children only
+    include cloud.*                  // all direct children
+    include cloud._                  // direct children related to the accumulated result
     include cloud.**                 // all descendants
   }
 }
@@ -280,7 +281,7 @@ model {
     technology "Kafka"
     metadata { format "CloudEvents" }
   }
-  api .sync -> cache "reads"          // alternative syntax: .KIND ->
+  api .sync cache "reads"             // alternative syntax: .KIND
 
   // Inline style override
   api -> db "writes" {

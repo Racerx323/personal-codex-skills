@@ -95,9 +95,8 @@ playwright-cli tab-select 0
 ## Storage
 
 ```bash
-playwright-cli state-save
-playwright-cli state-save auth.json
-playwright-cli state-load auth.json
+playwright-cli state-save /absolute/private/task/auth.json
+playwright-cli state-load /absolute/private/task/auth.json
 
 # Cookies
 playwright-cli cookie-list
@@ -225,6 +224,7 @@ playwright-cli close
 # Detach from an attached browser (leaves the external browser running)
 playwright-cli -s=msedge detach
 # Delete user data for the default session
+# Only after proving the default profile belongs to this task:
 playwright-cli delete-data
 ```
 
@@ -312,11 +312,9 @@ playwright-cli -s=mysession open example.com --persistent
 playwright-cli -s=mysession open example.com --profile=/path/to/profile
 playwright-cli -s=mysession click e6
 playwright-cli -s=mysession close  # stop a named browser
-playwright-cli -s=mysession delete-data  # delete user data for persistent session
+playwright-cli -s=mysession delete-data  # only for a verified task-owned profile
 
 playwright-cli list
-# Close all browsers
-playwright-cli close-all
-# Forcefully kill all browser processes
-playwright-cli kill-all
+# Close only verified task-owned sessions by name.
+# Global close/kill commands are not task cleanup.
 ```

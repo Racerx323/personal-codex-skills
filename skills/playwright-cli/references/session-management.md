@@ -44,15 +44,9 @@ playwright-cli list
 playwright-cli close                # stop the default browser
 playwright-cli -s=mysession close   # stop a named browser
 
-# Stop all browser sessions
-playwright-cli close-all
-
-# Forcefully kill all daemon processes (for stale/zombie processes)
-playwright-cli kill-all
-
-# Delete browser session user data (profile directory)
-playwright-cli delete-data                # delete default browser data
-playwright-cli -s=mysession delete-data   # delete named browser data
+# Delete data only after proving the named profile was created by this task,
+# and after checking retention requirements. A name alone is not ownership.
+playwright-cli -s=mysession delete-data
 ```
 
 ## Environment Variable
@@ -83,8 +77,10 @@ playwright-cli -s=site1 snapshot
 playwright-cli -s=site2 snapshot
 playwright-cli -s=site3 snapshot
 
-# Cleanup
-playwright-cli close-all
+# Close only the sessions created by this task
+playwright-cli -s=site1 close
+playwright-cli -s=site2 close
+playwright-cli -s=site3 close
 ```
 
 ### A/B Testing Sessions
@@ -216,16 +212,13 @@ playwright-cli -s=s1 open https://github.com
 playwright-cli -s=auth close
 playwright-cli -s=scrape close
 
-# Or stop all at once
-playwright-cli close-all
-
-# If browsers become unresponsive or zombie processes remain
-playwright-cli kill-all
+# If a session is unresponsive, inspect its task-owned process.
+# Do not terminate other sessions or run global cleanup.
 ```
 
 ### 3. Delete Stale Browser Data
 
 ```bash
-# Remove old browser data to free disk space
-playwright-cli -s=oldsession delete-data
+# After verifying this task created the profile and retention permits deletion:
+playwright-cli -s=task-owned-session delete-data
 ```

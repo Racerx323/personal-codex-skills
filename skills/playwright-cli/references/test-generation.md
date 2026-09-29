@@ -153,7 +153,10 @@ test -f playwright.config.ts || test -f playwright.config.js
 npx --no-install playwright --version
 ```
 
-If there is no Playwright install, bootstrap one and let the user pick the defaults:
+If Playwright is missing, report that prerequisite. Bootstrap only when installation
+is authorized by the user's task; a planning-only or test-authoring request does
+not authorize downloading dependencies or changing project configuration. Otherwise
+ask before running:
 
 ```bash
 npm init playwright@latest
@@ -318,7 +321,8 @@ Collect the generated code and write the test file at the path given in the spec
 ```ts
 // spec: specs/basic-operations.plan.md
 // seed: tests/seed.spec.ts
-import { test, expect } from './fixtures';   // or '@playwright/test' if no fixtures file
+// tests/auth/sign-in.spec.ts; fixture lives at tests/fixtures.ts
+import { test, expect } from '../fixtures';
 
 test.describe('Signing in and out', () => {
   test('should sign in', async ({ page }) => {
@@ -344,7 +348,12 @@ Rules:
 - **One test per file.** File path, describe name, and test name come verbatim from the spec (minus the ordinal).
 - Prefix each numbered step with a `// N. <step text>` comment before its actions.
 - Use the describe group name verbatim from the spec (no `1.` ordinal).
-- Import from `./fixtures` if the project has one; otherwise `@playwright/test`.
+- Resolve the fixture import relative to the generated test file: for
+  `tests/<group>/<scenario>.spec.ts` and `tests/fixtures.ts`, use `../fixtures`.
+- Without a reusable fixture, import from `@playwright/test` and copy or reuse
+  the standalone seed's navigation/setup inside each generated test or its
+  `beforeEach`. Running a separate seed test does not initialize another test's
+  fresh page; do not omit navigation in that branch.
 - **Important**: close the CLI session and stop the background test before moving to the next scenario.
 
 ### 2.3 Generate multiple scenarios

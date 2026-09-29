@@ -31,7 +31,7 @@ model {
     -> TARGET "title"                       // implicit source (current element)
     -> TARGET "title" { TAGS; PROPERTIES }
     -[REL_KIND]-> TARGET "title"            // typed relationship
-    .REL_KIND -> TARGET "title"             // alternative typed syntax
+    .REL_KIND TARGET "title"             // alternative typed syntax
     SOURCE -> it                            // TARGET = current element (alias)
     this -> TARGET                          // SOURCE = current element (alias)
   }

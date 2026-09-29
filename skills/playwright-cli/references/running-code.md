@@ -223,7 +223,8 @@ playwright-cli run-code "async page => {
   await page.getByRole('textbox', { name: 'Password' }).fill('secret');
   await page.getByRole('button', { name: 'Sign in' }).click();
   await page.waitForURL('**/dashboard');
-  await page.context().storageState({ path: 'auth.json' });
+  // Replace with the verified owner-private absolute task directory.
+  await page.context().storageState({ path: '/absolute/private/task/auth.json' });
   return 'Login successful';
 }"
 

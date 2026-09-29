@@ -240,7 +240,7 @@ dynamic view api-sequence {
 
   client -> gateway "POST /orders"
   gateway -> auth "validate token"
-  auth <- gateway "200 OK"
+  gateway <- auth "200 OK"
   gateway -> orders "create order"
   orders -> db "INSERT"
   orders <- db "order_id"

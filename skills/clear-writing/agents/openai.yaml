@@ -1,0 +1,4 @@
+interface:
+  display_name: "Clear Writing"
+  short_description: "Clear prose that preserves facts and voice"
+  default_prompt: "Use $clear-writing to edit this draft while preserving its meaning and voice."

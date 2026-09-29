@@ -1,0 +1,19 @@
+# Local runtime and editor state
+.vexp/
+.codex/
+.claude/
+.vscode/settings.json
+__pycache__/
+*.pyc
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Credentials and installation archives
+.env
+.env.*
+*.secret
+*.key
+*.pem
+backups/

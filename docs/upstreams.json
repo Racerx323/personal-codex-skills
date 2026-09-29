@@ -1,0 +1,53 @@
+{
+  "sources": [
+    {
+      "repository": "https://github.com/hardikpandya/stop-slop",
+      "commit": "8da1f030185bdfe8471220585162991eaeb970e9",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "7432a1d9ebdd42b27666da8458af252edf549f723fb14bcd4791425103930310"
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "2e2b2beaf41cc0ce28485455a62aed81777cdcdf68702e142427aef1cd720f2c"
+        },
+        {
+          "path": "references/phrases.md",
+          "sha256": "4ca1b7e97123b5c67eff3dc97e5e977332e0b24021265c1553888a93ec33fa93"
+        },
+        {
+          "path": "references/structures.md",
+          "sha256": "ffbf1316c7fb5aaf552de005609a64a9639b546ecd76bfb0e482864d5bbe6f58"
+        },
+        {
+          "path": "references/examples.md",
+          "sha256": "49c592899eb4457f95d0767e15e3143569e2cef50f2927c3174e62432984cd3d"
+        }
+      ]
+    },
+    {
+      "repository": "https://github.com/petergyang/no-ai-slop",
+      "commit": "000650b156983f5159695b441477f4e63b25dc85",
+      "files": [
+        {
+          "path": "skills/no-ai-slop/SKILL.md",
+          "sha256": "992b365f51a2f62cf4c1c5ed22049a9ee551dfea677550c1a72b371c0ceadd62"
+        },
+        {
+          "path": "skills/no-ai-slop/eval.md",
+          "sha256": "8ad8d83ed1abe7fc054ad74966bfca64fc182bc71f59d701b24b962c39d11ad7"
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "b7a7fe370cc4c9e974528c7cea7841cf8ac886bc9ed947edb11b289441fba4a8"
+        }
+      ]
+    }
+  ],
+  "structure_reference": {
+    "path": "frame-and-sample",
+    "commit": "eef9cec44e070a0ba92a0af39105b4a10bdcab24",
+    "use": "Structure and shared validation configuration; no domain prose or GPL license copied."
+  }
+}

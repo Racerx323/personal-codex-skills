@@ -9,6 +9,8 @@ validation layout of `frame-and-sample`, adapted for skills.
 | Skill | Purpose | Installation |
 | --- | --- | --- |
 | [clear-writing](skills/clear-writing/SKILL.md) | Draft, edit, or detect formulaic prose while preserving meaning and voice | Personal standalone skill |
+| [likec4-dsl](skills/likec4-dsl/SKILL.md) | Architecture DSL and verified CLI workflows | Personal standalone skill |
+| [playwright-cli](skills/playwright-cli/SKILL.md) | Scoped browser inspection and testing | Personal standalone skill |
 
 `clear-writing` combines selected guidance from Stop Slop and No AI Slop.
 It replaces the personal `stop-slop` installation. Taste Skill is excluded.
@@ -27,12 +29,13 @@ Invoke `$clear-writing` explicitly or let Codex select it for prose work.
 Use a detection-only request when you want findings without a rewrite.
 
 Read [installation and recovery](docs/installation.md),
-[upstream provenance](docs/upstreams.md), and
+[maintenance](docs/maintenance.md), [upstream provenance](docs/upstreams.md), and
 [evaluation cases](evals/clear-writing/cases.json) before changing an installation.
 Only the reviewed skill directory is deployed; repository governance and evals
 are not copied into the active skill folder.
 
 ## License
 
-New content is [MIT licensed](LICENSE.md). The deployed skill retains both
-[upstream notices](skills/clear-writing/ATTRIBUTION.md).
+New repository content is [MIT licensed](LICENSE.md). Clear Writing and LikeC4
+retain MIT upstream notices. The derived Playwright bundle retains its Apache-2.0
+license. See the ATTRIBUTION.md and license file within each skill.

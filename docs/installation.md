@@ -2,7 +2,10 @@
 
 ## Scope
 
-Install only `skills/clear-writing/` under `$HOME/.agents/skills/clear-writing/`.
+Install an individually reviewed `skills/<name>/` bundle under
+`$HOME/.agents/skills/<name>/`. The original Clear Writing consolidation procedure
+below is historical; subsequent LikeC4/Playwright updates follow
+[the maintenance procedure](maintenance.md).
 Keep source checkouts under the development workspace and backups under
 `$HOME/.local/state/personal-codex-skills/backups/`, outside discovery roots.
 Do not copy the whole repository into a skill directory.

@@ -1,0 +1,15 @@
+{
+  "cli": "0.1.22",
+  "playwright": "1.64.0-alpha-1790635538000",
+  "chromium_revision": 1247,
+  "fixture": "loopback synthetic page and state; no real account data",
+  "interaction_and_state": true,
+  "other_task_session_survived_targeted_close": true,
+  "external_browser_survived_detach": true,
+  "initial_attachment_assertion_failure": "Initial assertion incorrectly required CLI-created context page to persist after detach. Browser process survival is the contract tested here.",
+  "limitations": [
+    "Single browser engine/version; no production sites, real login, or browser extension attachment tested.",
+    "Detaching may dispose CLI-owned contexts; this test proves browser process survival/reconnection, not preservation of CLI-created pages.",
+    "Inert hostile text plus independent scope responses are not proof against every prompt injection."
+  ]
+}

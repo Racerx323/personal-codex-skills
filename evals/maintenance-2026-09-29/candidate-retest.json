@@ -1,0 +1,64 @@
+{
+  "cases": [
+    {
+      "case_id": 4,
+      "request": "LikeC4: in a disposable two-file project, give a minimal named deployment instance for existing model element cloud.api, no invented host names.",
+      "selected_skill": "likec4-dsl",
+      "actual_output": "```likec4\nprimary = instanceOf cloud.api\n```\n\nInsert this fragment inside the existing deployment node in the second file. It cannot appear directly at the `deployment` root. A complete two-file example needs the containing deployment node's identifier and kind; neither was supplied.",
+      "references_read": ["/home/aaron/code/personal-codex-skills/skills/likec4-dsl/SKILL.md", "/home/aaron/code/personal-codex-skills/skills/likec4-dsl/references/deployment.md", "/home/aaron/code/personal-codex-skills/skills/likec4-dsl/references/task-contracts.md"],
+      "simulated_tool_plan": [],
+      "limits": ["Insertion fragment only; no invented containing node or topology.", "Offline source-guided response; no current documentation retrieval or CLI validation."],
+      "execution_status": "Offline response completed; no fixture execution or source edits."
+    },
+    {
+      "case_id": 5,
+      "request": "LikeC4: provide the exact validate command for edited model.c4 and views.c4 under /tmp/fixture, machine-readable no-layout output.",
+      "selected_skill": "likec4-dsl",
+      "actual_output": "```bash\nlikec4 validate --json --no-layout --file /tmp/fixture/model.c4 --file /tmp/fixture/views.c4 /tmp/fixture\n```",
+      "references_read": ["/home/aaron/code/personal-codex-skills/skills/likec4-dsl/SKILL.md", "/home/aaron/code/personal-codex-skills/skills/likec4-dsl/references/cli.md", "/home/aaron/code/personal-codex-skills/skills/likec4-dsl/references/task-contracts.md"],
+      "simulated_tool_plan": ["If executing, inspect filteredFiles for a count of 2 and report filteredErrors, totalErrors, and process exit status."],
+      "limits": ["Absolute file filters avoid dependence on the command working directory.", "Command supplied only; no execution, installation, documentation retrieval, or layout validation."],
+      "execution_status": "Offline response completed."
+    },
+    {
+      "case_id": 13,
+      "request": "LikeC4: Can identifier payment- be used?",
+      "selected_skill": "likec4-dsl",
+      "actual_output": "Yes. `payment-` is a valid identifier in LikeC4 1.59.4: it starts with a letter and its remaining characters, including the trailing hyphen, match `[a-zA-Z0-9_-]*`.",
+      "references_read": ["/home/aaron/code/personal-codex-skills/skills/likec4-dsl/SKILL.md", "/home/aaron/code/personal-codex-skills/skills/likec4-dsl/references/identifier-validity.md"],
+      "simulated_tool_plan": [],
+      "limits": ["Version behavior taken from the current candidate reference, not independently executed in this offline retest."],
+      "execution_status": "Offline response completed."
+    },
+    {
+      "case_id": 14,
+      "request": "LikeC4: model a request a -> b -> c and return in reverse execution order using installed1.59.4; give valid dynamic steps",
+      "selected_skill": "likec4-dsl",
+      "actual_output": "```likec4\nviews {\n  dynamic view request-return {\n    a -> b -> c\n    b <- c\n    a <- b\n  }\n}\n```\n\nThe returns execute from `c` to `b`, then from `b` to `a`. LikeC4 1.59.4 requires these as separate return steps; repeated `<-` in one expression is unsupported.",
+      "references_read": ["/home/aaron/code/personal-codex-skills/skills/likec4-dsl/SKILL.md", "/home/aaron/code/personal-codex-skills/skills/likec4-dsl/references/dynamic-views.md"],
+      "simulated_tool_plan": [],
+      "limits": ["Assumes existing model elements a, b, and c.", "Compatibility stated from current candidate guidance; no fixture or installed CLI executed."],
+      "execution_status": "Offline response completed."
+    },
+    {
+      "case_id": 15,
+      "request": "LikeC4: include relationships in either direction between scope and other elements",
+      "selected_skill": "likec4-dsl",
+      "actual_output": "```likec4\ninclude -> scope ->\n```\n\nInside a view, this selects incoming and outgoing relationships between `scope` and the accumulated selection of other elements. Use the actual fully qualified element ID in place of `scope`. To name both endpoint sets explicitly, use `include scope <-> other`; `<-> scope` by itself is invalid.",
+      "references_read": ["/home/aaron/code/personal-codex-skills/skills/likec4-dsl/SKILL.md", "/home/aaron/code/personal-codex-skills/skills/likec4-dsl/references/predicates.md", "/home/aaron/code/personal-codex-skills/skills/likec4-dsl/references/relationships-bidirectional.md"],
+      "simulated_tool_plan": [],
+      "limits": ["View insertion fragment; the actual scope and accumulated element selection were not supplied.", "No CLI validation or live documentation retrieval."],
+      "execution_status": "Offline response completed."
+    },
+    {
+      "case_id": 16,
+      "request": "LikeC4: can parallel nest inside parallel?",
+      "selected_skill": "likec4-dsl",
+      "actual_output": "No. Nesting `parallel` or its alias `par` inside another parallel block is a validation error: `Nested parallel blocks are not allowed`. Put concurrent sibling actions in one parallel block. A parallel block may be nested inside other supported blocks, such as `opt`, `loop`, `try`, or an `alt` branch.",
+      "references_read": ["/home/aaron/code/personal-codex-skills/skills/likec4-dsl/SKILL.md", "/home/aaron/code/personal-codex-skills/skills/likec4-dsl/references/dynamic-views.md"],
+      "simulated_tool_plan": [],
+      "limits": ["Answer follows the current candidate reference; no validation command executed."],
+      "execution_status": "Offline response completed."
+    }
+  ]
+}

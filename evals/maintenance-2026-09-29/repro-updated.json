@@ -1,0 +1,68 @@
+[
+  {
+    "cwd": "$REPRO",
+    "errors": [],
+    "skills": [
+      {
+        "name": "plugin-creator",
+        "path": "$REPRO/.agents/skills/plugin-creator/SKILL.md",
+        "scope": "repo",
+        "enabled": true
+      },
+      {
+        "name": "clear-writing",
+        "path": "$HOME/.agents/skills/clear-writing/SKILL.md",
+        "scope": "user",
+        "enabled": true
+      },
+      {
+        "name": "context7:context7-mcp",
+        "path": "$HOME/.codex/plugins/cache/context7-marketplace/context7/1.0.1/skills/context7-mcp/SKILL.md",
+        "scope": "user",
+        "enabled": true
+      },
+      {
+        "name": "likec4-dsl",
+        "path": "$HOME/.agents/skills/likec4-dsl/SKILL.md",
+        "scope": "user",
+        "enabled": true
+      },
+      {
+        "name": "playwright-cli",
+        "path": "$HOME/.agents/skills/playwright-cli/SKILL.md",
+        "scope": "user",
+        "enabled": true
+      },
+      {
+        "name": "imagegen",
+        "path": "$HOME/.codex/skills/.system/imagegen/SKILL.md",
+        "scope": "system",
+        "enabled": true
+      },
+      {
+        "name": "openai-docs",
+        "path": "$HOME/.codex/skills/.system/openai-docs/SKILL.md",
+        "scope": "system",
+        "enabled": true
+      },
+      {
+        "name": "review-agent",
+        "path": "$HOME/.codex/skills/.system/review-agent/SKILL.md",
+        "scope": "system",
+        "enabled": true
+      },
+      {
+        "name": "skill-creator",
+        "path": "$HOME/.codex/skills/.system/skill-creator/SKILL.md",
+        "scope": "system",
+        "enabled": true
+      },
+      {
+        "name": "skill-installer",
+        "path": "$HOME/.codex/skills/.system/skill-installer/SKILL.md",
+        "scope": "system",
+        "enabled": true
+      }
+    ]
+  }
+]

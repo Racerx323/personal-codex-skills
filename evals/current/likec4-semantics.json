@@ -1,0 +1,55 @@
+{
+  "observation_date": "2026-10-04",
+  "harness": "evals/likec4-dsl/verify_semantics.py",
+  "harness_sha256": "0de50dfea58e6519f379ba163462440d728b66f89b1872176d76a9a37f42d96f",
+  "cli_version": "1.59.4",
+  "browser_tested": false,
+  "checks": [
+    {
+      "case": "absolute-files-total-errors",
+      "passed": true
+    },
+    {
+      "case": "descendants",
+      "nodes": [
+        "g.a",
+        "g.b",
+        "g.b.c"
+      ],
+      "edge_count": 0,
+      "passed": true
+    },
+    {
+      "case": "accumulated",
+      "nodes": [
+        "external",
+        "g.a",
+        "g.b",
+        "g.b.c"
+      ],
+      "edge_count": 0,
+      "passed": true
+    },
+    {
+      "case": "linked",
+      "nodes": [
+        "x",
+        "y"
+      ],
+      "edge_count": 1,
+      "passed": true
+    },
+    {
+      "case": "computed-edge-membership",
+      "passed": true
+    },
+    {
+      "case": "typed-title-exact-extension",
+      "passed": true
+    },
+    {
+      "case": "deployment-instances",
+      "passed": true
+    }
+  ]
+}

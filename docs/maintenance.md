@@ -18,15 +18,15 @@ as limitations; do not describe a source audit as proof of system safety.
 
 For LikeC4, keep the entrypoint focused on scope, reference selection, exact
 syntax and validation. Run positive and negative DSL fixtures using the project
-version, check filteredFiles and totalErrors, and retain existing evaluations.
+version and check filteredFiles and totalErrors. Replace superseded results.
 For Playwright, test task-owned sessions, attached-browser detach, synthetic
 state round-trip, unchanged assertions, prompt-injection resistance, and cleanup
 against a loopback fixture. Never use real credentials for these checks.
 
 Use independent baseline and candidate evaluators with the same requests;
 record actual answers and parent grading separately. A simulated plan does not
-prove browser/runtime behavior. Repair failed cases and retain the initial
-failure and retest, rather than replacing historical results with a pass.
+prove browser/runtime behavior. Repair failed cases. Keep failure and retest
+evidence only while it explains an unresolved issue or retained version.
 
 Run repository pre-commit checks, metadata validation for changed skills,
 relative-link checks, and the relevant behavioral/runtime cases. Keep upstream
@@ -44,12 +44,14 @@ instructions; shorter entrypoints alone are not acceptance evidence.
 4. Replace one reviewed skill at a time and verify its complete deployed hash map.
 5. Refresh CLI discovery and check enabled state and load errors. Refresh the
    other client in a new conversation before asserting cross-client parity.
-6. Keep the backup, manifests, review results and source revision. For rollback,
+6. Keep the current manifest, source provenance and required private backups.
+   Remove superseded public audit records. For rollback,
    first verify the active tree still matches the deployment manifest; archive
    it, restore that skill's backup, verify hashes and refresh discovery again.
 
-When reverting LikeC4 to upstream-managed ownership, restore only its original
-entry from the archived `skills-updater-lock-before.json` after checking for a
+When reverting LikeC4 to upstream-managed ownership, use the private updater-lock
+backup identified in [the current manifest](current-installation.json). Restore
+only its original entry after checking for a
 conflicting current entry; retain all other live installer settings. A rollback
 to an earlier personal adaptation keeps the upstream updater entry retired.
 
@@ -65,13 +67,14 @@ patches in `.system` or a plugin cache. The
 [plugin-creator report](plugin-creator-cache-refresh.md) records the observed
 cache conflict and the unsuccessful update remedy.
 
-For the documentation cache finding, use the helper's supported `--cache-dir`
-option with an absolute owner-private directory created beneath a trusted parent.
-Verify ownership, reject symlinks and require mode0700. This is a workaround,
-not a patched system helper. For security-plugin temporary artifacts, prefer
-persistent private artifact storage; temporary storage requires a process-wide
-owner-private temporary parent configured before the plugin starts. Do not
-assume the current running host uses such a parent or silently change its config.
+For the documentation cache finding, invoke the managed helper only through
+`python3 "$HOME/.local/share/codex-hardening/fetch-manual-private.py"`.
+The wrapper validates its fixed private cache. Do not invoke or import the helper
+directly or substitute a shared cache. Codex Security supplemental artifacts
+require `storage: "persistent"` with inline `content`, or prepared/read persistent
+storage. Temporary storage and `sourcePath` imports remain prohibited until the
+actual plugin process has a verified owner-private temporary parent. See
+[the retained findings](storage-issues.md) for scope and evidence limitations.
 
 Keep external review/upload and connector writes within the user's authorized
 scope. A local read-only worker profile is not sufficient evidence that every

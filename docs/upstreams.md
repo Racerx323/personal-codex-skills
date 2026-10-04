@@ -1,8 +1,8 @@
 # Source provenance and updates
 
 [upstreams.json](upstreams.json) records immutable upstream commits and SHA-256
-hashes of the reviewed source files. The installed Stop Slop entrypoint matched
-the reviewed upstream entrypoint at consolidation time.
+hashes of the source files used by the maintained bundles. These provenance pins
+identify derived content and license obligations; they are not tool upgrade pins.
 
 The merged skill uses Stop Slop's pattern catalog and No AI Slop's minimal-edit,
 voice-preservation, detection, and evaluation guidance. It intentionally drops

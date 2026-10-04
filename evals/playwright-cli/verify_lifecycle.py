@@ -182,7 +182,7 @@ def main():
             profile = root / "external-profile"
             profile.mkdir(mode=0o700)
             log = (root / "external-browser.log").open("w")
-            browser_process = subprocess.Popen([executable, "--headless", "--remote-debugging-address=127.0.0.1", "--remote-debugging-port=0", "--user-data-dir=" + str(profile), "--no-first-run", "--disable-background-networking", url + "?tab=one"], cwd=root, env=env, stdout=log, stderr=log)
+            browser_process = subprocess.Popen([executable, "--headless", "--password-store=basic", "--remote-debugging-address=127.0.0.1", "--remote-debugging-port=0", "--user-data-dir=" + str(profile), "--no-first-run", "--disable-background-networking", url + "?tab=one"], cwd=root, env=env, stdout=log, stderr=log)
             log.close()
             endpoint_file = profile / "DevToolsActivePort"
             deadline = time.monotonic() + 15

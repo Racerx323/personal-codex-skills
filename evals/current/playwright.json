@@ -1,0 +1,58 @@
+{
+  "mode": "executed synthetic loopback qualification",
+  "cli_version": "0.1.22",
+  "playwright_version": "1.64.0-alpha-1790635538000",
+  "core_version": "1.64.0-alpha-1790635538000",
+  "cli_sha256": "fda252270793401d2856530a5f503adf7fc326fc07bed97e413138f67c50662b",
+  "harness_sha256": "7b11ca0b115ec76daeb2154c488b54f29bfc5586bc78044aeaf19a3d7ce78051",
+  "runtime_manifest_sha256": "f8a818e27de670929765493bb92715c0253336b5b99fd59918318305e84ef17c",
+  "private_root_mode": "0o700",
+  "private_root_owner_matches": true,
+  "browser_executable": "<home>/.cache/ms-playwright/chromium-1247/chrome-linux64/chrome",
+  "browser_binary_sha256": "adf078f8f80eb9e980a07b4418af23b0f4008a83bc5756d5588055bc4d76c5a0",
+  "browser_binary_version": "Google Chrome for Testing 155.0.8059.12",
+  "observation_date": "2026-10-04",
+  "checks": [
+    {
+      "name": "installed_cli_browser_pairing",
+      "status": "pass"
+    },
+    {
+      "name": "snapshot_click_and_generated_action",
+      "status": "pass"
+    },
+    {
+      "name": "state_roundtrip",
+      "status": "pass"
+    },
+    {
+      "name": "indexeddb_blocked_deletion",
+      "status": "pass"
+    },
+    {
+      "name": "authoritative_failed_cli_assertion",
+      "status": "pass"
+    },
+    {
+      "name": "actual_trace_video_paths",
+      "status": "pass"
+    },
+    {
+      "name": "targeted_cleanup",
+      "status": "pass"
+    },
+    {
+      "name": "attached_detach_preserves_preexisting_tabs",
+      "status": "pass"
+    },
+    {
+      "name": "generated_test_imports_and_assertions",
+      "status": "pass"
+    },
+    {
+      "name": "raw_artifact_privacy",
+      "status": "pass"
+    }
+  ],
+  "limitations": "Synthetic task profiles only; no real credential-store or authenticated-site qualification. Private raw logs and traces are excluded."
+}

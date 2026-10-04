@@ -1,0 +1,143 @@
+{
+  "observation_date": "2026-10-04",
+  "clients": {
+    "ubuntu": {
+      "codex_version": "0.160.0",
+      "skills": [
+        {
+          "name": "chisle:chisle",
+          "scope": "user",
+          "enabled": true
+        },
+        {
+          "name": "chisle:chisle-audit",
+          "scope": "user",
+          "enabled": true
+        },
+        {
+          "name": "chisle:chisle-help",
+          "scope": "user",
+          "enabled": true
+        },
+        {
+          "name": "chisle:chisle-review",
+          "scope": "user",
+          "enabled": true
+        },
+        {
+          "name": "clear-writing",
+          "scope": "user",
+          "enabled": true
+        },
+        {
+          "name": "context7:context7-mcp",
+          "scope": "user",
+          "enabled": true
+        },
+        {
+          "name": "likec4-dsl",
+          "scope": "user",
+          "enabled": true
+        },
+        {
+          "name": "playwright-cli",
+          "scope": "user",
+          "enabled": true
+        },
+        {
+          "name": "imagegen",
+          "scope": "system",
+          "enabled": true
+        },
+        {
+          "name": "openai-docs",
+          "scope": "system",
+          "enabled": true
+        },
+        {
+          "name": "review-agent",
+          "scope": "system",
+          "enabled": true
+        },
+        {
+          "name": "skill-creator",
+          "scope": "system",
+          "enabled": true
+        },
+        {
+          "name": "skill-installer",
+          "scope": "system",
+          "enabled": true
+        }
+      ],
+      "errors": []
+    },
+    "windows": {
+      "codex_version": "0.160.0",
+      "skills": [
+        {
+          "name": "doc",
+          "scope": "user",
+          "enabled": true
+        },
+        {
+          "name": "migrate-to-codex",
+          "scope": "user",
+          "enabled": true
+        },
+        {
+          "name": "openai-docs",
+          "scope": "user",
+          "enabled": true
+        },
+        {
+          "name": "pdf",
+          "scope": "user",
+          "enabled": true
+        },
+        {
+          "name": "security-best-practices",
+          "scope": "user",
+          "enabled": true
+        },
+        {
+          "name": "security-ownership-map",
+          "scope": "user",
+          "enabled": true
+        },
+        {
+          "name": "security-threat-model",
+          "scope": "user",
+          "enabled": true
+        },
+        {
+          "name": "imagegen",
+          "scope": "system",
+          "enabled": true
+        },
+        {
+          "name": "openai-docs",
+          "scope": "system",
+          "enabled": true
+        },
+        {
+          "name": "review-agent",
+          "scope": "system",
+          "enabled": true
+        },
+        {
+          "name": "skill-creator",
+          "scope": "system",
+          "enabled": true
+        },
+        {
+          "name": "skill-installer",
+          "scope": "system",
+          "enabled": true
+        }
+      ],
+      "errors": []
+    }
+  },
+  "note": "Current skill discovery only; plugin installation and session availability are separate inventories in the development toolstack."
+}

@@ -83,5 +83,15 @@
       "Do not select clear-writing for a code-only task.",
       "Do not treat the writing skill as a code fixer."
     ]
+  },
+  {
+    "id": "unsupported-completion",
+    "mode": "draft",
+    "request": "Draft a claim that the migration cut costs by a lot; I have no cost figures. Keep it factual.",
+    "input": "No completion status or cost measurements are supplied.",
+    "criteria": [
+      "Do not invent completion status or cost savings.",
+      "State the missing evidence without leading with an unsupported factual claim."
+    ]
   }
 ]

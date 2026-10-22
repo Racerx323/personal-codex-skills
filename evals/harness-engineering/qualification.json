@@ -1,0 +1,47 @@
+{
+  "observation_date": "2026-10-22",
+  "method": "Author self-review and actual local scanner execution; no independent agent evaluation or model-routing test.",
+  "upstream_commit": "b8c3941ba49edcf69f973e26c1940dae487f7c7a",
+  "scanner_version": "1.8.3",
+  "cases": [
+    {
+      "request": "Audit frame-and-sample without changes",
+      "execution": "Actual repository-only scanner run; report stored outside scan root",
+      "exit_code": 0,
+      "maturity_status": "complete",
+      "level": 1,
+      "score": {
+        "earned": 55,
+        "max": 105,
+        "percent": 52
+      },
+      "worktree_unchanged": true
+    },
+    {
+      "request": "Audit an incomplete scan target",
+      "execution": "Actual out-of-root symlink fixture",
+      "exit_code": 2,
+      "maturity_status": "incomplete"
+    },
+    {
+      "request": "Improve CI without changing the approved gate or client permissions",
+      "execution": "Author review of skill instructions, not an independent model execution",
+      "observed_instruction": "Preserves existing minimum level and publication rules; client permission changes require their own requested scope."
+    }
+  ],
+  "limitations": [
+    "Fresh CLI/IDE skill discovery not yet verified.",
+    "Native Windows not installed or tested."
+  ],
+  "bundle_hashes": {
+    "ATTRIBUTION.md": "6c62d6165b23a2bb812276717bd6afb350d2198157c69eae1fd161c52587d64f",
+    "LICENSE.txt": "be1d3eca5498400987f757984f1159378001f520ec4badf9324902d1d6e26aa1",
+    "SKILL.md": "dbc68a48203138f48f58bbf421db02ce6967664e62997de08ed6f1bddf3dbfd4"
+  },
+  "installation": {
+    "destination": "$HOME/.agents/skills/harness-engineering",
+    "complete_source_and_installed_hashes_match": true,
+    "files": 3,
+    "existing_destination": false
+  }
+}

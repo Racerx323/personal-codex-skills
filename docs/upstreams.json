@@ -60,6 +60,26 @@
       "original_install_commit": null,
       "comparison_package": "@playwright/cli 0.1.22",
       "license": "Apache-2.0"
+    },
+    {
+      "repository": "https://github.com/paladini/harness-score",
+      "commit": "b8c3941ba49edcf69f973e26c1940dae487f7c7a",
+      "license": "MIT",
+      "adaptation": "skills/harness-engineering",
+      "files": [
+        {
+          "path": "plugins/claude-code/skills/harness-engineering/SKILL.md",
+          "sha256": "69ebf52dc1b98a623f6ec52149cf022273a1a8c2e28b4c3af6818e0976f45d50"
+        },
+        {
+          "path": "plugins/claude-code/commands/harness-audit.md",
+          "sha256": "9b6204cb9b892b768bf271216f1ace0457522feeb6a1f6842b4bfb1040a25de5"
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "be1d3eca5498400987f757984f1159378001f520ec4badf9324902d1d6e26aa1"
+        }
+      ]
     }
   ],
   "structure_reference": {

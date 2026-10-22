@@ -14,6 +14,19 @@ The repository layout follows `frame-and-sample`: root instructions and README,
 baseline workflow. Domain-specific folders and prose were not copied. The user
 selected MIT for new content; upstream MIT notices remain in the skill bundle.
 
+## Harness Engineering
+
+The personal `harness-engineering` bundle adapts paladini/harness-score's MIT
+audit command and Claude Code skill at immutable v1.8.3 commit
+`b8c3941ba49edcf69f973e26c1940dae487f7c7a`. It retains audit-before-remediation
+and the recipe families, replaces editor-specific paths and hooks with Codex
+guidance, uses the installed version matched to repository pins, and rejects
+incomplete results. It preserves existing gate and publication policies.
+
+There is no upstream Codex bundle at the reviewed revision. Do not replace this
+adaptation with the Claude Code or Cursor skill verbatim. See its
+[attribution](../skills/harness-engineering/ATTRIBUTION.md) for the source paths.
+
 ## Update procedure
 
 1. Resolve the candidate upstream revision to a full commit ID.

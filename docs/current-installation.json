@@ -61,6 +61,21 @@
         "references/tracing.md": "4f52f845bfa01efae45c8a918f66e9d17284282331bd6531668c5135711bd735",
         "references/video-recording.md": "3551e5aaec6360e8c5839a5a6e5c6f7df4018dac7a6781c525a3e55bac493f87"
       }
+    },
+    "harness-engineering": {
+      "observation_date": "2026-10-22",
+      "source_directory": "skills/harness-engineering",
+      "installed_directory": "$HOME/.agents/skills/harness-engineering",
+      "source_base_commit": "20d6a401f91268aadda93b6dd0a3a206fe94e428",
+      "source_state": "Reviewed working-tree adaptation; not committed by this task.",
+      "source_matches_installed": true,
+      "upstream_commit": "b8c3941ba49edcf69f973e26c1940dae487f7c7a",
+      "files": {
+        "ATTRIBUTION.md": "6c62d6165b23a2bb812276717bd6afb350d2198157c69eae1fd161c52587d64f",
+        "LICENSE.txt": "be1d3eca5498400987f757984f1159378001f520ec4badf9324902d1d6e26aa1",
+        "SKILL.md": "dbc68a48203138f48f58bbf421db02ce6967664e62997de08ed6f1bddf3dbfd4"
+      },
+      "discovery": "Fresh client discovery pending; current conversation catalogue predates installation."
     }
   },
   "updater_ownership": {
@@ -69,5 +84,6 @@
     "backup_exists": true,
     "backup_sha256": "8e24b4ffcd0b8d35b76efcbd2f0ddc0d902cdd3fc06a611b052682939741186c"
   },
-  "note": "Read-only hash audit of current deployed bundles. This task performs no skill installation or rollback."
+  "note": "Existing entries retain their October 4 observations. Harness Engineering was installed and hash-verified on October 22; no other bundle was replaced or requalified.",
+  "last_updated": "2026-10-22"
 }

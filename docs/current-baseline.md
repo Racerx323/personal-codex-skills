@@ -18,6 +18,26 @@ entries and 12 native Windows entries without load errors on Codex 0.160.0.
 The inventories differ by client. These results establish discovery, not
 behavioral quality, plugin installation or model-request routing.
 
+## October 22 Harness Engineering addition
+
+Installed the reviewed personal Codex adaptation under
+`$HOME/.agents/skills/harness-engineering`. All three files match the maintained
+source bundle, including attribution and the upstream MIT notice. The manifest
+records the source base revision and working-tree status; this addition does not
+requalify the October 4 observations above.
+
+Metadata validation, Markdown checks, relative links, and a scoped secret scan
+passed. An actual repository-only audit of frame-and-sample completed without
+changing its working tree. An out-of-root symlink fixture exited 2 with an
+incomplete verdict. See [qualification](../evals/harness-engineering/qualification.json)
+for inputs, results, and bundle hashes. These are local execution and author
+self-review results, not independent model or routing evaluations.
+
+Fresh Codex CLI/IDE discovery remains to be checked on a subsequent turn or fresh
+client. Native Windows installation and cross-client parity were not tested.
+The original Cursor/Claude Code packages and Windsurf support status are recorded
+in the [development toolstack](../../homelab-docs/docs/development-tool-stack.md#editor-and-agent-integration).
+
 ## Version-qualified runtime checks
 
 | Component | Current version | Evidence |

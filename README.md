@@ -11,6 +11,7 @@ validation layout of `frame-and-sample`, adapted for skills.
 | [clear-writing](skills/clear-writing/SKILL.md) | Draft, edit, or detect formulaic prose while preserving meaning and voice | Personal standalone skill |
 | [likec4-dsl](skills/likec4-dsl/SKILL.md) | Architecture DSL and verified CLI workflows | Personal standalone skill |
 | [playwright-cli](skills/playwright-cli/SKILL.md) | Scoped browser inspection and testing | Personal standalone skill |
+| [harness-engineering](skills/harness-engineering/SKILL.md) | Harness Score audits and requested Codex harness improvements | Personal standalone adaptation |
 
 `clear-writing` combines selected guidance from Stop Slop and No AI Slop.
 It replaces the personal `stop-slop` installation. Taste Skill is excluded.

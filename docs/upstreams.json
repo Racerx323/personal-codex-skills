@@ -45,6 +45,38 @@
       ]
     },
     {
+      "repository": "https://github.com/MohamedAbdallah-14/unslop",
+      "commit": "eaa3b92e0b54a29076df23ff6d846c5f81bed7b9",
+      "license": "MIT",
+      "adaptation": "skills/clear-writing",
+      "files": [
+        {
+          "path": "skills/unslop/SKILL.md",
+          "sha256": "3f250609bed188f459779dbf3188b9e9a4ea9c39f68e94a734516e2e4590534a"
+        },
+        {
+          "path": "skills/unslop-review/SKILL.md",
+          "sha256": "834861e864c339dd81648cf78f468fcf56dd9bdfa60c984d84bc314ac39fb9d8"
+        },
+        {
+          "path": ".cursor/skills/unslop/anti-aiisms.md",
+          "sha256": "6b57a51cf49b5d7a559846092f2be54eb31d21d42a2868c9250155800857715c"
+        },
+        {
+          "path": ".cursor/skills/unslop/prompt-templates.md",
+          "sha256": "8461f5c6af6db84e9548c2850867928ad5e31a0390d039c0a7ede30430790841"
+        },
+        {
+          "path": "evals/perceived_humanness.py",
+          "sha256": "c429ca5aec9cc33c6e2c2c473335230f824d31bf8addbd5e1dcd8afbefcd3431"
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "6db72078be38e7d2d27151893486c6921fe704da23d9068c1db4427b3be2f49f"
+        }
+      ]
+    },
+    {
       "repository": "https://github.com/likec4/likec4",
       "comparison_commit": "33dbc2d34c399a99daf96e92fc28fe5d280a7fd5",
       "original_install_commit": null,

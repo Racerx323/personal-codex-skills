@@ -9,6 +9,14 @@ voice-preservation, detection, and evaluation guidance. It intentionally drops
 blanket grammatical bans, arbitrary quality scores, mandatory change summaries,
 and instructions that might flatten uncertainty or technical precision.
 
+Unslop contributes stance preservation, contextual hedge and boilerplate editing,
+sample-based voice guidance, editing scope, and blinded comparison methodology at
+commit `eaa3b92e0b54a29076df23ff6d846c5f81bed7b9`. Its MIT notice travels with
+Clear Writing. The adaptation excludes blanket bans, artificial rhythm targets,
+detector optimization, persistent activation, and upstream executable helpers.
+See the [evaluation protocol](../evals/clear-writing/README.md) for preservation
+checks and the distinction between author self-review and independent judgments.
+
 The repository layout follows `frame-and-sample`: root instructions and README,
 `docs/`, `templates/`, `.github/` governance, local pre-commit tools, and the shared
 baseline workflow. Domain-specific folders and prose were not copied. The user

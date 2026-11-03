@@ -6,6 +6,8 @@ when it expresses a necessary distinction, a real question, or the writer's voic
 | Pattern | Editing decision |
 | --- | --- |
 | Empty setup: "Here's the thing", "It is worth noting" | Start with the substantive statement unless the setup carries voice or context. |
+| Stacked hesitation or polite padding | Remove redundant softening while retaining the qualifier that expresses actual uncertainty. |
+| Empty praise, automatic agreement, and service closers | Remove boilerplate that adds no information. Keep specific appreciation, appropriate support, and correspondence conventions. |
 | Dramatic reversal: "It is not X. It is Y." | State the point directly when the contrast adds no information. Keep operational boundaries and genuine comparisons. |
 | Negative listing and dramatic fragments | Remove theatrical buildup. Keep useful parallel requirements and intentional personal rhythm. |
 | Faux insight: "What nobody tells you" | Remove the claim to exclusive insight; retain the supported fact. |
@@ -38,6 +40,38 @@ The cause was not confirmed."
 After: "The reset may have interrupted the collector. The cause was not confirmed."
 
 Do not supply a human actor or replace the hypothesis with a causal conclusion.
+
+## Disagreement and tone
+
+Before: "With respect, I cannot recommend rollout. Recovery remains untested."
+
+After, when asked for a less formal tone: "I cannot recommend rollout. Recovery
+remains untested."
+
+Do not turn the objection into approval or a weaker recommendation to accommodate
+the reader. Preserve a real tradeoff; remove balancing language only when it adds
+no distinction.
+
+## Redundant hedges
+
+Before: "I would like to suggest that perhaps the queue may be full. We have not
+checked its depth."
+
+After: "The queue may be full. We have not checked its depth."
+
+The remaining qualifier carries the uncertainty. Do not replace it with a stronger
+confidence category or delete the missing-evidence statement.
+
+## Praise and closers
+
+Before: "Wonderful question! The report is available on Friday. Let me know if
+there is anything else I can help you with."
+
+After, for a factual status reply: "The report is available on Friday."
+
+Keep "Thank you for catching the incorrect date" in a correction email and
+"I'm sorry this has been such a difficult week" in a supportive personal note
+when those statements serve the writer's purpose. Warmth is not inherently filler.
 
 ## Supported specificity
 

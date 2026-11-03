@@ -38,6 +38,33 @@ client. Native Windows installation and cross-client parity were not tested.
 The original Cursor/Claude Code packages and Windsurf support status are recorded
 in the [development toolstack](../../homelab-docs/docs/development-tool-stack.md#editor-and-agent-integration).
 
+## November 3 Clear Writing update
+
+Installed Clear Writing from commit `75b81f09e32c2e139a0f0c5a2f58e5ad9ff47524`.
+All ten deployed files match the reviewed source. The prior eight-file bundle
+matched its manifest; its private backup and file rollback rehearsal were verified.
+
+Fresh discovery on Codex CLI 0.166.0 found the skill enabled with no load errors.
+Four fresh read-only sessions used the configured `gpt-6.1-sol` model without
+naming the skill in their requests. Detection loaded the installed entrypoint;
+short editing and drafting requests answered without a visible skill read. The
+code-only request did not load it. Automatic selection was inconsistent in these
+samples. See [routing evidence](../evals/clear-writing/routing.json).
+
+A subsequent scoped rule in the workspace `AGENTS.md` requires Clear Writing for
+requested prose work, including short requests, and excludes code-only work and
+ordinary conversation. Three fresh trials for each of the same four scenarios
+loaded the installed skill for all nine prose requests and left it unloaded for
+all three code-only requests. See the
+[retest evidence](../evals/clear-writing/routing-with-rule.json), including the
+exact rule and workspace instruction hashes. These finite results support the
+rule for the tested CLI scenarios; they do not guarantee future selection.
+
+These observations qualify Ubuntu/WSL CLI discovery and the tested requests.
+IDE and native Windows routing remain untested. No managed system-skill file
+changed during discovery or these sessions; installed Clear Writing hashes
+remained unchanged. Other personal bundles were not replaced or requalified.
+
 ## Version-qualified runtime checks
 
 | Component | Current version | Evidence |

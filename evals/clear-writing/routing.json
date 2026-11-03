@@ -1,0 +1,84 @@
+{
+  "date": "2026-11-03",
+  "client": "Ubuntu/WSL fresh non-interactive Codex CLI",
+  "codex_version": "codex-cli 0.166.0",
+  "configured_model": "gpt-6.1-sol",
+  "source_revision": "75b81f09e32c2e139a0f0c5a2f58e5ad9ff47524",
+  "installed_skill_sha256": "a5e0e220572fffa7ce986c620261c828011a1cdb54244e800d1a876da1fdb56e",
+  "method": "Separate ephemeral read-only CLI processes; user prompts do not name any skill; routing assessed from executed skill reads.",
+  "limitations": [
+    "One request per scenario; no statistical routing guarantee.",
+    "CLI results do not establish IDE or native Windows routing.",
+    "This tests routing and the supplied outputs, not baseline/candidate reader preference."
+  ],
+  "cwd": "$HOME/code",
+  "distinct_fresh_threads": 4,
+  "discovery": {
+    "enabled": true,
+    "load_errors": [],
+    "path": "$HOME/.agents/skills/clear-writing/SKILL.md"
+  },
+  "managed_system_files_changed_by_discovery": [],
+  "managed_system_files_changed_after_all_tests": [],
+  "installed_hashes_unchanged_after_tests": true,
+  "cases": [
+    {
+      "id": "edit",
+      "request": "Edit this operational update for clarity while preserving the uncertainty and my recommendation. Return only the revised prose.\n\nIt is worth noting that the cache may be stale. Its contents have not been inspected. With respect, I do not recommend enabling the schedule until recovery has been tested.",
+      "expected_selection": true,
+      "exit_code": 0,
+      "turn_completed": true,
+      "successful_skill_reads": [],
+      "observed_skill_read": false,
+      "routing_assessment": "no visible skill read on a relevant prose task",
+      "output": "The cache may be stale; its contents have not been inspected. I recommend waiting to enable the schedule until recovery has been tested.",
+      "output_review": "Author review: supplied facts and uncertainty preserved; no unsupported authorization introduced."
+    },
+    {
+      "id": "draft",
+      "request": "Draft a two-sentence project status update from these facts only. Local validation passed. No hosts were contacted. Deployment awaits separate authorization.",
+      "expected_selection": true,
+      "exit_code": 0,
+      "turn_completed": true,
+      "successful_skill_reads": [],
+      "observed_skill_read": false,
+      "routing_assessment": "no visible skill read on a relevant prose task",
+      "output": "Local validation passed, and no hosts were contacted. Deployment awaits separate authorization.",
+      "output_review": "Author review: supplied facts and uncertainty preserved; no unsupported authorization introduced."
+    },
+    {
+      "id": "detect",
+      "request": "Identify formulaic wording and unsupported claims in this paragraph. Quote brief examples and explain the issues without rewriting it or guessing who wrote it.\n\nAt the heart of this pivotal transformation is an unparalleled platform. Experts agree it will revolutionize every workflow.",
+      "expected_selection": true,
+      "exit_code": 0,
+      "turn_completed": true,
+      "successful_skill_reads": [
+        "/bin/bash -lc 'cat $HOME/.agents/skills/clear-writing/SKILL.md'"
+      ],
+      "observed_skill_read": true,
+      "routing_assessment": "expected skill read observed",
+      "output": "“At the heart of” is a stock opening; “pivotal transformation” inflates importance without identifying what changes or why it matters.\n\n“Unparalleled platform” claims superiority without naming competitors, comparison criteria, or evidence.\n\n“Experts agree” invokes authority without identifying experts or citing support for consensus.\n\n“Will revolutionize every workflow” combines vague promotional language with an absolute prediction. The paragraph provides no evidence for certainty or universal scope.",
+      "output_review": "Author review: identifies wording and evidence issues without rewriting or inferring authorship."
+    },
+    {
+      "id": "code-only",
+      "request": "Fix the arithmetic in this Python function. Return only the corrected code.\n\ndef total(a, b):\n    return a - b\n",
+      "expected_selection": false,
+      "exit_code": 0,
+      "turn_completed": true,
+      "successful_skill_reads": [],
+      "observed_skill_read": false,
+      "routing_assessment": "no skill read observed on code-only task",
+      "output": "def total(a, b):\n    return a + b",
+      "output_review": "Author review: corrected arithmetic returned without a prose edit."
+    }
+  ],
+  "summary": {
+    "prose_requests": 3,
+    "prose_requests_with_skill_read": 1,
+    "prose_requests_without_visible_skill_read": 2,
+    "code_only_requests": 1,
+    "code_only_skill_reads": 0,
+    "conclusion": "Discovery passed. Automatic selection was inconsistent across the tested prose requests. No skill read was observed for the code-only request."
+  }
+}

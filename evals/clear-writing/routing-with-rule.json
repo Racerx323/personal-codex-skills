@@ -1,0 +1,247 @@
+{
+  "date": "2026-11-03",
+  "client": "Ubuntu/WSL fresh non-interactive Codex CLI",
+  "codex_version": "codex-cli 0.166.0",
+  "configured_model": "gpt-6.1-sol",
+  "source_revision": "75b81f09e32c2e139a0f0c5a2f58e5ad9ff47524",
+  "installed_skill_sha256": "a5e0e220572fffa7ce986c620261c828011a1cdb54244e800d1a876da1fdb56e",
+  "cwd": "$HOME/code",
+  "workspace_rule": "When the user asks to draft, edit, rewrite, proofread, or identify formulaic prose,\nload and apply `clear-writing` before composing the result, including short\nrequests. Exclude code-only tasks and ordinary conversation.",
+  "workspace_agents_sha256_before": "59856a61e2a91ec62eeaf7290cab40b419fe584bb4ca9fe00755ec227d1a33de",
+  "workspace_agents_sha256_after": "3c7c644e65d927db860e19ce70eee8e24e8d17fa68f79d695c2e1e50fc191c32",
+  "method": "Three repetitions of the four baseline requests in separate ephemeral read-only CLI sessions. User prompts do not name a skill; the workspace AGENTS.md routing rule is the intervention. Successful executed reads of the installed SKILL.md are the selection evidence.",
+  "baseline_evidence": "routing.json",
+  "trials_per_scenario": 3,
+  "limitations": [
+    "Finite repeated trials do not guarantee future selection.",
+    "CLI observations do not establish IDE or native Windows behavior.",
+    "Ordinary conversation was excluded by the rule but was not an additional test scenario.",
+    "This evaluates skill loading; output quality is not independently graded."
+  ],
+  "distinct_fresh_threads": 12,
+  "installed_hashes_unchanged_after_tests": true,
+  "managed_system_files_changed_after_tests": [],
+  "summary": {
+    "edit": {
+      "trials": 3,
+      "skill_reads": 3,
+      "routing_passes": 3,
+      "completed": 3
+    },
+    "draft": {
+      "trials": 3,
+      "skill_reads": 3,
+      "routing_passes": 3,
+      "completed": 3
+    },
+    "detect": {
+      "trials": 3,
+      "skill_reads": 3,
+      "routing_passes": 3,
+      "completed": 3
+    },
+    "code-only": {
+      "trials": 3,
+      "skill_reads": 0,
+      "routing_passes": 3,
+      "completed": 3
+    }
+  },
+  "results": [
+    {
+      "scenario": "edit",
+      "trial": 1,
+      "request": "Edit this operational update for clarity while preserving the uncertainty and my recommendation. Return only the revised prose.\n\nIt is worth noting that the cache may be stale. Its contents have not been inspected. With respect, I do not recommend enabling the schedule until recovery has been tested.",
+      "expected_selection": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "turn_completed": true,
+      "successful_skill_reads": [
+        "/bin/bash -lc 'cat $HOME/.agents/skills/clear-writing/SKILL.md $HOME/.codex/plugins/cache/chisle/chisle/3.8.1/skills/chisle/SKILL.md'"
+      ],
+      "observed_skill_read": true,
+      "routing_check": "pass",
+      "output": "The cache may be stale. Its contents have not been inspected. I do not recommend enabling the schedule until recovery has been tested.",
+      "elapsed_seconds": 22.64
+    },
+    {
+      "scenario": "draft",
+      "trial": 1,
+      "request": "Draft a two-sentence project status update from these facts only. Local validation passed. No hosts were contacted. Deployment awaits separate authorization.",
+      "expected_selection": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "turn_completed": true,
+      "successful_skill_reads": [
+        "/bin/bash -lc 'cat $HOME/.codex/plugins/cache/chisle/chisle/3.8.1/skills/chisle/SKILL.md $HOME/.agents/skills/clear-writing/SKILL.md'"
+      ],
+      "observed_skill_read": true,
+      "routing_check": "pass",
+      "output": "Local validation passed, and no hosts were contacted. Deployment awaits separate authorization.",
+      "elapsed_seconds": 19.48
+    },
+    {
+      "scenario": "detect",
+      "trial": 1,
+      "request": "Identify formulaic wording and unsupported claims in this paragraph. Quote brief examples and explain the issues without rewriting it or guessing who wrote it.\n\nAt the heart of this pivotal transformation is an unparalleled platform. Experts agree it will revolutionize every workflow.",
+      "expected_selection": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "turn_completed": true,
+      "successful_skill_reads": [
+        "/bin/bash -lc 'cat $HOME/.agents/skills/clear-writing/SKILL.md $HOME/.codex/plugins/cache/chisle/chisle/3.8.1/skills/chisle/SKILL.md'"
+      ],
+      "observed_skill_read": true,
+      "routing_check": "pass",
+      "output": "“At the heart of” is a stock opening; “pivotal transformation” adds dramatic importance without explaining what is changing or why it matters.\n\n“Unparalleled platform” asserts superiority without naming competitors, comparison criteria, or evidence.\n\n“Experts agree” invokes authority without identifying experts or sources, leaving the claimed consensus unsupported.\n\n“Will revolutionize every workflow” combines a confident prediction with an absolute claim. The paragraph supplies no evidence for either the scale of improvement or its applicability to every workflow.",
+      "elapsed_seconds": 17.47
+    },
+    {
+      "scenario": "code-only",
+      "trial": 1,
+      "request": "Fix the arithmetic in this Python function. Return only the corrected code.\n\ndef total(a, b):\n    return a - b\n",
+      "expected_selection": false,
+      "exit_code": 0,
+      "timed_out": false,
+      "turn_completed": true,
+      "successful_skill_reads": [],
+      "observed_skill_read": false,
+      "routing_check": "pass",
+      "output": "def total(a, b):\n    return a + b",
+      "elapsed_seconds": 14.52
+    },
+    {
+      "scenario": "edit",
+      "trial": 2,
+      "request": "Edit this operational update for clarity while preserving the uncertainty and my recommendation. Return only the revised prose.\n\nIt is worth noting that the cache may be stale. Its contents have not been inspected. With respect, I do not recommend enabling the schedule until recovery has been tested.",
+      "expected_selection": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "turn_completed": true,
+      "successful_skill_reads": [
+        "/bin/bash -lc 'cat $HOME/.agents/skills/clear-writing/SKILL.md $HOME/.codex/plugins/cache/chisle/chisle/3.8.1/skills/chisle/SKILL.md'"
+      ],
+      "observed_skill_read": true,
+      "routing_check": "pass",
+      "output": "The cache may be stale. Its contents have not been inspected. I do not recommend enabling the schedule until recovery has been tested.",
+      "elapsed_seconds": 17.62
+    },
+    {
+      "scenario": "draft",
+      "trial": 2,
+      "request": "Draft a two-sentence project status update from these facts only. Local validation passed. No hosts were contacted. Deployment awaits separate authorization.",
+      "expected_selection": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "turn_completed": true,
+      "successful_skill_reads": [
+        "/bin/bash -lc 'cat $HOME/.agents/skills/clear-writing/SKILL.md $HOME/.codex/plugins/cache/chisle/chisle/3.8.1/skills/chisle/SKILL.md'"
+      ],
+      "observed_skill_read": true,
+      "routing_check": "pass",
+      "output": "Local validation passed, and no hosts were contacted. Deployment awaits separate authorization.",
+      "elapsed_seconds": 17.52
+    },
+    {
+      "scenario": "detect",
+      "trial": 2,
+      "request": "Identify formulaic wording and unsupported claims in this paragraph. Quote brief examples and explain the issues without rewriting it or guessing who wrote it.\n\nAt the heart of this pivotal transformation is an unparalleled platform. Experts agree it will revolutionize every workflow.",
+      "expected_selection": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "turn_completed": true,
+      "successful_skill_reads": [
+        "/bin/bash -lc 'cat $HOME/.agents/skills/clear-writing/SKILL.md'"
+      ],
+      "observed_skill_read": true,
+      "routing_check": "pass",
+      "output": "“At the heart of” is a stock opening; “pivotal transformation” adds dramatic importance without explaining what changes or why it matters.\n\n“Unparalleled platform” claims superiority without naming competitors, comparison criteria, or evidence.\n\n“Experts agree” invokes unnamed authorities and implies consensus without sources.\n\n“Will revolutionize every workflow” combines a certain prediction with a sweeping universal claim. The paragraph provides no evidence or defined scope to support either.",
+      "elapsed_seconds": 17.37
+    },
+    {
+      "scenario": "code-only",
+      "trial": 2,
+      "request": "Fix the arithmetic in this Python function. Return only the corrected code.\n\ndef total(a, b):\n    return a - b\n",
+      "expected_selection": false,
+      "exit_code": 0,
+      "timed_out": false,
+      "turn_completed": true,
+      "successful_skill_reads": [],
+      "observed_skill_read": false,
+      "routing_check": "pass",
+      "output": "def total(a, b):\n    return a + b",
+      "elapsed_seconds": 10.4
+    },
+    {
+      "scenario": "edit",
+      "trial": 3,
+      "request": "Edit this operational update for clarity while preserving the uncertainty and my recommendation. Return only the revised prose.\n\nIt is worth noting that the cache may be stale. Its contents have not been inspected. With respect, I do not recommend enabling the schedule until recovery has been tested.",
+      "expected_selection": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "turn_completed": true,
+      "successful_skill_reads": [
+        "/bin/bash -lc 'cat $HOME/.agents/skills/clear-writing/SKILL.md $HOME/.codex/plugins/cache/chisle/chisle/3.8.1/skills/chisle/SKILL.md'"
+      ],
+      "observed_skill_read": true,
+      "routing_check": "pass",
+      "output": "The cache may be stale. Its contents have not been inspected. I do not recommend enabling the schedule until recovery has been tested.",
+      "elapsed_seconds": 18.37
+    },
+    {
+      "scenario": "draft",
+      "trial": 3,
+      "request": "Draft a two-sentence project status update from these facts only. Local validation passed. No hosts were contacted. Deployment awaits separate authorization.",
+      "expected_selection": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "turn_completed": true,
+      "successful_skill_reads": [
+        "/bin/bash -lc 'cat $HOME/.codex/plugins/cache/chisle/chisle/3.8.1/skills/chisle/SKILL.md $HOME/.agents/skills/clear-writing/SKILL.md'"
+      ],
+      "observed_skill_read": true,
+      "routing_check": "pass",
+      "output": "Local validation passed, and no hosts were contacted. Deployment awaits separate authorization.",
+      "elapsed_seconds": 22.53
+    },
+    {
+      "scenario": "detect",
+      "trial": 3,
+      "request": "Identify formulaic wording and unsupported claims in this paragraph. Quote brief examples and explain the issues without rewriting it or guessing who wrote it.\n\nAt the heart of this pivotal transformation is an unparalleled platform. Experts agree it will revolutionize every workflow.",
+      "expected_selection": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "turn_completed": true,
+      "successful_skill_reads": [
+        "/bin/bash -lc 'cat $HOME/.agents/skills/clear-writing/SKILL.md'"
+      ],
+      "observed_skill_read": true,
+      "routing_check": "pass",
+      "output": "“At the heart of” is a stock introductory metaphor. “Pivotal transformation” inflates importance without identifying what changes or why it matters.\n\n“Unparalleled platform” claims superiority without naming competitors, comparison criteria, or evidence.\n\n“Experts agree” invokes authority without identifying the experts, their qualifications, or evidence of consensus.\n\n“Will revolutionize every workflow” combines a sweeping prediction with an absolute scope. The paragraph supplies no examples, measurable outcomes, or evidence supporting that certainty.",
+      "elapsed_seconds": 28.59
+    },
+    {
+      "scenario": "code-only",
+      "trial": 3,
+      "request": "Fix the arithmetic in this Python function. Return only the corrected code.\n\ndef total(a, b):\n    return a - b\n",
+      "expected_selection": false,
+      "exit_code": 0,
+      "timed_out": false,
+      "turn_completed": true,
+      "successful_skill_reads": [],
+      "observed_skill_read": false,
+      "routing_check": "pass",
+      "output": "def total(a, b):\n    return a + b",
+      "elapsed_seconds": 9.31
+    }
+  ],
+  "conclusion": "All nine prose trials read the installed skill; none of the three code-only trials read it. These finite CLI observations support the scoped workspace rule for the tested scenarios.",
+  "baseline_summary": {
+    "prose_requests": 3,
+    "prose_requests_with_skill_read": 1,
+    "prose_requests_without_visible_skill_read": 2,
+    "code_only_requests": 1,
+    "code_only_skill_reads": 0,
+    "conclusion": "Discovery passed. Automatic selection was inconsistent across the tested prose requests. No skill read was observed for the code-only request."
+  }
+}

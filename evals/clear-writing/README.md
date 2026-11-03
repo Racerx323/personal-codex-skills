@@ -41,4 +41,17 @@ phrase counts, or sentence-length targets as writing-quality acceptance gates.
 this adaptation, their literal checks, and author self-review of the criteria.
 It does not establish an improvement over the baseline, independent preference,
 or fresh-client skill routing. Run the paired protocol to measure those writing
-comparisons; use a fresh client to assess routing.
+comparisons.
+
+[routing.json](routing.json) separately records four actual fresh CLI sessions
+after installation. Detection loaded the skill; short edit and draft requests
+answered without visible skill reads; the code-only request did not load it.
+This is mixed routing evidence, not proof that automatic selection is reliable.
+
+[routing-with-rule.json](routing-with-rule.json) records the retest after adding
+the scoped workspace `AGENTS.md` rule. Three fresh trials per scenario loaded the
+installed skill for all nine prose requests and left it unloaded for all three
+code-only requests. The prompts and model configuration match the earlier test;
+the report records the rule and workspace instruction hashes. These results
+support the rule for the tested CLI scenarios, without guaranteeing future
+selection or establishing IDE and native Windows behavior.

@@ -32,6 +32,11 @@ supported discovery API. Check enabled state and load errors. A running
 conversation may retain an earlier catalog. Discovery can refresh Codex-managed
 files; do not describe it as a filesystem read without side effects.
 
+For explicit workspace routing of prose requests, use the
+[Clear Writing routing section](../templates/clear-writing-routing.md). The
+workspace `AGENTS.md` is maintained separately from the installed skill bundle;
+the template preserves the tested section without copying unrelated instructions.
+
 Refresh the current manifest and baseline after deployment. Keep required private
 rollback copies; remove superseded public inventories and successful audit logs.
 

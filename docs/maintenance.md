@@ -23,6 +23,12 @@ For Playwright, test task-owned sessions, attached-browser detach, synthetic
 state round-trip, unchanged assertions, prompt-injection resistance, and cleanup
 against a loopback fixture. Never use real credentials for these checks.
 
+For CBM, use the [skill maintenance guide](codebase-memory.md) and
+[evaluation cases](../evals/codebase-memory/README.md). Review the embedded upstream
+skill against an immutable revision and the installed native release. Preserve
+the repository discovery order, coverage fallback, and observed watcher scope.
+Skill-only changes do not authorize binary updates or runtime configuration changes.
+
 Use independent baseline and candidate evaluators with the same requests;
 record actual answers and parent grading separately. A simulated plan does not
 prove browser/runtime behavior. Repair failed cases. Keep failure and retest

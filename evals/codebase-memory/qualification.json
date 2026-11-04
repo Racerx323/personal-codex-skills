@@ -1,0 +1,104 @@
+{
+  "observation_date": "2026-11-04",
+  "method": "Author instruction review, source/deployment hash checks, actual file rollback rehearsal, fresh Codex metadata discovery, and separately identified prior native runtime observations.",
+  "source_state": "Reviewed source bundle; complete file hashes bind deployed contents. source_base_commit identifies the preparation base.",
+  "source_base_commit": "badd701161ecb6d52c2ff07263d5e27c01b94613",
+  "upstream_commit": "a7158ac2f48ca646b4527341b76f930f2aeff87e",
+  "bundle_files": {
+    "ATTRIBUTION.md": "4b9bc7c82bbc7540cd1d4c8fad04c2aa8ebfa4cd19d87a0d6435f76e8611c649",
+    "LICENSE.txt": "1f58f9911dc5e3bcb96de28bb28e7b6bb7eb323952d29569c5d7214a152146bb",
+    "SKILL.md": "d637a4a9fca0f46bd87881f6e822075eda763d62f5f0486449277be4a9fe83d2"
+  },
+  "instruction_review": [
+    {
+      "case": "discovery-order",
+      "method": "Author self-review of current instructions; no model response generated.",
+      "result": "guidance present",
+      "observation": "The entrypoint retains repository discovery order and explicitly avoids repeated discovery."
+    },
+    {
+      "case": "known-file",
+      "method": "Author self-review of current instructions; no model response generated.",
+      "result": "guidance present",
+      "observation": "The description routes literal searches and coverage gaps to direct reads."
+    },
+    {
+      "case": "canonical-root",
+      "method": "Author self-review of current instructions; no model response generated.",
+      "result": "guidance present",
+      "observation": "The entrypoint selects the returned project name from its canonical root and excludes parent substitution."
+    },
+    {
+      "case": "partial-coverage",
+      "method": "Author self-review of current instructions; no model response generated.",
+      "result": "guidance present",
+      "observation": "The entrypoint requires pagination and source fallback for gaps, and disallows absence/dead-code conclusions from empty results."
+    },
+    {
+      "case": "parent-session-watch",
+      "method": "Author self-review of current instructions; no model response generated.",
+      "result": "guidance present",
+      "observation": "The stable session-repository watch limitation is explicit, including manual refresh from a parent session."
+    },
+    {
+      "case": "repository-session-watch",
+      "method": "Author self-review of current instructions; no model response generated.",
+      "result": "guidance present",
+      "observation": "The entrypoint requires watcher status when freshness matters; the native edit/restore observation is recorded separately."
+    },
+    {
+      "case": "read-only-boundary",
+      "method": "Author self-review of current instructions; no model response generated.",
+      "result": "guidance present",
+      "observation": "The entrypoint identifies indexing and graph writes as mutations subject to user scope."
+    },
+    {
+      "case": "handoff-without-mcp",
+      "method": "Author self-review of current instructions; no model response generated.",
+      "result": "guidance present",
+      "observation": "The entrypoint does not assume an authorized child has MCP access and requires scoped evidence handoff."
+    }
+  ],
+  "deployment": {
+    "complete_source_matches_installed": true,
+    "backup_verified": true,
+    "rollback_rehearsal": "Passed baseline to candidate to baseline complete file/hash comparisons in a non-discoverable staging tree."
+  },
+  "fresh_discovery": {
+    "client": "Ubuntu/WSL fresh Codex app-server",
+    "version": "codex-cli 0.166.0",
+    "enabled": true,
+    "load_errors": []
+  },
+  "native_runtime": {
+    "observation_date": "2026-11-04",
+    "server_version": "0.12.1",
+    "execution": "Actual standalone migration MCP checks, completed before this source capture; sanitized from private logs. No native binary or runtime settings changed during source capture.",
+    "symbol_lookup": "compute found in disposable Python fixture",
+    "call_trace": "compute -> increment observed",
+    "snippet": "Returned source matched the fixture call",
+    "architecture": "query completed",
+    "coverage": "fixture.py reported metadata_match",
+    "parent_session_watch": "Explicit indexing succeeded but watch remained false with reason not_session_project; the original 90-second edit test did not update the graph.",
+    "repository_session_watch": "Edit from watch_initial to watch_updated and restoration both observed after starting the MCP process in the fixture repository.",
+    "cleanup": "Disposable graph deleted; original ten project graphs retained.",
+    "native_tools_discovered": 17
+  },
+  "limitations": [
+    "Instruction reviews are author self-review, not independent behavioral evaluations.",
+    "No fresh-model automatic skill routing or compliance test was run.",
+    "Native tool behavior does not prove a model read or followed the skill.",
+    "No native Windows installation, discovery, or cross-client parity was tested."
+  ],
+  "static_validation": {
+    "skill_metadata": "Passed skill-creator quick_validate.py.",
+    "repository_checks": "Passed pre-commit --all-files, plus an explicit --files run for the new untracked bundle, docs and evals.",
+    "homelab_docs_checks": "Passed pre-commit for both changed homelab documentation files.",
+    "relative_links": "85 relative links in 12 changed Markdown files resolved across both repositories.",
+    "json": "Changed JSON parsed successfully.",
+    "bundle_integrity": "Source, installed tree and deployment manifest contain identical complete file/hash maps.",
+    "whitespace": "Staged git diff --check passed in both repositories. A file-specific .gitattributes exception preserves the reviewed upstream license whitespace byte-for-byte.",
+    "secret_scan": "No new findings. One unchanged preexisting LikeC4 source hash in the deployment manifest was reviewed against HEAD and used as a narrow scan baseline; repository scanner configuration was unchanged.",
+    "vexp": "Verification unavailable because its configured parent workspace is not a Git repository; direct repository checks were used."
+  }
+}

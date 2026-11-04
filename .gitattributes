@@ -1,0 +1,2 @@
+# Preserve the reviewed upstream license bytes, including whitespace-only lines.
+skills/codebase-memory/LICENSE.txt whitespace=-blank-at-eol,-blank-at-eof

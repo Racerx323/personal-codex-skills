@@ -12,6 +12,7 @@ validation layout of `frame-and-sample`, adapted for skills.
 | [likec4-dsl](skills/likec4-dsl/SKILL.md) | Architecture DSL and verified CLI workflows | Personal standalone skill |
 | [playwright-cli](skills/playwright-cli/SKILL.md) | Scoped browser inspection and testing | Personal standalone skill |
 | [harness-engineering](skills/harness-engineering/SKILL.md) | Harness Score audits and requested Codex harness improvements | Personal standalone adaptation |
+| [codebase-memory](skills/codebase-memory/SKILL.md) | Structural graph queries, coverage checks, and repository-scoped freshness | Personal standalone adaptation |
 
 `clear-writing` combines selected guidance from Stop Slop and No AI Slop.
 It replaces the personal `stop-slop` installation. Taste Skill is excluded.
@@ -35,8 +36,12 @@ Read [installation and recovery](docs/installation.md),
 Only the reviewed skill directory is deployed; repository governance and evals
 are not copied into the active skill folder.
 
+See [Codebase Memory skill maintenance](docs/codebase-memory.md) for its source,
+deployment, evaluation, and update boundaries. The linked homelab guide owns
+the native server's workstation installation and lifecycle.
+
 ## License
 
-New repository content is [MIT licensed](LICENSE.md). Clear Writing and LikeC4
+New repository content is [MIT licensed](LICENSE.md). Clear Writing, LikeC4, and Codebase Memory
 retain MIT upstream notices. The derived Playwright bundle retains its Apache-2.0
 license. See the ATTRIBUTION.md and license file within each skill.

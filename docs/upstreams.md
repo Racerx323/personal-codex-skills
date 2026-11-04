@@ -35,6 +35,19 @@ There is no upstream Codex bundle at the reviewed revision. Do not replace this
 adaptation with the Claude Code or Cursor skill verbatim. See its
 [attribution](../skills/harness-engineering/ATTRIBUTION.md) for the source paths.
 
+## Codebase Memory
+
+The personal `codebase-memory` skill adapts DeusData/codebase-memory-mcp's embedded
+`skill_content` in `src/cli/cli.c` at v0.12.1 commit
+`a7158ac2f48ca646b4527341b76f930f2aeff87e`. The MIT notice is preserved in the
+bundle. The local adaptation retains workspace discovery order and authorization
+boundaries, narrows queries to unresolved questions, and records stable-release
+session-scoped watch behavior rather than adopting newer main-branch behavior.
+
+See its [attribution](../skills/codebase-memory/ATTRIBUTION.md) and
+[maintenance guide](codebase-memory.md). The provenance pin identifies reviewed
+skill content; the separate native CBM installation has its own lifecycle.
+
 ## Update procedure
 
 1. Resolve the candidate upstream revision to a full commit ID.

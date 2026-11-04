@@ -112,6 +112,28 @@
           "sha256": "be1d3eca5498400987f757984f1159378001f520ec4badf9324902d1d6e26aa1"
         }
       ]
+    },
+    {
+      "repository": "https://github.com/DeusData/codebase-memory-mcp",
+      "commit": "a7158ac2f48ca646b4527341b76f930f2aeff87e",
+      "tag": "v0.12.1",
+      "license": "MIT",
+      "adaptation": "skills/codebase-memory",
+      "source_embedding": "src/cli/cli.c: skill_content",
+      "files": [
+        {
+          "path": "src/cli/cli.c",
+          "sha256": "4d5cad983f2af5d9b9fd23c1ff8f5827cef830b84e1a0119a11cbf25a80c53aa"
+        },
+        {
+          "path": "docs/CONFIGURATION.md",
+          "sha256": "88baacfdea5f41ac5920721b93b80534a0d7634ff9ce37430dbe4ebe5894e5da"
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "1f58f9911dc5e3bcb96de28bb28e7b6bb7eb323952d29569c5d7214a152146bb"
+        }
+      ]
     }
   ],
   "structure_reference": {

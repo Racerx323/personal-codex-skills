@@ -65,6 +65,28 @@ IDE and native Windows routing remain untested. No managed system-skill file
 changed during discovery or these sessions; installed Clear Writing hashes
 remained unchanged. Other personal bundles were not replaced or requalified.
 
+## November 4 Codebase Memory source capture
+
+Captured the existing standalone adaptation under
+`skills/codebase-memory`, with the pinned upstream MIT notice and attribution.
+All three files match the deployed bundle under
+`$HOME/.agents/skills/codebase-memory`. Its preparation base revision and exact
+deployed content hashes are in the
+[deployment manifest](current-installation.json).
+
+The previous one-file installation was verified and backed up outside discovery.
+A baseline → candidate → baseline file/hash rehearsal passed before replacement.
+Fresh Ubuntu/WSL Codex app-server discovery verified the enabled skill and no load
+errors. This packaging change adds notices and an attribution link; it does not
+change the native server installation or claim model-routing qualification.
+
+The [skill guide](codebase-memory.md) links source provenance, installation,
+evaluation cases, and update boundaries to the separate homelab lifecycle guide.
+[Qualification](../evals/codebase-memory/qualification.json) separates author
+instruction review from prior actual native MCP and watcher checks. Independent
+model behavior and automatic skill routing have not been evaluated for CBM.
+Other skills' earlier observations remain unchanged.
+
 ## Version-qualified runtime checks
 
 | Component | Current version | Evidence |

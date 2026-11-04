@@ -4,6 +4,7 @@
 - [Source provenance and updates](upstreams.md)
 - [Maintenance and rollback](maintenance.md)
 - [Current installation and qualification](current-baseline.md)
+- [Codebase Memory skill maintenance](codebase-memory.md)
 - [Unresolved storage findings](storage-issues.md)
 - [Plugin creator cache-refresh report](plugin-creator-cache-refresh.md)
 

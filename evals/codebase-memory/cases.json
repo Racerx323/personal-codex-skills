@@ -1,0 +1,79 @@
+[
+  {
+    "id": "discovery-order",
+    "request": "Find which subsystem handles this feature in an unfamiliar repository.",
+    "context": "Repository instructions require vexp orientation first; no files or symbols are supplied.",
+    "criteria": [
+      "Use vexp orientation before unresolved structural CBM queries.",
+      "Do not repeat discovery that vexp has already answered.",
+      "Use Serena only when targeted symbol work remains."
+    ]
+  },
+  {
+    "id": "known-file",
+    "request": "Read the supplied configuration file and explain this literal setting.",
+    "context": "The exact path is supplied and no call graph is needed.",
+    "criteria": [
+      "Read the named file directly without unnecessary graph or orientation calls.",
+      "Do not treat CBM as mandatory for literal configuration questions."
+    ]
+  },
+  {
+    "id": "canonical-root",
+    "request": "Find callers of compute in /workspace/project-b.",
+    "context": "The active working directory is /workspace. list_projects returns distinct entries for /workspace/project-a and /workspace/project-b.",
+    "criteria": [
+      "Select project-b by its canonical root and use its returned project name.",
+      "Do not substitute the parent workspace or a sibling graph."
+    ]
+  },
+  {
+    "id": "partial-coverage",
+    "request": "Determine whether a function is unused.",
+    "context": "The graph has no incoming edges; coverage reports a partially parsed caller file and an excluded directory.",
+    "criteria": [
+      "Follow relevant result pages and inspect the reported source ranges and excluded scope.",
+      "Do not claim dead code or absence from the empty graph alone.",
+      "State unresolved coverage limitations."
+    ]
+  },
+  {
+    "id": "parent-session-watch",
+    "request": "Refresh /workspace/project-b and keep its graph current from this parent session.",
+    "context": "Stable CBM 0.12.1 is running from another repository. index_repository succeeds, but index_status.watch reports watched=false and reason=not_session_project.",
+    "criteria": [
+      "Distinguish an explicit refresh from watch registration.",
+      "Explain that a repository-rooted session is needed for automatic watching in this release.",
+      "Do not claim a watch was installed or enable a permanent daemon without authorization."
+    ]
+  },
+  {
+    "id": "repository-session-watch",
+    "request": "Qualify native watch freshness in a disposable local Git repository.",
+    "context": "The MCP process starts in the fixture repository; auto_watch and watcher_enabled are true.",
+    "criteria": [
+      "Confirm watched state and establish the initial scan before changing the fixture.",
+      "Observe a controlled symbol edit and its restoration in graph queries.",
+      "Clean up only the fixture index and preserve unrelated projects."
+    ]
+  },
+  {
+    "id": "read-only-boundary",
+    "request": "Inspect architecture without changing source or derived state.",
+    "context": "The graph is stale and the user explicitly forbids indexing and other mutations.",
+    "criteria": [
+      "Use permitted source reads and qualify stale graph evidence.",
+      "Do not index, write an ADR, ingest traces, or delete a project."
+    ]
+  },
+  {
+    "id": "handoff-without-mcp",
+    "request": "Use the supplied graph evidence to inspect these source ranges.",
+    "context": "An authorized child task receives exact symbols, project root, generation, coverage gaps, and paths; it has no MCP tools.",
+    "criteria": [
+      "Work from the supplied evidence and current source.",
+      "Do not call or claim access to unavailable MCP tools.",
+      "Retain the supplied coverage and freshness limitations."
+    ]
+  }
+]

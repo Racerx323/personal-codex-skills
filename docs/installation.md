@@ -40,6 +40,11 @@ the template preserves the tested section without copying unrelated instructions
 Refresh the current manifest and baseline after deployment. Keep required private
 rollback copies; remove superseded public inventories and successful audit logs.
 
+For CBM, deploy the complete `skills/codebase-memory` bundle. Its
+[skill-specific guide](codebase-memory.md) distinguishes skill deployment from
+the native server installation maintained in `homelab-docs`. Do not run the
+upstream multi-client installer to update this personal skill.
+
 ## Recovery
 
 Confirm the active tree still matches its deployment manifest before replacing
